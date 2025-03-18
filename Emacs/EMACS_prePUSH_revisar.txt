@@ -1,3 +1,6 @@
+
+				C-x C-c			(save-buffers-kill-emacs)
+
 		ojO.....-> -> ->   C-x u     (es diferente a)   C-x C-u
 		ojO.....-> -> ->   C-x b     (es diferente a)   C-x C-b
 
