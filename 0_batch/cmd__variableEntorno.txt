@@ -1,3 +1,6 @@
+
+																											::: set OLDDIR=%CD% && cd %OLDDIR%							(mas variables de entorno el final...!!!)
+
 		start cmd      consola desde consola en ubicaciónActual  :)   :)  :)  
 
 abrir explorer desde consola en la ubicación actual:
@@ -102,3 +105,7 @@ leer archivo de texto desde consola  ( como cat en Debian )
 
          %errorlevel%               // codigoDeEstado [ultimoComandoEjecutado, como en debian    :)
 
+### Variables de Entorno cmd
+
+	::: set OLDDIR=%CD%
+	:::cd %OLDDIR%

@@ -1,0 +1,12 @@
+no olvides jugar con ::: sponge /etc/environment  en lugar de vim:: w ! sudo tee %  dale  vim:: w ! sudo sponge %
+
+
+
+# windows sha256sum
+::: powershell
+ ::  Get-FileHash ./archlinux-2023.iso | Format-List
+
+		Algorithm : SHA256
+		Hash      : 477F50617D648E46D6E326549AA56AB92115A29A97F2CA364E944CEA06970608
+		Path      : C:\Users\nglar\Downloads\archlinux-2023.11.01-x86_64.iso
+

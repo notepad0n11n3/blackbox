@@ -1,5 +1,5 @@
-::: aplicationHere >/dev/null 2>&1 & disown 
-::: aplicationHere &>/dev/null & disown 
+::: aplicationHere >/dev/null 2>&1 & disown						'convierte el stderr a stdin y lo manda al dev/null'
+::: aplicationHere &>/dev/null & disown								'manda todo stderr y stdin  al dev/null'
 
 			simbolo $ ---  usuario normal           simbolo # ---  usuario ROOT
 

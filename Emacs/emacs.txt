@@ -1,5 +1,8 @@
 						Ctrl === C			Alt === M
 
+
+::: emacs -nw 		emacs en terminal no ventana emergente <3 <3 <3   
+
 ::: emacs -nw -fg gree $HOME
 	Ctrl x Ctrl c			(Close Emacs)
 
