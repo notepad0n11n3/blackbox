@@ -1,6 +1,6 @@
 
 
-::: sudo apt-get --purge remove hollywood -y
+::: sudo apt-get  remove --purge  hollywood -y
 
 
 
@@ -27,6 +27,6 @@
  
 
   # ELIMINAR/DESINSTALAR usando APT
-    ::: sudo apt remove google-chrome-stable     <--  --purge no testeado :/
+    ::: sudo apt  remove  google-chrome-stable     <--  --purge no testeado :/
         ..
         Do you want to continue? [Y/n]
