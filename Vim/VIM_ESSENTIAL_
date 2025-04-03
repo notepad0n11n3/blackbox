@@ -59,7 +59,7 @@ vim:: imap ;l <Esc>
 
 ### COMPILADO ONELINER DESDE COMMAND-MODE ... <3 <3 <3
 
-				vim:: w | ! gcc % -o %< && ./%<         "guarda el archivo actual, compila el archivo actual(%) y lo guarda como el nombre actual del archivo sin extension (%<)" "LOS ESPACIOS SON IMPORTANTES !!!"
+				vim:: w | ! gcc % -o %< && .//%<         "guarda el archivo actual, compila el archivo actual(%) y lo guarda como el nombre actual del archivo sin extension (%<)" "LOS ESPACIOS SON IMPORTANTES !!!"
 
 				@:          repeat the previous ":" command N times   .... ojo ojo ... ... ... <3 <3 <3
 
