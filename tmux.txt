@@ -33,7 +33,10 @@
 					run -b "whoami | tr -d '\n' | xclip -sel clip"      ... <3 <3 <3
 					run -b "firefox & burpsuite & qtermial"
 
-SESSION
+SESSION		└─$ tmux new-session -s "Bomb_maybe" -c $burn -n MangO					└─$ tmux new-session -d -s "Bomb_maybe" -c $burn -n MangO		......<3 <3 <3 <3 (-d la creaDesacoplada detached <3)
+							sessions should be nested with care, unset $TMUX to force
+
+																		
   ::: tmux new -s "nameSession" -c $burn -n "nameWindow"
   ::: tmux new -s nameSession
   @ : new -s nombreSession -c $HOME -n "nameWindow"
