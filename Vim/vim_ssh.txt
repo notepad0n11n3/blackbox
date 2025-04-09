@@ -1,0 +1,9 @@
+
+### Acceder a carpeta delServer por :Ex  ...<3 <3 <3 
+		::: e scp://user_name@ip_here//
+
+### Copiar archivos del server a local... <3
+		::: scp user_name@ip_here:/ruta/archivo.txt  ./my_folder/			( o solo ./  )	
+
+ ## ... de local al server ...<3
+		::: scp ./archivo.txt  user_name@ip_here:/ruta/server/
