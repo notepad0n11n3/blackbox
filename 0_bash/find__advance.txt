@@ -21,5 +21,14 @@
 
 
 ### filtra varios tipos de extension.   *.html *.js *.c
+
 	::: find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.c" \)
+
 	::: find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.c" \) -exec vim -p {} +
+
+	::: find . -type f ! \( -name \*.svgz -o -name \*.qml \) -exec vim {} +
+
+	
+
+### abrir archivos .nse (metasploit)	:: vim $(locate .nse)
+	::: find / -type f -name \*.nse 2>/dev/null -exec vim {} +
