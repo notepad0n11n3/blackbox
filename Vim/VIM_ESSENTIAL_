@@ -45,6 +45,7 @@ vim:: imap ;l <Esc>
 
 ### INFO DEL ARCHIVO EN EDICION
 					vim:: echo expand('%:p')				"muestra el path absoluto con el nombre de archivo ...<3 <3 <3"			 vim:: echo expand('%:h')				: help %<
+					vim:: echo bufnr('%')					"muestra el numero del buffer actual"				bufnr('#')   'numero de buffer archivoAnterior'
 
 										%:h:p
 										%:p

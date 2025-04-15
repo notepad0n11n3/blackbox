@@ -63,7 +63,7 @@ v:: set tabstop=2    espacio de indentación  TAB
           vim file.* file1.* file2.* file3.* file4.*
 
       vim:: buffers     ===      vim:: files
-      vim:: buffer + número     goBufferNúmero
+      vim:: buffer + número     goBufferNúmero		 b8  b3  b1  b3
                     nombre
 
       vim:: b#		" saltar al archivo('#') anterior , %archivo actual"
@@ -81,6 +81,11 @@ v:: set tabstop=2    espacio de indentación  TAB
       vim:: bdetele + numero       eliminaBufferNumero
 
       vim:: %bdelete               delete allBuffers
+
+				.vimrc{
+					nnoremap <C-k> :bnext<CR>
+					nnoremap <C-l> :bprevious<CR>
+				}
 
 ### PATH path
 
