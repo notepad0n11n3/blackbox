@@ -18,6 +18,8 @@
 
        Ctrl w R   'rotate panes <3 <3...'
 
+			 Ctrl w q   like a :q
+
 ### DIVISION DE PANTALLA EXTRA PANEL PANELES	    ' :h window-moving '      ' :h tabpage   "pesta~as" '
           
           Ctrl w T       independizar panel actual a una pesta~a 

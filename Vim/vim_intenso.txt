@@ -38,6 +38,11 @@ xset q | grep "Caps Lock" | sed -E 's/ +/ /g' | cut -d' ' -f3,5 | tr -d "\n"
         -p     "Abre todos los archivos en pesta~as"
         -O     "                           divVerticales"
         -o     "                           divHorizontales"
+	
+	::: vim $(locate .nse)
+	::: find / -type f -name \*.nse 2>/dev/null -exec vim {} +
+	::: vim $(find . -type f ! \( -name \*.svgz -o -name \*.qml \))
+
 
 
 ### Abrir archivos de manera recursiva 
