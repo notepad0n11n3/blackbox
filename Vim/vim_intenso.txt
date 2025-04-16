@@ -41,7 +41,9 @@ xset q | grep "Caps Lock" | sed -E 's/ +/ /g' | cut -d' ' -f3,5 | tr -d "\n"
 	
 	::: vim $(locate .nse)
 	::: find / -type f -name \*.nse 2>/dev/null -exec vim {} +
-	::: vim $(find . -type f ! \( -name \*.svgz -o -name \*.qml \))
+			find . -type f ! \( -name *.svgz -o -name *.qml -o -name *.jpg -o -name *.png \) -exec vim {} +				(' ! ignora las extenciones -o agrupa las opciones, no olvides espacios dentro \( 8 \) ')
+
+	:::	vim $(find . -type f ! \( -name *.svgz -o -name *.qml -o -name *.jpg -o -name *.png \))
 
 
 
