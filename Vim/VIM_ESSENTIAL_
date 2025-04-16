@@ -15,6 +15,9 @@ vim:: imap ;l <Esc>
 	vim:: tabnew | execute 'read! cat /etc/passwd' | execute ' %! grep sh$' | call Lterm()			ejecuta todo en la nueva pestana... <3 <3 <3
 	vim:: tabnew | call Mvnb('-ip')
 
+	vim:: vnew | buffer 2					'abrir el buffer 2'		Si no le pasas unArchivo crea un buffer nuevo VACIO sin nombre ([No Name])
+	vim:: vsplit | buffer 2				'abrir el buffer 2'		Si no le pasas archivo, abre el mismo archivo actual en un nuevo split (como un clon del actual).
+
 	vim::  execute 'w ! sudo tee %' | ! sudo update-grub
 	vim::  execute 'w ! sudo tee %' | execute '! sudo update-grub'
 
