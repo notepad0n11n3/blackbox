@@ -16,7 +16,8 @@
 vim:: r !cd      vim:: r! pwd     # imprime en vim la salida del comando ejecutado
 
 				vim::r!bash -c "source ~/.zshrc_self && 0n11n3 -f"
-				vim::w!gcc % -o %< && clear && .//%<
+
+				vim::w |!gcc % -o %< && clear && .//%<
 
 mio
 				C:\vim -p archivo1.* archivo2.*
