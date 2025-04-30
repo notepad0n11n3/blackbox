@@ -48,6 +48,7 @@ vim:: imap ;l <Esc>
 
 ### INFO DEL ARCHIVO EN EDICION
 					vim:: echo expand('%:p')				"muestra el path absoluto con el nombre de archivo ...<3 <3 <3"			 vim:: echo expand('%:h')				: help %<
+					vim:: echo getcwd()							"muestra el path del AREA DE TRABAJO, no el path del archivo"
 					vim:: echo bufnr('%')					"muestra el numero del buffer actual"				bufnr('#')   'numero de buffer archivoAnterior'
 
 										%:h:p
@@ -63,7 +64,7 @@ vim:: imap ;l <Esc>
 
 ### COMPILADO ONELINER DESDE COMMAND-MODE ... <3 <3 <3
 
-				vim:: w | ! gcc % -o %< && .//%<         "guarda el archivo actual, compila el archivo actual(%) y lo guarda como el nombre actual del archivo sin extension (%<)" "LOS ESPACIOS SON IMPORTANTES !!!"
+				vim:: w |! gcc % -o %< && .//%<         "guarda el archivo actual, compila el archivo actual(%) y lo guarda como el nombre actual del archivo sin extension (%<)" "LOS ESPACIOS SON IMPORTANTES !!!"
 
 				@:          repeat the previous ":" command N times   .... ojo ojo ... ... ... <3 <3 <3
 
@@ -78,7 +79,7 @@ vim:: imap ;l <Esc>
 
 		::: cat /etc/passwd | vim -c "%! grep sh$" -
 
-		vim:: r ! cat /etc/passwd | grep "sh$"      ...<3 <3 <3  (' no es necesario escapar  |  con  \  despues del !  ')
+		vim:: r !cat /etc/passwd | grep "sh$"      ...<3 <3 <3  (' no es necesario escapar  |  con  \  despues del !  ')
 
 		::: cat /etc/passwd | vim -				vim:: %! grep "sh$" ...<3 <3 <3...!!!			'jugamos con el archivo actual con comandos de shell'
 

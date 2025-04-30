@@ -103,6 +103,7 @@ v:: set tabstop=2    espacio de indentación  TAB
 
 
 	ZZ --- sale guardando ( ZZ ó shift + zz );
+	ZQ --- sale sinGuardar
 	gg --- inicio del archivo
 	G  --- final del archivo
 	
