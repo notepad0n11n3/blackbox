@@ -111,7 +111,7 @@ VI MODE vi mode VI MODE vi mode
 
 					COPIAR / BUSCAR				@ [      'modo copia'
 								@ [ V           'like V en c_vim, selecciona toda la linea'  "default"
-								@ [ Ctrl-v      'like v en c_vim, selecciona por bloque'
+								@ [ Ctrl-v Espace   'like v en c_vim, selecciona por bloque para seleccionar con Espacio'
 
 									ESPACIO    modoSelecci[on
 										ENTER      para copiar ' Ctrl j == ENTER    READY...<3'
