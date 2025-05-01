@@ -109,8 +109,8 @@ VI MODE vi mode VI MODE vi mode
   @ : setw -g mode-keys vi      teclas vim para usar con @ [  *** *** *** ***
     copiar Vimode  Espacio para seleccionar despues enter,  pegar con @ ]
 
-					COPIAR / BUSCAR				@ [      'modo copia'
-								@ [ V           'like V en c_vim, selecciona toda la linea'  "default"
+					COPIAR / BUSCAR				@ [      'modo copia'							Ctrl-v   alterna el resaltado por bloque/linea... <3 <3 <3
+
 								@ [ Ctrl-v Espace   'like v en c_vim, selecciona por bloque para seleccionar con Espacio'
 
 									ESPACIO    modoSelecci[on
