@@ -24,7 +24,7 @@
 
           @ : set status off/on  ... <3 <3 <3
 
-### Ejecucion de comandos desde Tmux... <3 <3 <3 <3
+### Ejecucion de comandos desde Tmux... <3 <3 <3 <3		{{el prompt de comando tiene los atajos de teclado Ctrl-a Ctrl-e Ctrl-b Ctrl-f Alt-b Alt-f Ctrl-w Ctrl-u ...<3 <3 <3 <3 <3}}
 
 				 @ : run "ls"
 				 @ : run -b "ls"             ( -b ejecuta en segundo plano )
@@ -57,9 +57,10 @@ SESSION		└─$ tmux new-session -s "Bomb_maybe" -c $burn -n MangO					└─$ 
   @ : kill-session -t sessionName   // cerrarLaSession sessionName
   @ : kill-ses -t sessionName     @ : kill-ses -a
 
-DIVISIONES
+*** DIVISIONES{{
 		kill-pane -a			" == a :only en vim ...<3 <3 <3"
 
+	@ : select-pane 0						"selecciona el split/panel 0"
 
   @ -   //divisionHorizontal           @ "    like_aVim  vnew      
   @ _   //divisionVertical             @ %    like_aVim  new 
@@ -87,6 +88,15 @@ DIVISIONES
   @ < o >   intercambiar divisiones  INTERCAMBIAR DIVISIONES
 
   @ x    cerrar solo panel  *** *** *** *
+
+		### MOVER/intercambiar split/SPLIT divisiones/DIVISIONES
+			
+			@ : swap-pane -t splitTarged				(lo intercambia con el split actual'Focus')
+			@ : swap-pane -s splitSource -t splitTarged
+
+			@ : swap-pane -s 8 -t 6 ; swap-pane -s 5 -t 29			"podemos ejecutar mas de un comando con ; ...<3 <3 <3"
+
+*** DIVISIONES }}
 
 VENTANAS
   @ ,    rename ventanaActual
