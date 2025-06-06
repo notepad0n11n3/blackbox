@@ -283,6 +283,8 @@ CMD desde Vim
 
 ### PESTAÑAS EN VIM
 						::: vim -p 
+						::: vim * -p			('abre todos los archivos de manera recursiva... <3 <3 <3')
+						::: vim *.txt */*.txt -p  (solo archivos elegidos de manera recursiva... <3 <3 <3 <3)
 
 						gt	siguiente pestana
 						gT  pestana anterior
