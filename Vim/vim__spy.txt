@@ -1,0 +1,5 @@
+
+
+::: vim -i NONE -u NONE .
+													vim:: vim -i NONE ### No lee ni escribe .viminfo
+													vim:: vim -u NONE ### No lee ni escribe .vimrc
