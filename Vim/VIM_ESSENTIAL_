@@ -66,6 +66,8 @@ vim:: imap ;l <Esc>
 
 				vim:: w |! gcc % -o %< && .//%<         "guarda el archivo actual, compila el archivo actual(%) y lo guarda como el nombre actual del archivo sin extension (%<)" "LOS ESPACIOS SON IMPORTANTES !!!"
 
+				vim:: w|!chmod +x % && clear && .//%		"para python, limpiaEjecuta el script rapido con  @ :  en modo normal... <3 <3 <3 "
+
 				@:          repeat the previous ":" command N times   .... ojo ojo ... ... ... <3 <3 <3
 
 ### CORREGIR AUTOIDENTACION EN VIM AL COPIAR CODIGO... <3 <3 <3
