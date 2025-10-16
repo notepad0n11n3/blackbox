@@ -1,0 +1,48 @@
+# powershell
+
+	IEX("firefox.exe; vmware.exe; & 'C:\Program Files (x86)\Steam\steam.exe'");
+
+	- si no usas & al inicio powershell tratara la ruta como un string y no va ejecutar nada :u
+
+
+
+### TMUX CMD WINDOWS:
+
+	alt  shift  d  	      'panel aleatorio vertical/horizontal  (eso creo :u)'
+	
+	alt  shift  -         'panel horizontal cmd.exe'
+	alt  shift  +         'panel vertical cmd.exe'
+	
+	alt  flechas          'salto entre paneles'
+
+
+	ctrl  alt  d		'nueva pesta~a'
+
+
+	Lista de Comandos    Ctrl Shift p
+
+			windows(cmd)  Ctrl+m  ===   Ctrl+j   Linux             [noPowershell :( ]
+
+duplicate pane		Alt Shift d
+duplicate pane, split: down		Alt Shift minus
+duplicate pane, split: right		Alt Shift plus
+
+RESIZE PANE		Alt+Shift+ up/down/left/right ...<3 <3 <3
+fullZoomPane		Ctrl Shift p zoo Enter     ...<3 <3 <3
+
+close pane		ctrl shift w
+
+move downLeftRight		alt down  alt left  alt right
+move focus to the last used pane		Ctrl Alt Left
+
+duplicate tab		Ctrl Shift d
+next tab		Ctrl Tab
+previous tab		Ctrl Shift Tab
+focus paneNumber	Ctrl Alt numberPaneHere 1,2,3,4...
+
+
+newTab POWERSHELL	Ctrl Shift 1
+newTab CMD		Ctrl Shift 2
+
+
+new window		Ctrl Shift n

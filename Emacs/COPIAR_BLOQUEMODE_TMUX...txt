@@ -1,0 +1,6 @@
+
+
+
+### bloqueMode en tmux pa ...<3 <3 <3
+	
+	'prefix'  [  Ctrl  v

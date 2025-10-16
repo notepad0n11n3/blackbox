@@ -1,0 +1,215 @@
+
+  ./script.sh > dictionary.txt
+
+::: mktemp -d  #crea un directorioTemporal, imprimira la ruta de la carpetaTemporal, ATENTO
+
+              trings data.txt | grep "===" | while read sauron; do echo ${sauron}; done
+
+                  !$  hace referencia no al comando sino al argumento del ultimo comando
+                      touch hello.sh
+                        chmod +x !$
+                          cat !$
+
+echo $? == 0   ===== exit 0  como una salida exitosa del comando anterior 
+
+
+::: echo $0     # muestra que tipo de shell con el que estamos
+::: $0     # solo $0 EJECUTA UNA SHELL solo funciona en bash, no en zsh , ES MUY UTIL CSM :)
+
+::: tty    # whatis tty
+
+
+===================================
+ssh bandit @bandit.labs.overthewire.org -p 2220
+  #1  scripting en bash
+
+STDR  STDIN STDR  STDIN *******
+      ls -l /dev/null   XD mv /* /dev/null  
+      
+::: comandoHere 2>/dev/null    error STDR
+      2>&1  STDR a STDIN
+::: comandoHere >/dev/null   STDIN al /dev/null
+  : firefox > /dev/null 2>&1
+
+          ::: firefox >/dev/null 2>&1  &  disown
+          ::: firefox &>/dev/null  &  disown
+
+::: comando &     ejecuta comando en segundoPlano
+::: jobs      muestra segundo plano en ejecuci[on 
+::: disown         independiza sedungoPlano
+******
+
+::: cat ./-  :: cat /home/bandit1/- :: cat /home/bandit1/* (cat a todo) 
+::: cat $(pwd)/-
+
+
+::: find . -name archivoHere | xargs cat
+::: find / -user usuarioHere -group groupHere 2>/dev/null 
+
+
+PERMISOS PERMISOS PERMISOS PERMISOS **********
+
+:::lsattr +i archivo.txt
+:::lsattr -e archivo.txt
+
+*********
+
+::: time comandoHere  
+      muestra el tiempo de ejecuci[on de un comando
+
+
+FIND FIND FIND FIND *********
+
+:::find . -size 1033c -group groupHere -user userHere
+    bytes c 
+
+**********
+
+AWK AWK AWK AWK AWK AWK ********
+
+::: awk '/sauronUp/' data.txt | awk '{print $1}'
+      like a grep...  pero m]as lento
+
+::: awk 'NR==19994'  inprime la linea n[umero 
+
+::: awk '{print $2}' inprime el segundo argumento
+
+::: awk 'NF{print $NF}'  imprime el ultimo argumento
+
+*******
+
+
+::: uniq -u  muestra las lineas que no se repiten
+      previo sort SIEMPRE
+
+
+
+::: strings archivo.txt print the strings of printable characters in files.
+
+
+CODIFICACI[ON BASE 64 BASE64 base64 *********
+
+::: echo "hola que tal" | base64  #codifica la cadena en  base 64
+::: echo "hola que tal" | base64 | base64 -d #decodifica la cadena 
+::: cat data.txt | base64 -d
+
+*********
+
+MOSTRAR EN HEXADECIMAL **************
+::: echo "Hola que tal " | xxd
+::: *** | xxd | xxd -r    #revierte el xxd
+::: echo "HOLA QUE TAL" | xxd -ps #solo muestra el hexadecimal
+*****************
+
+
+TYPO DE ARCHIVO tipo de archivo TIPO DE ARCHIVO******
+::: file archivo  #print tipo de archivo
+*****
+
+
+DESCOMPRECI[ON DESCOMPRECI[ON ***********
+::: 7z data.gzip
+::: 7z l data.gzip  # muestra archivosComprimidos sin descomprimier like a ls
+::: 7z x data.gzip  # EXTRAER ARCHIVO
+********
+
+grep avanzado GREP AVANZADO ********
+::: 7z l data.zip | grep "name" -A 2 
+      # print 2 lineas extra por DEBAJO de lineaName
+::: 7z l data.tar | grep "name" -B 2
+      # print 2 lineas extra por ARRIBA de la lineaName
+::: 7z l data.gzip | grep "name" -C 2
+      # print 2 lineas extra por ARRIBA y ABAJO
+******
+
+
+clave privada ssh CLAVE PRIVADA SSH ********
+
+::: cd /root/
+ :: vim /etc/ssh/sshd_config
+ v: /PermitRootLogin yes      :wq
+
+ :: service ssh start  :: service ssh restart
+ .: service ssh status
+
+ :: ssh-keygen #Creamos claveSsh, enterAtod 
+ :: ls
+ utput: id_rsa  id_rsa.pub
+
+ :: ssh -i sshkey.private bandit14@localhost
+
+::: ssh -i id_rsa bandit17@localhost
+*******
+
+bash avanzado BASH AVANZADO ******************
+
+::: echo '' >/dev/tcp/127.0.0.1/30000 2>/dev/null 2>&1 ##Envia una cadena de texto por el puerto 30000
+                                                       ##ver resultado con echo $?
+
+::: bash -c "comandos here" 2>/dev/null 
+    bash -c "comandos here" 2>/dev/null && echo "[*] Puerto abierto" || echo "[*] Puerto cerrado"
+
+  
+****************************
+
+PUERTOS puertos TELNET telnet nc NC  *********
+::: echo "BfMYroe26WYalil77FoDi9qh59eK5xNr" | nc localhost 30000  ## envia la cadena de texto por el puerto 30000
+
+==: telnet localhost 30000
+  .: 4wcYUJFw0k0XLShlD
+  
+*****************************
+
+encriptacion ssl ENCRIPTACION SSL ********
+
+::: openssl s_client -connect 127.0.0.1:30001
+
+*******************
+
+grep avanzado GREP AVANZADO ****************
+::: cat aeo8.txt | head -n5 | grep -v "sauron" 
+        ##muestra todo menos la linea(s) que contengan "sauron"
+
+::: cat archivo.txt | grep -E "^aeo8|^panda8hat"  filtrara por los 2 aeo8 y panda8hat
+==: cat archivo.txt | grep "^aeo8\|^panda8hat"   sin el -E tenemos que usar el \ para el |
+****************************
+
+diferencia entre 2 archivos******************
+DIFERENCIA ENTRE 2 ARCHIVOS******************
+::: diff archivoAntiguo.txt archivoNuevo.txt
+*****************************
+
+permisos directorio PERMISOS DIRECTORIO ********
+::: chmod 777  ../carpetaHere  # si 2.. no 1 . 
+*******************
+
+
+ejecucion de comando continuo**************
+EJECUCION DE COMANDO CONTINUO**************
+
+::: watch -n 1 ls -l
+        ## cada 1 sagundo ls -l en ubicacion actual
+***********************
+
+
+directorio temporal DIRECTORIO TEMPORAL********
+::: mktemp -d     # atento al output de la ruta del directorio temporal :)
+*****************
+
+
+
+https://overthewire.org/wargames/bandit/bandit33.html
+
+echo 33 c9c3199ddf4121b10cf581a98d51caee > pass.txt :)
+
+Congratulations on solving the last level of this game!
+
+At this moment, there are no more levels to play in this game. However, we are constantly working
+on new levels and will most likely expand this game with more levels soon.
+Keep an eye out for an announcement on our usual communication channels!
+In the meantime, you could play some of our other wargames.
+
+If you have an idea for an awesome new level, please let us know!
+ 
+
+ <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3 <3

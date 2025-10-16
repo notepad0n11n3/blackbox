@@ -1,0 +1,19 @@
+
+### STDIN EN PANTALLA Y GUARDADO N PARALELO ********			no olvides usar :::sponge... <3 <3 <3
+          tee   tee        tee      tee
+    ::: date > /tmp/fecha.txt3
+    ::: date > /tmp/fecha.txt && cat /tmp/fecha.txt  # guarda la salida de date en /tmp/fecha.txt y mostrar stdin en pantalla
+
+    ::: date > tee /tmp/fecha.txt  # la salida de date se muestra en pantalla y tambi[en se guarda en fecha.txt
+
+    ::: ls -lah /home/ | tee listadoHome.txt     like a  'ls -lah > listadoHome.txt'
+
+### STEDIN EN PANTALLA Y GUARDADO N PARALELO ********
+
+
+
+### Eliminar todos los archivos de una carpeta MENOS ....
+
+		::: find . -type f ! -name '*.mp4' -exec echo {} +				'MOSTRARA todos los archivos MENOS los .mp4 ...<3'
+
+		::: find . -type f ! -name '*.mp4' -exec rm {} +					'ELIMINARA todos los archivos MENOS los .mp4 ...<3'

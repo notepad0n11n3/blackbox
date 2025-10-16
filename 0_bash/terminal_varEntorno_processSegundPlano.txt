@@ -1,0 +1,122 @@
+::: firefox &>/dev/null & disown
+::: firefox >/dev/null  2>&1 & disown      2&>1 & disown
+
+::: cd -       #!regresa al directorio anterior :)
+
+::: outputComand | inputNewComand       "pipe operator"
+
+::: comando1; comando2; comando3        ejecuci[on sincrona(uno despu[es de otro)
+
+::: comando1 & comando2 & comando3      ejecuci[on simultanea(lo hace en segundo plano, usa hilos propios del procesador)
+
+::: comando1 && comando2                if comando1 == true  go comand2
+
+::: comando1 || comando2 || comando3    si comand1 se ejecuta descarta los demas, si comnd1 no se ejecuta pruebaEjecutando comnd2, si comnd1,2 no se ejecutan intenta con comand3.
+
+::: ls -lh       h== human,  peso legible de los archivos 
+        -r      reverse print
+        -S      order por height(upperCase)
+
+::: mv archivo.txt ..     copiar/mover una carpeta atras
+
+::: mv directorio1 directorio2    mover directorio1 dentro de direc2 
+
+::: rm -r directorioHere      directorio y contenido delete :: rm -ri     i recursividad/pregunta
+
+::: cp -r directorioAcopiar rutaDeseada/
+
+LECTURA DE ARCHIVOS TERMINAL...
+
+  ::: head archivo.***   
+  ::: head archivo.*** -n 5   cincoPrimera_lineas
+
+  ::: tail archivo.***
+  ::: tail archivo.*** -n numeroHere
+
+  ::: less archivo.***      like vim    *** *** 
+
+
+::: xdg-open archivo.***    abrir archivo con programa predeterminado .txt .html .jpg *** *** *** 
+
+::: ls sauro?  :: ls saur?? :: ls sau???
+::: ls -d [[:upper:]]*      solo directorios(-d) y la primera MAYUSCULA
+::: ls -d [[:lower:]]*
+
+::: ls [ad]*    todo que inicie con a o d 
+
+
+::: file archivo.***      muestra tipo de archivo/descripci[on
+
+::: tar -czvf sauron.tar.gz burningArea/
+::: tar =xzvf sauron.tar.gz burningArea/
+
+::: ls awefawe >> output.txt 2>&1     >> concatena resultados anteriores,   2>  a 1> == > 
+
+PERMISOS...
+
+  Modo simb[olico:
+    u  solo para el usuario
+    g  solo para el grupo
+    o  solo para otros (es el world).
+    a  aplica para todos.
+
+::: chmod 777 archivo            421
+::: chmod u-r archivo   ::  chmod u+r archivo
+::: chmod u-x,go=w archivo    
+
+LINK SIMBOLICO  (acceso directo like win)
+
+::: ln -s Document/dev nameLinkHere :: permisos dumi === permisos sin valor, los linkSinboli como tal no tienePermisos
+
+VARIABLES DE ENTORNO
+
+  ::: printenv    muestra las variables de entorno
+    
+  *** crear variales de entorno, .bashrc    PANDA8HAT='panda8hat.aeo8.6ndaeo8'  ::  echo $PANDA8HAT
+  *** agregar al PATH    .bashrc        PATH=$PATH:/home/newFolderPath/bin
+
+COMANDOS DE B[USQUEDA
+
+  ::: type cd || ls     no son binarios, son utilidades del sistema
+  ::: wich firefox :: wich vim :: wich spotify    buscar binarios en systema
+
+  ::: find ./ -name '*.txt'    buscar carpeta/archivos en ruta especificada
+  ::: find <ubicaci[on> -name '<nombre>' -type fd <file/directory>
+  ::: find ./ -type f -name '*.log' :: find ./ -size 20M     M==megabites
+
+  ::: find ./ -name '*.txt' 2>/dev/null 1>misArchivos_TXT.txt ; echo "Archivos Copiados panda8hat"
+
+  ::: grep panda8hat sauron.***
+  ::: grep -i the sauron.***     -i  ignore caseSencitive
+  ::: grep -c the sauron.*** cuantas veces aparece "the" :: grep -ci the sauron.***
+  ::: grep -vi panda8hat sauron.***  sin panda8hat
+
+  ::: cat /etc/passwd | grep -oP "sh$"       // muestra solo las coincidencias de la busqueda
+  ::: cat /etc/passwd | grep -E "sh$"        // muestra TODA la linea de la coincidencia de la busqueda
+
+UTILIDADES DE RED
+
+  ::: wget www.google.com :: curl www.google.com
+
+  ::: traceroute www.google.com
+
+  ::: ifconfig    :: :: netstat -i
+
+
+  ::: tar -cvf archivoCom.tar carpetaTarget
+    ::: tar -xvf archivoCom.tar
+
+  ::: tar -cvzf archivoCom.tar.gz carpetaTarget
+    ::: tar -xvzf arhivoCom.tar.gz 
+
+  ::: zip -r archivoCom.zip carpetaTarget
+    ::: unzip archivoCom.zip
+
+PROCESS
+
+  ::: ps    :: :: top     ( h  forHelp / u paraFiltrarXusuario ) 
+
+  ::: Ctrl + z     envia proceso al background
+  ::: jobs   muestra los procesos en background
+  ::: fg %(numberProcesPreJobsHere)     trae proc d background al foreground
+  ::: bg %(numberProcesPreJobsHere)    descongela proceso en segundoPlano

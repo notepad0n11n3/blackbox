@@ -1,0 +1,8 @@
+
+^  representa al inicio de la Expresion Regular
+$  representa al final de la ER
+*  representa 0 o m[as ocurrencias de la espresi[on
++  representa una o m[as ocurrencias de la expresi[on
+{n} n veces de una expresi[on
+[]  representa un conjunto de caracteres, por ejem. [a-z] representa las letras de abc de
+    la a a la z

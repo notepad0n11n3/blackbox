@@ -1,0 +1,4 @@
+
+::: systemctl hibernate       // 0 consumo de energia y mantiene el estado del sistema
+
+::: systemctl suspend         // suspender sistema(consume energia, si llega a 0%, se pierde el avance del sistema)

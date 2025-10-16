@@ -1,0 +1,2 @@
+
+::: pwsh                    powershell en kali <3

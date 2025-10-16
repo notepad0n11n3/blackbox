@@ -1,0 +1,31 @@
+
+
+ CRON => se ejecuta cuando arranca el sistema, sirve para especificar cuando se van a ejecutar tareas repetitivas en el systema sin que el administrador tenga que estar pendiente ('backups, mantenimiento, rotaci[on de logs, etc ')
+
+  ::: ls /etc/cron* -ld
+
+      etc/cron.UmU/::: vim panda8hat.sh && chmod +x panda8*.sh
+
+
+
+
+::: crontab -l      =>   list
+
+::: crontab -e      =>   crearTarea
+      m   h    dom    mon   dow     command
+   minuto hora diaMes mes diaSemana comando
+     0    12    1      *     *       /home/aeo8/x89p.sh
+
+
+
+  0 23 1 * * -czf /var/backups/total_$(date +\%F).tar.gz  /home/
+     
+
+
+ >=>> aveces el editor es nano por defecto, tambi[en me gusta pero...
+          vim... omg... ah.. VIM...!!!
+
+              ::: export VISUAL=vim
+              ::: export EDITOR=vim
+
+                  ahora vim the default text editor :)

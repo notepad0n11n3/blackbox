@@ -1,0 +1,4 @@
+
+::: timeout 4 bash -c 'while [ 1 -eq 1 ];do echo "x89p"  ;done'
+
+::: x89p=1; print "pre_While"; read; while [ ${x89p} -lt 10 ];do echo "UwU"; print "${x89p}"; x89p=$(( ${x89p}+1 )); print "${x89p}" ;done

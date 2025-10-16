@@ -1,0 +1,1 @@
+::: alias mango="whoami"            // valido solo para comandos, no me acepta ip's

@@ -1,0 +1,111 @@
+
+																											::: set OLDDIR=%CD% && cd %OLDDIR%							(mas variables de entorno el final...!!!)
+
+		start cmd      consola desde consola en ubicaciónActual  :)   :)  :)  
+
+abrir explorer desde consola en la ubicación actual:
+								explorer .      abre  C::\Users\aeo8
+								explorer ..     abre  C:\users
+								explorer ..\..  abre  C:\
+											   ..    go back 
+
+concatenar comandos en cmdWindows
+				
+				&    ejecutaPrimercomando, despuesSegundoComando ( casi todo enParalelo )
+				&&   ejecutaPrimercomando soloEjecutaSegundoComando siComando1 termina con exito
+				||   ejecutaPrimerComando soloEjecutaSegundoComando siComando1 noTerminaCONexito
+
+				ejem:   chrome.exe & firefox.exe & msedge.exe 
+
+cd escrito sin ningun parámetro devolverá elDirectorioActual
+              en vim ayuda mucho para jalar rápido la ruta actual con ( :r !cd )
+
+
+    pip freeze > ../../src/requirements.txt  #el archivo ya existia, lo sobreescribió y relleno noProblem :)
+
+::: dir > sauronDir.txt       jo jo jo jo jo jo hoho  
+
+::: echo > sauron.txt meep moop woop no necesita comillas para agrupar todo el texto
+
+::: type sauron.txt
+
+comando DIR avanzado 
+			:::dir /ad       solo carpeta
+			:::dir /a-d      todo menos carpetas
+			:::dir /ah       archivos/carpetas ocultas
+			:::dir /a-h		  todo menos cosas ocultas
+				
+					:::dir /a            ls -all        ls -a
+					:::dir /ad       solo carpetas 
+					:::dir  /ah       solo archivos ocultos
+					:::dir /a-d       todo menos carpetas
+		
+dir recursivo
+      ::: dir /s /b kuma.txt   ===  :::dir /b /s kuma.txt
+
+      ::: dir /s kuma.txt | findstr "like_a_GrepUnix<3"
+      ::: dir /s euro.txt | findstr "Directory" 
+
+
+findstr    ===   grep
+
+      ::: findstr /i /r /c:".*test" _vimrc        
+
+                  /i  noCaseSensitive        
+                  /r regularExpreison       
+                  /c:"textHere"   stringTarged      .* === * enLinux    (acepta ^,$) <3
+
+      ::: findstr /i /r ".*test"  archivoHere          funcionaIgual :)
+
+guardar el resultado de un comando en un  archivo
+			:::dir C:\ > "archivo.*"
+							  	 "s:\carpeta\archivo.*"
+
+					>    es un operador, que significa <<enviar a>> alguna parte
+
+renonbrar un directorioCarpeta
+				
+			:::ren "c:\carpeta\carpeta" "nuevo Nombre" 
+			:::ren	".\carpetaModificar" "nuevoNombre"
+							
+						el punto hace referencia a la ruta actual
+							como en ( explorer . ) 
+
+leer archivo de texto desde consola  ( como cat en Debian )
+		:::type archivo.*
+		:::type archivo1.* archivo2.*
+
+::: whoami /priv
+
+::: whoami /all
+
+::: net user    /// lista de cuentas en el equipo
+
+::: net user aeo8       ::: net user panda8hat   //// info detallada sobre la cuenta especificada
+
+
+================================= VARIABLES DE ENTORNO ============================================ 
+
+::: echo %SystemRoot%           // C:\Windows\
+         %UserProfile%          // likea a :::  cd == $HOME   en linux   ; %homepath%  //noDevuelveRutaAbsoluta OJO
+         %SystemDrive%          // unidad de sistema  C:   necesita \ al final para usar con cd o pushd
+
+         %path%                 // path del sistema
+         %temp%                 // folder archivos temporales
+         %cd%                   // like a  ::: pwd
+         %ErrorLevel%
+         
+         %number_of_processors%     // numero de n[ucleos f[isicos y virtuales
+         %processor_identifier%
+         %random%                   // numero aleatorio de 0 a 32767
+         %date%
+         %time%
+         %UserName%
+         %ComputerName%
+
+         %errorlevel%               // codigoDeEstado [ultimoComandoEjecutado, como en debian    :)
+
+### Variables de Entorno cmd
+
+	::: set OLDDIR=%CD%
+	:::cd %OLDDIR%

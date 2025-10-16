@@ -1,0 +1,60 @@
+::: aplicationHere >/dev/null 2>&1 & disown						'convierte el stderr a stdin y lo manda al dev/null'
+::: aplicationHere &>/dev/null & disown								'manda todo stderr y stdin  al dev/null'
+
+			simbolo $ ---  usuario normal           simbolo # ---  usuario ROOT
+
+	xdg-open .              abre el gestor de archivo el la ubicación actual
+	xdg-open archivoHere    abre el archivo como si le hubieras dado dobleClick
+
+Ctrl + j     <Enter>    <3 <3 <3 
+Alt + a     'like Ctrl+j y mantiene el comando ejecutado para continuar ...(soloZSHnoBASH</3) <3 <3'
+
+Alt + 22 + a  'imprime 22 "a"'... <3 <3 <3 
+Alt + .       like a !$  ultimo argumento del comandoAnterior
+
+Ctrl + h     borra caracter like Back KEY               vimReady
+
+Ctrl + d     CIERRA la terminal si no tiene nada escrito ...<3 <3 <3
+						 si tiene algo escrito muestra sugerencias.
+
+Ctrl + w     elimina una palabra entera                 vimReady
+
+Ctrl + q     Limpia toda la linea, SIN IMPORTAR el FOCUS  noVim :(
+Ctrl + u     Limpiar Linea/avecesDesdeFOCUS_aIncioLine    vimReady
+Ctrl + k     Limpia desdeFOCUS aFinalLine                 noVim :(
+
+Ctrl + 7     revierte lo borrado, soloTerminalUnix        noVim :( 
+
+  Ctrl + y   PERMITE PEGAR/recuperar LO [ULTIMO QUE SE BORR[O
+  Ctrl + r   buscador de comandos utilizados
+
+Ctrl b     retrocede un caracter
+Alt b      retrocede una palabra
+
+Ctrl f     avanza un caracter
+Alt  f     avanza una palabra
+
+Ctrl a     ir al principio de linea
+Ctrl e     ir al final de linea / TAMBI[EN COMPLETA_SUGERENCIA ZSH
+
+Tab (tabulador)  completaLasPosiblesCoincidencias (bash/zsh)
+
+===========vim
+ Ctrl + o/O           <Enter>
+                     zz w + i == 'Ctrl-o + :w '<-'modoInserci[on'   VIM te saca al modo NORMAL para realizar 1 sola acci[on,
+                     despu[es regresaras al modo inserci[on :), 
+
+terminal sin bordes <<--
+	Alt f3        m    n       shortCuts para eliminar la barra superior :)
+ solo en kde 
+
+
+
+
+ ::: !!       ultimo comando ejecutado
+ ::: !?       ultimo comando ejecutado
+
+ ::: !$       argumento del ultimo comando ejecutado
+ ::: !#       ultima parabra escrita, si like a copy/paste(Ctrl-v / Ctrl-y) en caliente <3 <3 <3...
+
+ ::: echo $?     codigo de salida del ultimo comando ejecutado

@@ -1,0 +1,24 @@
+// pushd popd  tambi[en funciona en windows <3
+
+::: pushd rutaDestino
+
+::: dirs -v
+    
+    0  /home
+    1  /var        <-<-<-<--
+    2  /tmp                |
+                           |
+ :: cd ~1        // go  /var/    :)
+
+
+::: dirs -c   /// clear buffer
+
+=================================
+
+::: cd -           /// salta al ultimo directorio en el que estabas, sin limite de usos :)  <3
+
+
+
+
+::: echo $PWD
+::: echo $OLDPWD

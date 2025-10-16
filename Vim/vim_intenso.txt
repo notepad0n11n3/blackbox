@@ -1,0 +1,137 @@
+xset q | grep "Caps Lock" | sed -E 's/ +/ /g' | cut -d' ' -f3,5 | tr -d "\n"
+  cip   cap   dap   dip    'p PARRAFO  , el parrafo se delimita por las LINEAS en blanco ("\n")'  <3 <3
+
+
+###  Ctrl 'a|x'   se puede usar con Ctrl v
+																						' Ctrl v  Ctrl a '    ingrementa los numeros seleccionados, todos a la vez ++     tambien funciona con Ctrl V
+                                            ' Ctrl v  g Ctrl a '  ingrementa los numeros SUCESIVAMENTE...!!!     tambien funciona con Ctrl V
+
+                                                                 mi_array[1] = "mango";                     mi_array[1] = "mango";
+                                                                 mi_array[2] = "dango";                     mi_array[1] = "dango";
+                                                                 mi_array[3] = "goro";                      mi_array[1] = "goro";
+                                                                 mi_array[4] = "nee";                       mi_array[1] = "nee";
+    Ctrl a    'ingrementa un numero(normalMode)'   280
+    Ctrl x    'resta un numero'
+
+
+    Ctrl 6    ===   Ctrl ^       'saltar entre los 2 ultimos archivos abiertos(vim:: files  vim:: buffers)'
+    vim:: buffer?   vim:: b?       ? -->  reemplaza el ? por el numero del archivo en el bufferList
+
+## Abrir stdin en vim
+  ::: cat /etc/passwd | vim -   "Abre una copiaDel passwd en laUbicaci[on (vim:: q!)actual para poder editar tranquilo"
+      ls -lah | vim -
+
+
+### Buscar archivos     vim:: edit   ====   vim:: e
+  vim:: edit *.c         'con TAB mostrara las sugerenciasCoincidencias'     <3 <3 <3
+  vim:: edit **/*.c      'Busca archivo de manera recursiva entre las carpetas' <3
+
+  vim:: edit .
+  vim:: edit $HOME        vim:: edit $desktop             vim:: edit $burn
+
+
+### Abrir archivos de manera recursiva
+  ::: vim -p **/**.txt           "Abrir de manera recursiva archivo .c .rb .py etc..."
+
+      vim -p *.c *.txt
+
+        -p     "Abre todos los archivos en pesta~as"
+        -O     "                           divVerticales"
+        -o     "                           divHorizontales"
+
+	::: vim $(locate .nse)
+	::: find / -type f -name \*.nse 2>/dev/null -exec vim {} +
+			find . -type f ! \( -name *.svgz -o -name *.qml -o -name *.jpg -o -name *.png \) -exec vim {} +				(' ! ignora las extenciones -o agrupa las opciones, no olvides espacios dentro \( 8 \) ')
+
+	:::	vim $(find . -type f ! \( -name *.svgz -o -name *.qml -o -name *.jpg -o -name *.png \))
+
+
+
+### Abrir archivos de manera recursiva
+
+
+    vim:: put _     'inserta una nueva linea sin entrar en modiInserci[on, _ es como un dev/null, '  <3 <3 <3
+    vim:: put a
+          put 1
+          put .  etc...
+    vim:: 10put a
+
+    vim:: g/mango/put _    'inserta una lineaEnBlanco despu[es de la palabra mango' <3 <3
+    vim:: g/\s\+$          'muestra los espacios y identaciones al final del archivo'
+                             :%s/\s\+$//      'elimina espacios/identaciones alFinal de linea del archivo'
+                             :%s/\s\+$//e     ' e no muestra 'pattern not found' si no hay espacios al final'
+
+
+
+
+        LOS REGISTROS NOMINALES NO SOLO ALMACENAN TEXTO, TAMBIEN LOS MACROS SE GUARDAN AHI...
+            CUIDADO... puedes sobreescribir un texto con un macros y viceversa
+
+    revisa los registros con (vim:: register 'todos los registros') (vim:: register a  'registro espec[ifico')
+
+
+### Registros  (los registros sePueden usar enModo inserci[on(pegar) con Ctrl r <registrokey> )
+{
+                                                                         i_Ctrl r 0  (insertMode)
+                                                                         i_Ctrl r -  (insertMode)
+                                                                         i_Ctrl r a  (insertMode)    etc...
+              ""p   ===    p     P   ('clipboard por defecto')
+    ""p    'RegistroSinNombre, Ultimo texto que modificaste/borraste/copiaste (palabra y linea)' <3 <3
+    ""P
+
+    "0p   'registro al usar yy, pero este no se modifica cuando borras algo(dd) hasta el siguiente yy '
+    "0P
+
+    "-p   'cambios o borrados menores a una l[inea (like a miniRegistro)'
+
+
+   ## Registros 1-9 (se almacenan de forma recursiva segun vas eliminando '1 es lo [ultimo que eliminaste')
+
+    "1p       !!! Con punto(.) despues de "1p puedes Iterar/Repetir entre todos los registros "2p, "3p, "4p... "9p
+
+
+   ## REGISTROS NOMINALES  a-z  <3
+
+    "a   '(borrar(dd)/modificar/copiar(yy)) ser[a almacenada en el registro a'
+
+    "add
+    "ayy    'copiar linea al registro a (solo con "ay  da problemas :u )'
+    "ayiw   'yiw  copia la palabra en el registroNominal a'
+
+
+
+    !! Agrega mas datos a un registroNominal ya existente con el UPPERCASE del registro A-Z
+
+      "Ayiw    'Agrega a registro a ' <3 <3 <3
+
+   ## Registros solo lectura
+
+    .   'Almacena el [ultimo texto insertado'
+    :   'Almacena lo [ultimo que fue ejecutado en la l[inea de comandos(vim:: buffers | vim:: help) '
+    %   'Almacena el nombre del archivo actual'
+    #   'Almacena el nombre del [ultimo archivo que abriste'
+
+
+    ".p     ":p      "%p    "#p
+
+  ## DEV NULL en vim  'Eliminar algo sin guardar en ningun registro, incluso el por defecto'
+
+    "_dd
+
+
+}
+### INGRESAR LA LINEA FOCUS AL MODO COMANDOS
+									c_Ctrl r l      (inserta la linea focus al modoComandos post ':' )
+									c_Ctrl r "  		(pega la linea post yy ...<3 <3 <3)
+
+### PEGA REGISTROS EN TERMINAL :TERM :term   pre... yy    ...<3 <3 <3
+									t_Ctrl w " "		(pega en al terminal':term' el registro "  yy ) ... <3 <3 <3
+
+
+### Guardar archivo actual en otra ubicacion y continuar la edicion ahi $(/home/user_test/Downloads/test.c) y el pwd
+
+  		vim::: saveas $down/test.c
+   			 ::: saveas $down/ 'Ctrl-r ='  expand('%:t')
+										c_Ctrl-r =   ( ahora dale expand('%:t')  )  ingresara el nombre del archivo actual a : ...<3 <3 <3 <3
+
+

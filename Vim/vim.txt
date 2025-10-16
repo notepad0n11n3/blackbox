@@ -1,0 +1,507 @@
+     v::: help i_Ctrl-i    Ctrl i en insertMode
+     v:: help Ctrl -i     Ctrl i en normalMode
+		 ::: help :X							'encryption'
+
+    x    (insertMode)  elimina caracter del focus a derecha    like a <--
+    X    (insertMode)  elimina caracter del focus a izquierda  like a supr/Del
+
+		v:: g/test						"muestra todas la coincidencias de 'test' en todo el documento... <3 <3 <3"
+		v:: g/test$/d					"elimina lo que termina en test del archivo... <3 <3 <3"
+		v:: g!/test$/d				"elimina TODO MENOS los que terminan en test... <3 <3 <3"
+
+							vim ::: tabs   (muestra el contenidoDetallado de todas las pestanas ... <3 <3 <3)
+
+
+		::: cat /etc/passwd | vim -c "%! grep sh$" -		... <3 <3 <3 
+
+
+vim:: r !cd      vim:: r! pwd     # imprime en vim la salida del comando ejecutado
+
+				vim::r!bash -c "source ~/.zshrc_self && 0n11n3 -f"
+
+				vim::w |!gcc % -o %< && clear && .//%<
+
+mio
+				C:\vim -p archivo1.* archivo2.*
+				C:\vim -p *
+
+v::nohlsearch					cancelar últimaBusqueda con resaltado
+v:: set ic							ignora camelCase al momento de buscar
+v:: set noic						
+v:: set autoindent			identación automatica
+v:: set tabstop=2    espacio de indentación  TAB
+
+	:split "archivo.*"      :new  "archivo.*"
+	:vsplit "archivo.*"     :vnew "archivo.*"
+
+
+### SELECCIONAR TEXTO  ( MODO VISUAL DE LINEA Y BLOQUES )
+        v
+          la selección de texto se puede juntar con "número" + /h/j/k/l 
+        v
+
+
+### VISUAL MODE   MODO VISUAL
+        v + h/j/k/l         v + 8 + j seleccionarSaltoAbajo8_espacios valido para todos... v  V  Ctrl v
+        V            // toda la linea
+        Ctrl + v     // selección por BLOQUE :)
+          
+              seleccionar + u/U    convierte_a lowercase/UPERCASE... <3 <3 <3
+
+### IMPRIMIR LINEA N VECES
+
+        "número" + o + ESC     // zz ready, no funciona con Ctrl c 
+
+        v/V/ctrl+v  +  d ---  eliminaTextoSeleccionado.
+        ctrl + D --- selcción_por_bloque + eliminaTodasLinea_desdeCaracter_hastaFinalLinea
+
+### UNIR LINEAS SEPARANDOLAS POR ESPACIOS ( COMANDO JOIN )
+        J ---  unir lineas separando todo con espacios 
+																<a href="pagina.html">Home</a> <a href="user.html">Pagina usuario</a> <a href="">maincra</a> <a href="maincra">maincra</a>
+
+### JUGANDO CON MIS BUFFERS
+
+    Ctrl 6  ===  Ctrl ^     'saltar entre los 2 ultimos archivos abiertos, valido para marks <3' <3 <3 
+
+          vim file.* file1.* file2.* file3.* file4.*
+
+      vim:: buffers     ===      vim:: files
+      vim:: buffer + número     goBufferNúmero		 b8  b3  b1  b3
+                    nombre
+
+      vim:: b#		" saltar al archivo('#') anterior , %archivo actual"
+
+                    :args *.*
+                           * 
+                    :tab all
+                    
+
+      vim:: badd file.*        agregaArchivoBuffer
+      vim:: bad
+      vim:: badd ./carpeta/archivo.*    agregaArchivoOtraCarpeta
+      vim:: badd ../archivo.*           agregaDesdeOtraCarpeta
+
+      vim:: bdetele + numero       eliminaBufferNumero
+
+      vim:: %bdelete               delete allBuffers
+
+				.vimrc{
+					nnoremap <C-k> :bnext<CR>
+					nnoremap <C-l> :bprevious<CR>
+				}
+
+### PATH path
+
+	vim:: set path+=./path/here/				" vim:: find test1.txt "
+
+  To add the CURRENT directory use: 
+                :set path+=
+
+	To remove the CURRENT directory use: 
+                :set path-=
+
+
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+
+	ZZ --- sale guardando ( ZZ ó shift + zz );
+	ZQ --- sale sinGuardar
+	gg --- inicio del archivo
+	G  --- final del archivo
+	
+	"numero" + G        go numero de linea
+  50%            go a linea 50% aprox del archivo <3 
+	vim:: "numero de linea"        número de linea 
+
+	H --- inicio de pantalla visible
+	M --- mitad de pantalla visible
+	L --- final de pantalla visible
+
+MOVIMIENTO_DE_PANTALLA
+    ctrl + u --- media pantalla atras 
+    ctrl + d --- media pantalla adelante
+    ctrl + F --- pantalla adelante
+    ctrl + B --- pantalla atras
+
+BORRAR                   w 'usa como limite los " " espacios '       W 'usa como limite espacio y caracteresEspeciales "[;(.!*...etc"  '     esto3asld!__asdf(a;sdlffam_"";sdasdfi./>)[]; 
+    dd --- cortar linea
+    dw --- borra desde el caracter hasta el final de la palabra
+    diw -- borra toda la palabra
+    D  --- desde el caracter actual hasta el final de la linea
+    d0 --- desde el caracter actual hasta el principio de la linea 
+    dgg    borra de focus_a_inicioArchivo
+    dG     borra de focus_a_finalArchivo
+
+COPIAR                   w 'usa como limite los " " espacios '       W 'usa como limite espacio y caracteresEspeciales "[;(.!*...etc"  '     esto3asld!__asdf(a;sdlffam_"";sdasdfi./>)[];
+    yy --- COPIAR LINEA COPIAR LINEA COPIAR LINEA COPIAR LINEA COPIAR LINEA
+    Y  --- COPIAR LINEA COP0AR LINEA COPIAR LINEA COPIAR LINEA COPIAR LINEA 
+    yw --- copiar palabra completa ( se pega con p ó P, se pega en la misma linea );
+    y$
+    y0
+
+									c_Ctrl-r-"-"			(pega la linea focus en el como comandos...<3 <3 <3)
+
+INSERCIONES
+    i
+    a
+    I --- inicio de linea
+    A --- final de linea
+    o --- insercion abajo 
+    O --- inserción arriba
+
+ELIMINAR PALABRAS + INSERCIÓN RÁPIDA    w 'usa como limite los " " espacios '       W 'usa como limite espacio y caracteresEspeciales "[;(.!*...etc"  '     esto3asld!__asdf(a;sdlffam_"";sdasdfi./>)[];
+    ciw --- borra toda la palabra + inserciónRápida
+    cc  --- borra toda la linea + inserciónRápida
+    C   --- borra desde el caracter hasta el final de linea + inserciónRápida
+
+REPETICIONES DE COMANDOS
+    "numero" + comando --- ejem ( 10 + dd --- elimina 10 lineas );
+                                ( 3 + yy --- copia 3 lineas );
+                                ( 3 + Y  ---    "  "   "    );
+    .   ejecutara la ultimaAcci[onRealizada... <3 <3 <3
+
+BUSQUEDA DE TEXTO
+    /word --- busca para adelante del focus
+    ?word --- busca para atras del focus
+
+		vim:: g/word					"busca en todo el documento ( / + ? ) "
+
+    /^word --- busca "word" al inicio de cada linea
+    /word$  --- busca "word" al final de cada linea
+    /c[ao]sa  --- busca casa y cosa en el archivo :)
+              /c[ao]sa$ -----  	/^c[ao]sa     funciona :)
+
+    /c[a-z]sa  ---  de la "a" a la "z"   :) 
+    /[cC][a-z]sa ---   vim es caseSensitive y nadie dice nada :U 
+
+
+
+MODO EX  :   :   :   :   :  :  :  :  :  :  :  :  :  :  :  :  :  :  :  :  :  :  :  :
+
+BORRAR_EX
+					:dLinea#,aLine# + d     // borrar
+					:dLinea#,aLine# + co + debjoLine#   // pegaDebajo desde laÜltima lineaIndicada
+					:dLinea#,aLine# + m + debjoLine#   // mover el codigo :)
+
+					:dLinea#,aLine# + j       // (j=join)  junta las lineasDividiendo porEspacios
+
+					:95,102y           copia, si funciona solo y  no yy
+
+					:deLinea#, aLinea# + p : noEjecuta nada,soloMuestraElContenidoDeLasLineas prevenir:u
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! RESPUESTA  DIEGO 
+																									CORDOBA  :)
+
+			Los portaPapeles pueden ser como buffers 
+
+										:lineaDeseadaPaPegar + put/pu  pegaPortapapeles predeterminado
+										:lineaDondePega + put/pu + t     t='a-z" pegaContenidoDel portaPapeles t
+
+										:1,5y t   copiaLineaD1,5 en el PortaPapeles t
+										'<,'> + "ty        "como buffer, t comoPortapapeles, y comoCopiar
+ 
+
+						1 primera linea de archivo
+						$ última linea de archivo
+						% todo el archivo
+						0 anterior a la primer linea ( linea 0 )
+						. linea actual
+					:1co.     copiaLinea "1"    a el focus actual
+					:$co.			copiaÚltima linea a el focus actual
+					:$co0			meterá a fuerza la última linea en la linea 1, siTieneQueEmpujarTodo lo hará!
+					:1co$			copia linea "1" a la última linea
+					:%co$			copia todo el archivo al final de este
+					
+							 Puede co (copy) o d / m /       "y" no sirve en Ex, para eso esta copy 
+
+					V + :    activara '<  '>  paraUsar co/d/m  + numero de linea ó 1/$/0 
+
+	 
+
+### CARGAR CODIGO AL ARCHIVO ACTUAL DESDE OTRO ARCHIVO
+    vim:: r  archivo.*   ó     "/carpeta/carpeta/archivo.txt"    "../../desktop/archivo.txt"
+										// pegaDesdeElFocus
+
+
+CMD desde Vim
+
+	:silent ! firefox &>/dev/null & disown					( silent evita el mensaje para presionar una tecla <3... redimensiona la terminal para recuperar la terminal/color)
+
+	:! test.exe   : seEjecutaraSobreLaConsolaDondeCorreVIM
+
+									SE PUEDE JUNTAR :r Y :! .................!!!!!!!!!!
+
+									:r !dir       ...................!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+### MACROS,  PRE-GRABAR EDICIONES DE LINEA ( <li></li> <a href=""></a> ):
+				
+				q+caracter    empezar a grabar
+				q							 dejar de grabar
+				@+caracter    realizar los cambios grabados en la linea focus
+				:normal @"caracter"
+
+												'Solo pueden ser UN SOLO CARACTER OJO ojo '
+												'Los caracteres pueden ser "a-z" "A-Z" "0-9" '
+
+				V + : normal @ "caracter"
+			V = '<, '>   linea(s) seleccionadas
+																			Ojo, no solo se grabar escritura, tambien
+																			se puede borra/ identar/ dejar en como texto ó
+																			comando.  Se puede grabar un macros de lo que sea
+																				:)
+			<li><a href="index.html">Home</a></li>
+			<li><a href="cuenta.html">Cuenta Principal</a></li>
+			<li><a href="planes.html">Nuevas Ofertas</a></li>
+			<li><a href="actualizar.html">Nuevas Planes</a></li>
+			<li><a href="juegos.html">Recomendados de la semana</a></li>
+			<li><a href="juguitoExtra.html">vamos papu esto esta genial</a></li>
+
+
+
+### BUFFER
+    buffers...  es casi parecido a Macros, pero no es el buffers con el que estabaJugando :(
+
+								con     :registers     podemos ver los buffers de las teclas a-z A-Z 0-9
+																			y algunos caracteres extra
+
+    " + tecla + yy           pondrá en el buffers de la tecla la linea del focus( copia )
+
+    '<,'> + " + tecla + yy   selecciónXModoGráfico paraIngresar lineas al buffers
+												 'al momento de usar el último comando, abajoMuestra cuantaLineas
+													y que es lo que se hizo'
+
+								yy/Y ó dd   al gusto					
+
+					PARA PEGAR LOS BUFFERS......
+								en modo comandos ( : es modo Ex no comandos )
+										
+										" + teclaBuffer + p-P
+
+
+
+### PESTAÑAS EN VIM
+						::: vim -p 
+						::: vim * -p			('abre todos los archivos de manera recursiva... <3 <3 <3')
+						::: vim *.txt */*.txt -p  (solo archivos elegidos de manera recursiva... <3 <3 <3 <3)
+
+						gt	siguiente pestana
+						gT  pestana anterior
+						num gt  salta a la pestana numero
+						g<TAB> salta entre las 2 ultimas pestanas ... <3 <3 <3 
+
+						: tabs   (muestra el contenidoDetallado de todas las pestanas ... <3 <3 <3)
+
+						gt                   modo comando, saltar entre pestañas
+						"númeroPestaña"gt    salta a la pestaña especifica 
+
+						:tabnew archivo.*
+						:tabnew ./carpeta/archivo.*
+						:tabnew ../archivo.*
+										../../archivo.*
+
+						:tabnext
+						:tabprevious
+						:tablast
+						:tabfirst
+
+						:tabmove + número
+						:tabmove - número				ordenar las pestañas abiertas - + 
+						:tabmove $			enviar pestaña al final
+						:tabmove 0			enviar pestaña al inicio
+									$ final de linea    0 inicio de linea   RECUERDA
+
+						:tabclose
+
+### DIVISION DE VENTANA
+	
+				vim -o archivo.* archivo.*    todo horizontal
+				vim -O archivo.* archivo.*    todo vertical
+
+
+								esto es mio     :vsplit archivo.*      división vertical
+																:split archivo.*       división horizontal
+
+			 Ctrl + w + 'hjkl'     movimiento dirigido  'aceptaRepeticióDcomandos' 3ctrlw"hjkl"
+								
+
+
+### DIVISION DE PANTALLA EXTRA	
+          
+          Ctrl w s       horizontal
+          Ctrl w v       vertical
+				
+					:split archivo.*      división horizontal
+					:vsplit archivo.*     división vertical
+					:split								el mismo archivo dividido
+					:vsplit								el mismo archivo dividido VERTICAL
+
+					:new                  divisiónPantalla archivoNuevo [noName]  :w archivo.*
+					:vnew										"  "   "    "    vertical
+
+					:lineas+split        división de pantalla con x lineas
+					:lineas+vsplit						"    "     "      "  "   "
+					:lineas+new
+					:lineas+vnew
+
+					
+					Ctrl w Shift h/j/k/l				"Mover panel/division Left/Down/Up/Right"... <3 <3 <3
+
+### IGUALAR EL TAMAÑO DE LAS DIVISIONES
+
+				Ctrl + W + =        iguala todo :)
+				Ctrl + w + '+'      en modo horizontal
+				Ctrl + w + '-'			en modo horizontal
+				Ctrl + w +  <				en modo vertical
+				Ctrl + w +  >				en modo vertical
+
+
+### FOLDING  PLEGADO DE CODIGO 
+
+				zf      creaNuevoFold con modoVisual   '<,'> (seleccionar)
+				zF      3 zF   'visualMode'
+
+				za			abreCierra elFold en cualquierParte delBloque  'noRecursivo'
+				zA			abreCierra recursivo
+
+        zM  cierraTodo los Fold y los deja como nuevos							... ... ... <3 <3 <3 
+        zR  abreTodos lo plegado  !!!!  source=>  v:: help folding  ... ... ... <3 <3 <3
+
+				zE		Elimina todos los folds... <3 <3 <3
+
+				zd    elimina 1 fold en el focusCursor
+				zD    elimina folds recursivamente 'focusCursor'
+
+				zo			abreFold focus noRecursivo
+				zO			abreFold focus recursivo
+				zc			cierraFold focus noRecursivo
+				zC			cierraFold focus recursivo
+
+				:set foldmethod=syntax
+				:set foldmethod=indent
+				:set foldmethod=manual
+
+
+### REMPLAZAR TEXTO  sustituciones SUSTITUCIONES
+
+	:%s/\s\+$//e				Reemplaza(elimina) los espacios en blanco al final de cada linea en todo el archivo.
+								\s		Caracter de espacio en blanco (espacios, tabulaciones, etc)
+								\+		Una o mas ocurrencias del caracter anterior, en este caso los espacios
+								$			final de linea
+								e			silenciar los errores
+		
+			:%s/word/wordNew/g        modificaTodo   Go
+			:%s/word/wordNew/gc       preguntasTodosLosRemplazos  cuestion
+			'<,'> + :s/word/wordNew/g   gc  
+
+										y   yes
+										n   no 
+										a   todo
+										q   SALIR
+
+										l   listaLosCambios
+
+										Ctrl + E    movimiento de pantalla
+										Ctrl + Y                           subir y bajar mientras remplazas
+
+
+      Ctrl v      modoVisual por bloques, con d es suficiente :)
+                        c = d solo que este deja modoInserción
+
+
+      vim:: '<,'>s/\(\w.*\)/mi_array[0] = "\1";
+                
+                  \(\w.*\)     'string seleccionado con Ctrl v(normalMode) para usar como variable \1 '
+
+                              mi_array[0] = "mango";
+                              mi_array[0] = "dango";
+                              mi_array[0] = "goro";
+                              mi_array[0] = "nee";
+             
+
+
+### COMENTAR CODIGO Y BORRADO DEL MISMO
+
+					'<,'>  : s/^/#  ó   //   ó <!---   /gc ó g   
+
+
+### NERDTree NERDTree NERDTree NERDTree NERDTree NERDTree NERDTree NERDTree NERDTree 
+
+								i     archivo.* split
+								s			archivo.* vsplit
+
+								t			archivo.* in new tab																																
+								T			archivo.* in new tab SILENTLY
+
+								o			open/close bookmark
+
+
+
+### diferencias : ' !'  '! '
+							*:_!*
+The '!' (bang) character after an Ex command makes the command behave in a
+different way.  The '!' should be placed immediately after the command, without
+any blanks in between.  If you insert blanks the '!' will be seen as an
+argument for the command, which has a different meaning.  For example:
+	:w! name	write the current buffer to file "name", overwriting
+			any existing file
+	:w !name	send the current buffer as standard input to command
+			"name"
+
+
+### session seciones
+
+	vim:: mksession my_sesison.vim
+
+		::: vim -S ./my_session.vim
+
+
+### INGRESAR LA LINEA FOCUS AL MODO COMANDOS
+						c_Ctrl r l      (inserta la linea focus al modoComandos post ':' )
+						c_Ctrl r "  		(pega la linea post yy ...<3 <3 <3)
+
+
+### PEGA REGISTROS EN TERMINAL :TERM :term   pre... yy    ...<3 <3 <3
+					t_Ctrl w " "		(pega en al terminal':term' el registro "  yy ) ... <3 <3 <3 
+
+
+### INGRESAR LA RUTA DEL ARCHIVO BAJO EL FOCUS... <stdio.h> <stdlib.h> <time.h>
+
+				c_Ctrl r p			'muestra la ruta completa para poder usar el :tabnew  '
+
+
+				c_Ctrl r %    'FULL PATH del directorio actual'... <3 <3 <3
+
+
+
+####     sivvi    ####
+  EJECUTA UNA SHELL PARA MORE
+   ::: more /etc/passwd    # solo muestra lo que entre en pantalla  like a 89%  40%
+            si presionas  v  entraras en el modo vi
+     :  :set shell=/bin/bash
+      :  :shell             # devuelve una shell :)
+
+   :e  /etc/bandit_pass/bandit26   #editara el archivo especificado de la ruta introducida :)  :)
+#### END sivvi    ####
+
+
+
+
+### REMPLAZAR SUSTITUIR  AVANZADO... <3 <3 <3
+
+						vim:: %s/.*::\(.*\) .*/MochimangoREADY = \1;/g
+
+		vim:: '<,'>s/pub const \(.*\) =.*/test _ = { \1 ;}
+
+
+							pub const tower = @import("tower.zig");
+							pub const creep = @import("creep.zig");
+							pub const renderer = @import("renderer");
+							pub const input = @import("input.zig");
+
+
+							test _ = { tower ;}
+							test _ = { creep ;}
+							test _ = { renderer ;}
+							test _ = { gamestate ;}

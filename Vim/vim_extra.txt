@@ -1,0 +1,113 @@
+								% hace referencia al nombre del archivo actual ::: tabnew % ::: vnew %   <3 <3 <3 <3 <3
+										vim:: echo expand('%:p')			%:p - %:t - %:r - %<
+
+        q:     'normalMode' lista de ultimos comandos ingresados en vim::
+        :e       actualizar el archivo abierto en vim
+
+      vim:: w ! sudo tee %        ##!! GUARDA COMO ROOT SI ESTAMOS COMO USUARIO SIN PRIVILEGIOS....!!!
+      vim:: w ! sudo sponge %     ##!! GUARDA COMO ROOT SI ESTAMOS COMO USUARIO SIN PRIVILEGIOS....!!!
+
+      f{v%d    selecciona todo entre los {} y dd   <3 <3
+      va{d     selecciona todo entre los {} y dd
+      vi{d     selecciona todo entre los {} y dd
+      di{      selecciona todo entre los {} y dd
+      da{
+
+%   sobre () {} []  para saltar entre ellos('normalMode')
+
+  =ap     ('nomalMode' arregla la identacion del codigo "ty_thePrime") <3 <3 <3
+
+Ctrl y    sube todo el contenido(linea a linea) (normalMode)
+Ctrl e    baja todo el contenido(linea a linea) (normalMode)
+Ctrl u    sube todo el contenido(media pantalla) (normalMode)
+Ctrl d    baja todo el contenido(media pantalla) (normalMode)
+
+]p      Ajusta la identaci[on al copiar
+[p      pega como   p P  arriba([p)/abajo(]p) conservando la identaci[on
+
+
+### Saltar entre palabras ('normalMode')
+    w    e        (' Avanzar   inicio(w) / fin(e)  de palabra')
+    b    ge       ('Retrocede  inicio(b) / fin(ge) de palabra')
+
+              ::1     localhost ip6-localhost ip6-loopback    <<- prueba ac[a w y W
+    W    E
+    B    gE
+
+  ^   ('Go inicio de linea que no sea un espacio en blanco') <3 <3 <3
+  0   ('Go inicio de linea')
+  $   ('Go final de linea')
+
+  I   'Modi inserci[on al principio de linea que no sea espacio en blanco' <3 <3
+  A   'Modo inserci[on al final de la linea'
+
+
+comentar linea en cualquier lenguaje, modi visual (;l)  Shift + 7 (noFuncionaEnMuchos Lenguajes) </3 </3 <3
+
+
+  f <character>  salta a al primera coincidencia del caracter
+  F <character>  saltaRetrocede a la primera coincidencia del caracter
+        ;        salta a la siguiente busqueda con f/F
+        ,        regresa entre las coincidencias con f/F
+
+### REEMPLAZAR TEXTO SELECCIONADO  ( Ctrl v  'normalMode' )
+
+			Ctrl v  c     modoVisual por bloques, con d es elimina, c reemplaza 'no funciona con ;l, tienes que usar Ctrl [  o  <Esc>'  :)
+                            parece que solo reemplaza la primera linea seleccionada, pero al salir reemplaza todo 'Ctrl [  <Esc>'  ';l  no funciona </3'
+
+                                        // comentar lineas   -   agregar comentarios al final
+      Ctrl v I     agrega al INICIO de todo lo selecionado  (Ctrl v   solo 1 caracter, bloqueMode)
+      Ctrl v $ I   agrega al INICIO de toda la linea				($ selecciona del focus al final de linea, MUTI LINEA... <3 <3 <3)
+
+                   : s/^/mango/g
+
+      Ctrl v A     agrega al FINAL  de todo lo selecionado (Ctrl v  solo 1 caracter, bloqueMode)
+      Ctrl v ^ A   agrega al FINAL  de toda la linea			 (^ selecciona del focus al inicio, MULTI LINEA ... <3 <3 <3)
+
+                   : s/$/mango/g
+
+
+													https://10.10.10.10:445
+													http://10.10.10.10:445
+
+### Completar... <3 <3
+
+			i_CTRL-e		Insert the character which is below the cursor.
+									*i_CTRL-Y*
+			i_CTRL-y		Insert the character which is above the cursor.
+
+
+### MenuContextual  AutocompletadoNativo		(insertMode... <3 <3 <3)
+    Ctrl n (insertMode) => 'bajar' lanza un menu contextual con las palabras del archivo, autocompletado noPlugin
+    Ctrl p (insertMode) => 'subir'
+
+
+      Shift + r    'normalMode'   remplazar
+
+      u      deshacer cambios
+      Ctrl + r    'normalMode' revertir ultima acci[on, sirve para contrarestar a u
+
+
+      c ->  Change (cambiar)       i -> inside (dentro de)				 w ->  word (palabra)
+      d ->  Delete (borrar)				 a -> around (alrededor de)			 p ->  paragraph (parrafo)
+      y ->  Yank   (copiar)																				 " ->  Entrecomillado
+                                                              <    > ->  Entre estos simbolos < >
+                                                              (    ) ->  Entre estos simbolos ( )
+                                                              [    ]
+                                                              {    }
+
+      ::: figlet panda8hat
+      :r !figlet panda8hat
+                             _        ___  _           _
+       _ __   __ _ _ __   __| | __ _ ( _ )| |__   __ _| |_
+      | '_ \ / _` | '_ \ / _` |/ _` |/ _ \| '_ \ / _` | __|
+      | |_) | (_| | | | | (_| | (_| | (_) | | | | (_| | |_
+      | .__/ \__,_|_| |_|\__,_|\__,_|\___/|_| |_|\__,_|\__|
+      |_|
+
+            ___  ___
+      __  _( _ )/ _ \ _ __
+      \ \/ / _ \ (_) | '_ \
+       >  < (_) \__, | |_) |
+      /_/\_\___/  /_/| .__/
+                     |_|

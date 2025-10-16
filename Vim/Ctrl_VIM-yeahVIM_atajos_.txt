@@ -1,0 +1,84 @@
+=i{  ===  =i[     // arreglaLaIdentaci[onDentro de {}   <3....  FOCUS SOBRE CUALQUIER {}
+vi{  // arreglaLaIdentaci[onDentro de {}   <3....  FOCUS SOBRE CUALQUIER {}
+
+
+    Ctrl 6    ===   Ctrl ^       'saltar entre los 2 ultimos archivos abiertos(vim:: files  vim:: buffers)'
+    vim:: buffer?   vim:: b?       ? -->  reemplaza el ? por el numero del archivo en el bufferList
+
+
+v:: h 
+v:: term      // terminalPantallaDividida :)  like a   <Esc> z   pero prefiero el mio <3
+
+encadenar comandos 
+v:: 17,20 | 122put   // copyLine 17-20 and paste line 122
+
+*** *** *** normalMode (;n)
+  J  realiza el join(JUNTA) las lineas debajoDelFocus unaXuna
+  K  en visualMode sobre printf dale a K (mayus) y moatrar infoDetallada, funciona con muchos m[as
+
+### Saltos entre ultimas modificaciones
+{
+  Ctrl O    // salta a la anterios linea modificada
+  g ;       // se...  la tecla 'g' + ;
+
+  Ctrl I    //  vuelve en los movimientos de   Ctrl O  ===  g ;
+  g ,       // se...  la tecla 'g' + ,
+                                /// Evita saltar de archivo, ultimaLineaModificada
+                          v:: jumps        
+                          v:: clearjumps
+}
+
+
+*** *** *** insertMode (i/a/o/O){     i_CTRL-
+
+    i_Ctrl t    + 1 identaci[on en insertMode
+    i_Ctrl d    - 1 identaci[on en insertMode
+
+    i_Ctrl y             // CierraElMenuSugerencias Youcompleteme ('insertMode')
+
+    i_Ctrl c   ===  i_Ctrl [  ==  ;l  ===  i_Ctrl \ n  ===  Esc
+
+    i_Ctrl n   //   i_Ctrl p      // 'bajar/subir' menuContextual autocompletado
+}*** *** *** insertMode (i/a/o/O)
+
+
+Ctrl y    Ctrl e     // subir/bajar  pantallasSinMover CursoPosici[on
+
+Ctrl w  Ctrl v     ===   v:: vsplit %
+Ctrl w  Ctrl s     ===   v:: split %   
+
+Ctrl w  Ctrl O     // cierra todos los paneles abiertos <3
+Ctrl w  Ctrl o     // cierra todos los paneles abiertos <3
+
+Ctrl w  Ctrl l     // salta al panel de la izquierda
+Ctrl w  Ctrl h     // salta al panel de la derecha
+Ctrl w  Ctrl k     // salta al panel de arriba
+Ctrl w  Ctrl j     // salta al panel de abajo
+
+
+*** *** *** 
+
+    v:: vimgrep  textHEre  rutaHere/*.c       **/*.c      ** == todosLosDirectorios  <3...
+    v:: copen         // lista de todas la conincidencias del vimgrep
+    v:: cnext         // salta aLaCoincidencia del vimgrep, lineaExacta
+    v:: cprev
+    v:: cclose        // cerrar la lista con las coincidencias del vimgrep
+
+    v:: help vimgrep  ===  v:: h vimgrep
+
+    v:: options        // para .vimrc
+
+
+
+
+
+    let g:ycm_key_list_stop_completion = ['<C-y>']    " .vimrc
+    Ctrl <Espace>      // abreElMenuSugerencias Youcompleteme
+    let g:ycm_key_invoke_completion = '<C-Space>'     " .vimrc
+
+
+    ci[  ci{   ci(  di[   di {   di(    //eliminaTodoDentro de 
+    vi{   vi[   vi(       // resaltaTodoDentro de     --==>> se puede agregar <> para la identaci[on    vi{> vi{<    <3...
+
+
+    =i{  ===  =i[     // arreglaLaIdentaci[onDentro de {}   <3....

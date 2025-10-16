@@ -1,0 +1,10 @@
+  ::: cat /etc/passwd | grep -oP "sh$"       // muestra solo las coincidencias de la busqueda
+  ::: cat /etc/passwd | grep -E "sh$"        // muestra TODA la linea de la coincidencia de la busqueda
+
+
+  ::: ps axuw | grep vim | grep -v vim       // -v  ignora todas la lineas que contengan el match 'vim'
+
+
+  ::: ps axuw | grep vim | grep -v grep | awk '{print $2}' | xargs kill -9 
+  ::: ps axuw | grep burpsutie | grep -v grep | awk '{print $2}' | xargs kill -9 
+

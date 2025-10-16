@@ -1,0 +1,276 @@
+::: more === less === 
+   h help =   
+
+      echo -e "\nrutas ==> $PATH"
+              rutas ==> /usr/local/sbin....
+\n normal en las 2
+      echo -e '\nrutas ==> $PATH'
+              rutas ==> $PATH
+
+sudo apt-get remove programHere
+sudo apt-get purge programHere
+
+::: id               info_user       
+::: sudo -i          root
+
+### LISTADO DE ARCHIVOS
+	::: ls 
+					-l			listaDetalle
+					-h  		tama~o
+					-a  		ocultos
+					-S  		ordenaXtama~s
+					-t  		ordenXfecha
+					-r  		invierteElPrint
+					-R  		Recursivo en los directorios			(ls -lahR)
+					-d */   soloDirectorios, * cualquier nombreDeArchivo pero el / al final lo restringe solo aDirectorios
+										ls -d */
+										ls -d /ruta/del/directorio/*/				(:find . -maxdepth 1 -type d)  (ls -l | greh ^d)
+
+	::: ls -lhS   _tama~o ><
+		: ls -lhSr      <>
+	ls -lhs ??? du -sh .  ??
+
+  ::: tree				'lista todo like a tree :v'
+		: tree -d			'solo directorios'
+
+### HISORIAL DE COMANDOS
+		::: Ctrl r    searchComandHistory
+		::: history 
+		 .: !numberComandHistory
+
+::: mkdir -p newDir/Newdir/newNew  creaTodo mkdir recursivo *** ** ***
+
+::: rm -r dir5/fotos    dltFotos noDir5
+
+### ESPACIO EN DISCO ARCHIVOS 
+		::: df -h /rutaDirOptional/  espacioUsado/Libre
+
+		::: du -h    tama~oQ_ocupa1fichero o todoContenidoDirectorio
+				du -hs .
+
+""A los directorio solo enlaces simb[olicos
+::: ln -s panda8hat.sh enlaSimboli    enlaceSimbolico like a accesoDirecto
+          
+ln a arhivos y carpetasXigual
+::: ln panda8hat.sh enlaceDuroDirecto     enlaceDuro/Directo 
+
+
+::: adduser nameHere
+  ROOT:: addgroup nameHere
+  ROOT:: usermod -g nameGroup nameUser
+  ROOT:: passwd userHere_x89p    <CR>
+
+
+::: find ruta  options
+  find . -perm /002 -type d     carpetas con permiso de escritura para todos !!!
+    options: 
+              -name "expresion"
+              -iname   #noCamelCase
+              -type tipoHere
+                  d directorios, f ficheros, l enlacesSimbolicos, b dispositivosBloque
+                  c dispositivosCar[acter, p tuber[ias, s  Sockets.
+              -size +/-<n>
+                  c bytes, k kilobytes, M megabytes, G gigabytes.
+                      find +2M     find -1G
+              -perm -600 exigeRW    -perm /600 opcionalRW
+              -user usuarioHere
+              -group groupHere
+              -mmin +/-   find . -mmin -50 [o  +50    modificadosHaceMenosM[asDe...
+              -mtime +/-  find . -mtime -1 [o +1     modiHaceM[aDE ? dia/s
+
+              -maxdepth nivelesHere
+                  find -maxdepth 3 -iname '*a*'   DESPUES DEL FIND .  !!!  ***
+
+              -exec 
+                  find . -type f -iname '*.txt' -size +200M -exec '{}' copiasAeo8 ';'
+                  find documentos/ -type f -exec grep -l informe '{}' ';'
+                  find -size +50M -exec du -h '{}' ';'
+                  find -size +50M -exec ls -lh '{}' ';'
+                  find . -maxdepth 2 -size -10M -type f -iname '*.txt' -exec ls -lh '{}' ';'
+
+::: head -n1 archivoHere   === head -1 archivoHere
+::: tail -n1 ****    === tail -1 *****
+
+::: cut 
+    -c  numeroDcaracter  
+    -d  caracterDelimitador
+    -f  columnas a mostrar
+      cut -c 1 /etc/passwd
+      cut -c 8-15 /etc/passwd  rango del 8 al 15
+      cut -c 8,15 /etc/passwd   caracter 8 y 15
+      cut -c 1-3,10-15,25 /etc/pas*    del1-3 y del10-25 y caracter25
+    
+      cut -d":" -f1 /etc/passwd === tail /etc/passwd | cut -d":" -f1
+      cut -d":" -f1,4,7-10 /etc/passwd
+
+      cut -d":" -f3- /etc/passwd		"desde el tercero hasta el final... <3 <3 <3"
+      cut -d":" -f3-5 /etc/passwd		"desde el tercero hasta el quinto... <3 <3 <3"
+
+::: cat archivo.txt | awk -F ":" '{print $1}'   $1 primerElem.   $2 segundoElem.
+                             'NF{print $NF}'    # imprime el [ultimo elemento
+
+::: grep
+      --color
+      -v muestra NOcoincidenConElPatr[on
+      -l nombreFicheroDonde encontroCoincidencia
+      -w palabraIndependiente
+      -n n[umero de linea
+      -i noDistingue May[us/Min[us
+      -c printCantidadLinea cumplenPatr[on
+      -r busqueda forma recursiva
+
+  grep root /etc/passwd
+  grep root -l /var/log/*.log
+
+
+  ::: cat /etc/passwd | grep -oP "sh$"       // muestra solo las coincidencias de la busqueda
+  ::: cat /etc/passwd | grep -E "sh$"        // muestra TODA la linea de la coincidencia de la busqueda
+
+
+::: sort 
+      -r  invertirPrint
+
+::: uniq archivo.txt       printSinRepeticiones
+    -i   noM[ayus/Min[us
+    -d   printSoloRepetidas
+    -c   printCantidadRepeticiones
+
+::: rev archivo.txt     invierteEl printDe derecha a izquierda, 
+      rev archivo.txt | cut -d"/" -f1 
+
+::: wc     cantidadLinea  cantidadPalabras  cantidadCaracteres
+      -l      -w      -m      solo wc para los 3
+          wc -l /etc/passwd
+
+::; tr 'a' 'e'  < archivo.txt   remplaza  a  x  e
+ :: *** | tr " " "\n"  #espacioXsaltoDLinea 
+
+
+  rangos
+    a-z  incluye todas la min[usculas de a a la z
+    d-g  d e f g
+  repeticiones
+    [a*3] indica la cadena aaa
+  clases  representa un conjunto predefinido de caracteres 
+  [ :alnum: ]  Las letras y d[igitos
+  [ :alpha: ]  Letras
+  [ :blank: ]  Espacios en Blanco
+  [ :space: ]  Los Espacios en Blanco
+  [ :lower: ]  Min[usculas
+  [ :upper: ]  May[usculas
+ tr [:digit:] @ < fichero.txt
+ tr [:space:] - < fichero.txt
+
+    -d caracterHere    eliminaCaracterDlPrint
+    -s caracterHere  eliminaRepeticiones
+ tr [:lowe:] [:upper:] < fichero.txt
+          ::: *** | tr -s " "  eliminarEspaciosSeguidosDejandoSolo1 para usar cut -d" " -fnumberHere
+        
+::: sed     sustituir texto
+    sustituye texto/palabra, tr solo 1 caracter
+        -e 'scriptHere'
+         * '8i\GOro'  insertarTexto
+              '8i\Panda8hat' fichero.txt
+         * '8a\GOro'  a~adir texto
+              '8a\Panda8hat' fichero.txt
+         * '/aeo8/c\X89P'  sustituirLineaCompleta
+                '/hi/c\bie' 
+         * '/srpHr/d'  borrar
+             '/aeo8/,10d'   '10,/sauron/d'
+         * '8p'  inprimmirEsaLinea
+              sed -n -e '1p' fichero.txt    -n noDuplicado
+              sed -n -e '1,8p' fichero.txt     printTodo   1 al 8
+         * '/srpHr/q'  salir like a break
+         * '/srpHr/!'  invertiarLaOrden
+                sed -n -e '1,8!p' fichero.txt  printTodoMenos 1 al 8
+         
+  sed -e 's/[[:lower:]]/aeo8/g' fichero.txt
+  sed -e 's/[[:space:]]/aeo8/g' fichero.txt
+  sed -e 's/aeo8/ /g' fichero.txt
+    cat -n fichero.txt | sed -n '8!p'    no me pide el -e, con -n va normal :)
+    cat -n fichero.txt | sed -e '3i\GOLOGOLOQWQW' -e '7a\QWQWQWQWQWQWQWQWQW'
+
+
+
+        -n  noMuestra duplicados
+        -i  guardaLas modificacionesEnEl archivoOriginal
+        -f ficheroHere   leeLas Instrucciones desdeUn fichero panda8hat  panda8hat.txt
+              -f  vimaeo.txtFile{
+                                  1,5d
+                                  15,$d    #" del 15 al final delete
+                                }
+
+    sed -e '1,3d' fichero.txt   eliminarLinea 1 a la 3
+    sed -e '/frase/d' fichero.t.xt eliminarLinea con "frase"
+    sed -e '/frase/,3d' fichero.txt desdeLineaFrase hastaLine3 delete
+    sed -e '2,/manolo/d' fichero.txt 
+      cat -n fichero.txt | sed -e '2,/aeo8/d' 
+
+    sed -e '/\.net;/d' -e 's/\.co\.uk/\.com/' fichero.txt
+            . === \.   . === \. 
+
+
+	sed -E 's/ +/ /g'     (reemplaza las mutliples repeticiones de '      ' por solo ' ' ...<3 <3 <3)
+
+
+cut -d";" -f1,5
+---------------------EXPRESIONES REGULARES----------------------------------
+---------------------EXPRESIONES REGULARES----------------------------------
+
+^   inicio de linea  ^q
+$   fin de linea      q$
+.   cualquier car[acter,  usarmos \ para referirnos al punto de todaLaVida \.
+[]  contieneOpciones
+  [^]  Exclusi[on
+  [-]  Rangos
+    
+      [aeiou]        c[aei]s[ao]
+      grep "^[[:upper:]]" f?ch*s.txt
+      c[^aei]s[^ao]   ^DentroDe []  noPude contener aei , ao
+      [a-d] [0-5]   rango de n[umeros/letras
+      [3-8[:upper:]mty]
+      grep '^m[i-o][^f-z].$' ./carpeta/archivo
+
+...........Expresiones regulares EXTENDIDAS EXTENDIDAS..........
+
+    * ===  .*       ' ^pan.*8.*t$ '
+
+  para usar expresiones regulares extendidas:
+                  grep -E  ====  sed -r         *** *** *** *
+grep --color -E '^[h-q]{8}s' archivo.txt
+
+REPETICIONES (Regex Extendidas)
+  aeo8*   cero a m[as repeticiones
+        grep --color -E 'he[[:alpha:]]*' fichero.txt 
+  aeo8?   cero o una aparici[on 
+  aeo8+   una [o m[as repeticiones
+  aeo8{n}  n repeticiones exactas de aeo8
+  aeo8{n,}  n [o m[as repeticiones de aeo8
+  aeo8{,n}  cero o a lo sumo n repeticiones de aeo8
+  aeo8{n,m}  al menos n repeticiones [o como mucho m repeticiones
+        grep --color -E ' [[:alpha:]]{3,8} ' fichero.txt
+
+  '/<'  inicio de palabra
+      sed -r 's/\</|/g' fichero.txt
+  '/>'  fin de palabra
+      sed -r 's/\>/|/g' fichero.txt
+  '/b'  l[imite de palabra (inicio o fin :: borders)
+      sed -r 's/\b/|/g' fichero.txt
+  '/B'  Lo contrario a /b, espacios entre caracteres
+      sed -r 's/\B/|/g' fichero.txt
+
+    grep -e '^p.*t$' fichero.txt
+    grep -e 'pa.*ha.' fichero.txt
+    grep -e 'panda.ha.' fichero.txt
+
+SE PUEDE USAR OR |  DENTRO DE EXPRESIONES REGULARES  ' [[:alpha:]] | ^ae '
+
+    '^a.*t$ | ^e.*x$'
+
+    '(c[aeiou]{2})'  !=!=  'c[aeiou]{}'
+
+
+
+---------------------EXPRESIONES REGULARES----------------------------------
+---------------------EXPRESIONES REGULARES----------------------------------
+

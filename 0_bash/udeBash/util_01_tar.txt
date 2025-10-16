@@ -1,0 +1,27 @@
+
+
+::: tar [opciones] destino.tar datos
+
+
+Compactar=>  ::: tar  -cf  fichero.tar  /etc/  /var/
+Extraer=>  ::: tar  -xf  fichero.tar
+
+Comprimir=>  ::: tar  -czf  fichero.tar.gz  /etc/  /var/
+Extraer=>  ::: tar -xzf fichero.tar.gz
+
+
+      Options:
+        - c :  compacta
+        - x :  expande(Extrae)
+        - f :  escribe o lee de un fichero
+        - z :  comprime o descomprime con gunzip
+        - j :  comprime o descomprime con bzip2
+        - P :  utiliza rutas absolutas (por defecto ser[an relativas)
+          ::: tar -czPf log.tar.gz /var/log/ # compr.
+          ::: tar -tzf log.tar.gz    # ver contenido
+          ::: tar -xzPf log.tar.gz  # extrae usando la ruta absoluta utilizada en la compre., sobreGuardara en /var/log/
+        - p :  preserva los permisos de los ficheros originales
+        - r :  a~ade elementos a un fichero compactado
+          ::: tar -rf  sauron.tar  aeo8/
+        - t :  muestra la informaci[on que contiene un fichero tar
+          ::: tar -tf sauron.tar | less :: tar -tf sauron.tar | grep helloHello

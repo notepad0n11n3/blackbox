@@ -1,0 +1,55 @@
+///     pushd y popd  TAMBI[EN funcionan en cmd  <3 <3 <3
+
+::: ver       versi[on del sistemaOperativo
+
+::: ipconfig
+
+::: whoami        usuario
+::: whoami /priv  permisos de Usuario 
+           /user  /groups   /all    
+
+//INFO DE UN USUARIO EN ESPECIFICO, grupos, lastLogon
+::: net user  userNameHere       likea a ::: net user svc-printer
+
+
+::: dir /ad        solo carpetas
+::: dir /a-d       NO carpetas
+::: dir /ah        solo archivoOcultos
+
+::: dir /s archivo.txt            dirRecusivo
+
+::: findstr /r /i "^go.*hello$"                 .* == * (Unix)    /r regularExpresion      /i  noSensitiveCase
+
+::: where cmd.exe
+
+
+
+###CAMBIAR DE UNIDAD  C: D: E: F: ...
+  ::: s:
+  ::: c:        ::: %SystemDrive%           
+
+
+### CD RAIZ DISCO C
+  ::: cd %SystemDrive%\          '/' o '\'  echo %SystemDrive% retorna colo C:  , sin el / o \ no va al inicio
+
+  ::: cd %SytemDrive%\Users\userName\Desktop        << ac[a no da problema alguno
+
+
+### Variables de Entorno cmd
+
+	::: set OLDDIR=%CD%
+	:::cd %OLDDIR%
+
+### Saltar entre Carpetas de diferente particion. 
+
+	C:\> cd /d D:\MisDocumentos
+	D:\MisDocumentos>
+
+	 Linux, puedes cambiar de directorio y unidad al mismo tiempo con un solo comando, pero en CMD debes especificar la unidad de forma separada con el comando cd:
+
+	    Para cambiar a una unidad distinta y un directorio al mismo tiempo, puedes usar el modificador /d:
+
+### ALIAS en WINdows like Linux
+
+	::: doskey gohome= cd %userprofile%\Desktop\
+	 :: gohome

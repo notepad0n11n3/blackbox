@@ -1,0 +1,234 @@
+
+vim:: set number relativenumber numberwidth=1 sw=2 tabstop=2 softtabstop=2 noswapfile wrap | map <C-j> <CR>|cmap <C-v> <Left>| color murphy
+vim:: imap ;l <Esc>
+
+									
+											vim::: help :      vim::: help Ctrl   vim::: help i_Ctrl-o 'insertMode'  vim::: help c_CTRL-R		vim::: help t_Ctrl-w 'termMode'
+											vim::: help :      vim::: help Ctrl   vim::: help i_Ctrl-o 'insertMode'  vim::: help c_CTRL-R		vim::: help t_Ctrl-w 'termMode'
+
+											
+																											"Ctrl-[  == Ctrl-\-n  ===  Esc  ==  Ctrl-c"
+
+### MODO-COMANDOS ONELINER ... <3 <3 <3
+	vim:: tabnew | Ex $burn | call Lterm() ... <3 <3 <3																					ejecuta todo en la nueva pestana... <3 <3 <3
+	vim:: vnew | Ex $burn | call Lterm() ... <3 <3 <3																						ejecuta todo en la nueva pestana... <3 <3 <3
+	vim:: tabnew | execute 'read! cat /etc/passwd' | execute ' %! grep sh$' | call Lterm()			ejecuta todo en la nueva pestana... <3 <3 <3
+	vim:: tabnew | call Mvnb('-ip')
+
+	vim:: !clear && source $HOME/.zshrc && 0n11n3 -c
+	vim:: |Whereami																	(' | no ! , para poder seguir usando comando con : y ver todo el historial{output} de los comandos anteriores... <3 <3 <3')
+
+	vim:: vnew | buffer 2					'abrir el buffer 2'		Si no le pasas unArchivo crea un buffer nuevo VACIO sin nombre ([No Name])
+	vim:: vsplit | buffer 2				'abrir el buffer 2'		Si no le pasas archivo, abre el mismo archivo actual en un nuevo split (como un clon del actual).
+
+	vim::  execute 'w ! sudo tee %' | ! sudo update-grub
+	vim::  execute 'w ! sudo tee %' | execute '! sudo update-grub'
+
+### MUESTRA INFORMACION DEL ARCHIVO ACTUAL, FULLPATH,  ESTADO[MODIFICADO], LINEA Y PORCENTAJEACTUAL ...<3 <3 <3  (NORMALMODE)
+
+				Ctrl-G/g		"prints the current file name with path, estado del archivo, lineas en total, ubicacion porcentual del focus en el archivo " ...<3 <3 <3
+
+
+### SALTAR ENTRE LOS 2 ULTIMOS ARCHIVOS EDITADOS ... <3 <3 <3
+
+				Ctrl 6    ===   Ctrl ^       'saltar entre los 2 ultimos archivos abiertos(vim:: files  vim:: buffers)'
+
+
+
+					:q  !=  q:          q:  ==  : Ctrl-f  (Ctrl-c  para poder usar Ctrl j, Ctrl-j funciona en modoInsertar...<3)      'salir de q:   ("Ctrl \ n"  o  "Ctrl w c")'				vim:: Ex == E
+
+									|  ==   &&  like unix                       ' vim:: c_Ctl-r % '  "ruta archivo actual... <3 <3 <3"
+																		
+																			vim:: .! zsh/bash					'ejecuta linea actual en zsh/bash'				" c_!! ==>>  vim:: .! "
+																			vim:: r! echo %:h		:p		'path archivo actual'      " %:p  path y archivo" 	r! echo %:p   /home/aeo8/.burningArea/vim/main.c
+																			vim:: r! echo #:h		:p		'path archivo anterior'
+
+### EJECUTAR CON EL PROGRAMA PREDETERMINADO EL FOCUS
+
+		gx "go url under the cursor (normalMode), focus en el http"  gf "go file under the cursor (controlMode)"
+
+
+
+### INFO DEL ARCHIVO EN EDICION
+					vim:: echo expand('%:p')				"muestra el path absoluto con el nombre de archivo ...<3 <3 <3"			 vim:: echo expand('%:h')				: help %<
+					vim:: echo getcwd()							"muestra el path del AREA DE TRABAJO, no el path del archivo"
+					vim:: echo bufnr('%')					"muestra el numero del buffer actual"				bufnr('#')   'numero de buffer archivoAnterior'
+
+										%:h:p
+										%:p
+										%:t				'muestra solo el nombre del archivo en edicion...  <3 <3 <3   (  : echo expand('%:t')   ) '
+
+																	: w ./%:t | w $desk/%:t   .... <3 <3 <3 
+								
+
+
+	vim:: wq   ==   x          " vim:: X   'cifra en archivo actual...<3 <3 <3' "
+
+
+### COMPILADO ONELINER DESDE COMMAND-MODE ... <3 <3 <3
+
+				vim:: w |! gcc % -o %< && .//%<         "guarda el archivo actual, compila el archivo actual(%) y lo guarda como el nombre actual del archivo sin extension (%<)" "LOS ESPACIOS SON IMPORTANTES !!!"
+
+				vim:: w|!chmod +x % && clear && .//%		"para python, limpiaEjecuta el script rapido con  @ :  en modo normal... <3 <3 <3 "
+
+				@:          repeat the previous ":" command N times   .... ojo ojo ... ... ... <3 <3 <3
+
+### CORREGIR AUTOIDENTACION EN VIM AL COPIAR CODIGO... <3 <3 <3
+								
+				gg = G      'corrige todo el archivo de gg a G, igual con modiVisual (  V + =  )' 
+				=  G        'corrige desde el focus hasta el final de pagina'
+
+
+
+### VIM -		 GREP ::VIM   
+
+		::: cat /etc/passwd | vim -c "%! grep sh$" -
+
+		vim:: r !cat /etc/passwd | grep "sh$"      ...<3 <3 <3  (' no es necesario escapar  |  con  \  despues del !  ')
+
+		::: cat /etc/passwd | vim -				vim:: %! grep "sh$" ...<3 <3 <3...!!!			'jugamos con el archivo actual con comandos de shell'
+
+
+###  vim::: term
+				 Ctrl \ n  ...<3 <3 <3   t_CTRL-\_CTRL-N == Esc 
+
+
+ ## CERRAR termSplit:
+				 Ctrl \ n  Shift ZQ
+				 Ctrl d Ctrl wq
+
+    vim::: term   ' Ctrl-w .  ===  Ctrl-w(bash) '  "delete lastWord" ... <3 <3 <3
+
+
+### PEGA INSERTAR COMMAND-MODE TERM-MODE
+
+		c_Ctrl-w " "    'pegar el ultima yy  ... <3 <3 <3, puedes jugar con los registros <3 (vim::: registers)' 
+
+		c_Ctrl-r Ctrl-l      (inserta la linea focus al modo commando) ... <3 <3 <3
+
+
+		t_Ctrl-w "					(pega en la terminal el registro "  yy ) ...<3 <3 <3 
+
+
+
+## PANELES DIVISIONES {
+			vim:: tabclose 'close all tab pages except the current one'                 vim:: tabonly   'close all tab pages except the current one'
+			vim:: only  'close all windows/paneles/divisiones except the current one'
+
+			vim::  new   vnew               Ctrl-w-n          Ctrl-w-T 'independizar divisionActual' ...<3 <3 <3 <3
+			vim::  tabnew
+			vim:: tabs   'muestra detalles de todas la pestanas abiertas... <3 <3 <3'
+
+			Ctrl-w-n            'division nuevoFicheroVacio'  'new   vnew'
+			Ctrl-w-v  Ctrl-w-s    'fichero(%) actual dividir panel vertical/horizontal'
+			Ctrl-w-q              'cerrar panel/division...<3 <3 <3'
+
+			Ctrl w Shift h/j/k/l        "Mover panel/division Left/Down/Up/Right"... <3 <3 <3
+
+			Ctrl-w-x  Ctrl-w-r  Ctrl-w-R   'intercambiar paneles, rotar paneles(horario/antihorario)(r/R)'
+
+			' Ctrl _ '   ' Ctrl | '     "maximizar alto/ancho  (Ctrl =  'igualaTodos los paneles')"
+			Ctrl +    Ctrl -				"incrementar altura N	'N Ctrl +' "
+			Ctrl <    Ctrl >				"incrementar ancho N  'N Ctrl <' "
+
+			Ctrl-w-f		like  gf				abre en una division/panel <stdou.h> 
+			Ctrl-w-F 		like  gF           'Ctrl-w-gf/gF  ventanaNueva'
+
+			Ctrl-w-o		"cierra todos los paneles menos el actual ...<3 <3 <3 "
+
+
+			Num Ctrl-w k/j/l/h       "up/down/right/left" "Num de saltos de paneles (2 Ctrl-w j)"
+			Ctrl-w p           go to previous (last accessed) window/pane  like { Alt-m ;    Alt-m Ctrl-i }(tmux),  { Win-i i3 } (i3)
+			CTRL-W g <Tab>     same as " g Tab  " go to last accessed tab
+
+					*** SALTO ENTRE PANELES/DIVISIONES LIKE TMUX  Alt-m-q ... ... ... <3 <3 <3{	 " CTRL-W w     go to N next window (wrap around) "
+						  Num Ctrl-w w    " Num => 1-2-3..8-9 "					"vim:: set statusline+=\ %{winnr()}"
+							Ctrl-w p		"salta al panel anterior"							Ctrl-w o   "cierra todos los paneles(sin cambios) menos el actual"
+
+					vim:: echo (winnr())			"print the number of the current panel/division... <3 <3 <3" " set statusline+=%F  'fullPath' "
+
+						Ctrl-w t	Move cursor to top-left window.
+						Ctrl-w b  Move cursor to bottom-right window.
+
+					*** SALTO ENTRE PANELES/DIVISIONES LIKE TMUX  Alt-m-q ... ... ... <3 <3 <3}
+
+
+### SALTOS FOCUS
+	''			(Salta entre las 2 ultimas posicionesFocus... <3 <3 <3)
+
+	g;			(salta entre las modificaciones hasta la mas ANTIGUA)
+	g,			(salta entre las modificaciones hasta la mas NUEVA)
+
+	Ctrl 6   (Salta entre los 2 ultimos archivos abiertos)
+
+
+  ZZ         write if buffer changed and close window
+  ZQ         close window without writing			         Ctrl-w-q   ... <3 <3 <3
+
+  ''  ``     position before "latest jump"  (funciona con '' y ``)  g;  g,   Ctrl-o Ctrl-i		... <3 <3 <3
+
+	gd				 go to definition of word under the cursor... <3 <3 <3
+
+  {          cursor to the start of the current paragraph
+  }          cursor to the end of the current paragraph
+
+  m    m{A-Za-z}        set mark {A-Za-z} at cursor position
+  '    '{a-zA-Z0-9}     cursor to the mark {a-zA-Z0-9} (funciona tambi[en con `)
+
+
+### (" netrw == vim::Ex ") {		Ex Ex Ex								vim:: Ex /  ::Ex /home/user/downloads ::Ex ../  ::Ex ./path/here		... <3 <3 <3 
+						<enter>   Open the file in the current window.     |netrw-cr|
+
+						o   Horizontally split window and display file |netrw-o|
+						v   Vertically split window and display file   |netrw-v|
+
+						p   Use the |preview-window|       |netrw-p|
+									Ctrl-w-z   (CIERRA PREVIEW WINDOW... <3 <3 <3 <3 <3 <3 !!!!!!)
+									Ctrl-w-o   (cerrer el preview, 'only' )
+						P   Edit in the previous window      |netrw-P| ... <3 <3 <3 !!!
+									Ctrl w z    closePreviewWindow ... <3 <3 <3
+
+						t   Open file in a new tab         |netrw-t|
+
+						x  "Me permite entrar a las carpetas :) ... <3 <3 <3 "
+						mb "Marca la carpeta actual"
+						gb "Salta a la carpeta marcada"
+
+	Vim remembers the last directory that you used.  Use "cd -" to go back to it.
+					:pwd			=> 	 /home/Bram/VeryLongFileName
+					:cd /etc
+					:pwd			=>	 /etc
+					:cd -
+					:pwd			=>	 /home/Bram/VeryLongFileName
+					:cd -
+					:pwd			=>	 /etc
+
+  ....To change to the directory of the current file/path :				( vim:: cd  %:h		)  si funciona tal cual XD ... <3 <3 <3 ...	<3 <3 <3 !!!
+
+		WINDOW LOCAL DIRECTORY
+					When you split a window, both windows use the same current directory.  When
+				you want to edit a number of files somewhere else in the new window, you can
+				make it use a different directory, without changing the current directory in
+				the other window.  This is called a local directory. >
+
+					:pwd		=>		 /home/Bram/VeryLongFileName
+					:split
+					:lcd /etc
+					:pwd		=>		 /etc
+					CTRL-W w
+					:pwd		=>		 /home/Bram/VeryLongFileName
+		
+		TAB LOCAL DIRECTORY		vim:: tcd  /new/path/here
+
+		:edit FileName/file1.txt		 :e FileName/file1.txt
+
+___	(" netrw == vim::Ex ")  Ex Ex Ex  }
+
+
+
+### INGRESAR LA LINEA FOCUS AL MODO COMANDOS
+									c_Ctrl r l      (inserta la linea focus al modoComandos post ':' )
+									c_Ctrl r " 		(pega la linea post yy ...<3 <3 <3)
+
+									t_Ctrl w " "		(pega en al terminal':term' el registro "  yy ) ... <3 <3 <3 
+

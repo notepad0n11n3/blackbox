@@ -1,0 +1,18 @@
+
+  ^ - Ctrl
+  M - Alt/Esc
+
+
+^N = mueve un regl[on hacia abajo
+^P = mueve un regl[on hacia arriba
+
+^K = cortar una linea
+^U = pegar una linea
+M6 - copiar linea
+
+^O = guardar el buffer/archivo	
+^E = focus final linea
+^A = focus inicio linea
+
+^W sauron = buscar una palabra en el archivo
+^W <CR> = saltara a la siguiente coincidencia

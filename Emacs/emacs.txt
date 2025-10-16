@@ -1,0 +1,42 @@
+						Ctrl === C			Alt === M
+
+
+::: emacs -nw 		emacs en terminal no ventana emergente <3 <3 <3   
+
+::: emacs -nw -fg gree $HOME
+	Ctrl x Ctrl c			(Close Emacs)
+
+	Ctrl-g   (like Ctrl \ n  'Esc' en vim)
+
+C x C s			"guardar"
+
+### MOVILIDAD BASICA
+			Ctrl-p			(Down)
+			Ctrl-n			(Up)
+			Ctrl-b			(Left)
+			Ctrl-f			(Right)
+
+
+			Ctrl-s 'word'				(like f en vim normalMode)
+
+			M - <     (like gg en vim)
+			M - >     (like G en vim)
+
+
+### DIVISIONES DE PANTALLA
+			C x 2		split
+			C x 3   split
+
+			C x 0   closeSplitACTUAL
+			C x 1		cierraTODOmenos elSplitFocus... <3 <3 <3
+
+### TERMINALES...
+
+		M-x eshell			(puedo saltar con C-x-o entre los splits ...<# <3 <3 )
+		M-x term				(mucho mejor pero no me deja saltar a los otros splits </3)
+
+### ABRIR ARCHIVOS
+
+	C-x C-f ~/.vimrc       (valido tambien para carpetas like :Ex $desk)
+
+	M-x find-file

@@ -1,0 +1,73 @@
+
+### popup.....      <3 <3 <3 <3 
+
+vim:: call popup_create("solo quiero tener algun letrero para seguir lo que tengo pendiente y no perderme", #{highlight: 'WarningMsg', border: [], time: 3000})
+
+								vim:: call term_start('bash', #{hidden: 1})
+								
+vim:: call popup_create(term_start('bash', #{hidden: 1}), #{border: [], highlight: 'WarningMsg', minwidth: 60, minheight: 60})
+
+
+vim:: call popup_clear()    "cierra todos los popups
+
+vim:: echo popup_list()			"muestra el numeroPopup del mas nuevo a antiguo
+vim:: call popup_close(numberPopHERE)  "cierra un popup especifico...<3
+
+### Modificar las opciones de un popup ya creado ... <3 <3 <3 
+
+		vim:: call popup_setoptions(numberPopupHere, #{minwidth: 60, minheight: 60})
+
+			: call popup_close(1003)
+
+vim:: call popup_hide(numberPopHERE)  "oculta un popup especifico...<3
+vim:: call popup_show(numberPopHERE)  "muestra el popup oculto...<3
+
+
+
+					call popup_create("test", #{line: 20, col: 8, highlight: 'WarningMsg', border: [], time: 3000})
+					call popup_notification("test", #{line: 20, col: 8, highlight: 'WarningMsg', border: []})
+
+
+
+
+
+	# cartel de alerta con tiempo de espera pre close... <3 <3
+:: call popup_create("mochimango READY, UPDATE OWO", #{line: 8, col: 3, minwidth: 20, time: 2000, tabpage: -1, zindex: 300, drag: 1, highlight: 'WarningMsg', border: [], close: 'click', padding: [0,1,0,1], })
+
+	# Interesante...
+call popup_create("Mochi Mango READY...", #{pos: 'center', zindex: 200, drag:1, wrap: 0, border: [], cursorline: 1, padding: [0,1,0,1], filter: 'popup_filter_menu', mapping: 0})
+
+
+
+### funciones avanzadas de c_Ctrl-R   en vim ...<3 <3 <3
+
+		vim:: help c_Ctrl-R
+
+
+CTRL-R CTRL-F                           *c_CTRL-R_CTRL-F* *c_<C-R>_<C-F>*
+CTRL-R CTRL-P                           *c_CTRL-R_CTRL-P* *c_<C-R>_<C-P>*
+CTRL-R CTRL-W                           *c_CTRL-R_CTRL-W* *c_<C-R>_<C-W>*
+CTRL-R CTRL-A                           *c_CTRL-R_CTRL-A* *c_<C-R>_<C-A>*
+CTRL-R CTRL-L                           *c_CTRL-R_CTRL-L* *c_<C-R>_<C-L>*
+                Insert the object under the cursor:
+                        CTRL-F  the Filename under the cursor
+                        CTRL-P  the Filename under the cursor, expanded with				.... <3 <3 <3  (#include <stdio.h>)
+                                'path' as in |gf|
+                        CTRL-W  the Word under the cursor
+                        CTRL-A  the WORD under the cursor; see |WORD|
+                        CTRL-L  the line under the cursor								............. <3 <3 <3 <3 !!! !!! !!!
+
+                When 'incsearch' is set the cursor position at the end of the
+                currently displayed match is used.  With CTRL-W the part of
+                the word that was already typed is not inserted again.
+
+                                        *c_CTRL-R_CTRL-R* *c_<C-R>_<C-R>*
+                                        *c_CTRL-R_CTRL-O* *c_<C-R>_<C-O>*
+CTRL-R CTRL-R {register CTRL-F CTRL-P CTRL-W CTRL-A CTRL-L}
+CTRL-R CTRL-O {register CTRL-F CTRL-P CTRL-W CTRL-A CTRL-L}
+                Insert register or object under the cursor.  Works like
+                |c_CTRL-R| but inserts the text literally.  For example, if
+                register a contains "xy^Hz" (where ^H is a backspace),
+                "CTRL-R a" will insert "xz" while "CTRL-R CTRL-R a" will
+                insert "xy^Hz".
+

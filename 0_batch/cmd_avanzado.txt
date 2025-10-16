@@ -1,0 +1,14 @@
+
+
+for /f "tokens=1" %a in (mi_archivo.txt) do echo %a
+
+Este comando hace lo siguiente:
+
+    for /f: procesa la salida línea por línea.
+    "tokens=1": indica que tome solo el primer token (lo que está antes del primer espacio).
+    %a: es la variable que tomará el valor de cada línea procesada.
+    echo %a: imprime el valor de la primera parte de la línea.
+
+Si el archivo tiene más de una línea y deseas filtrar el primer elemento de cada línea, el comando funcionará de igual manera.
+
+en cmd al usar:  type mi_archivo.txt   tengo el siguiente output: d6ccfbfccea732857bd60d33925852a639f08e570336f68e179479fa99df3866  manjaro-gnome-24.2.1-241216-linux612.iso   , quiero filtrar el primer elemento tomando como delimitador los espacios.

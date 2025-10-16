@@ -1,0 +1,9 @@
+    *** *** ***   Alt Espace    // menuContextualAplication
+
+*** *** Ventana aMonitor 2
+  Windows + Shift + Derecha/Izquierda
+
+
+*** *** Bloqueo Session
+  
+  Win  l   // bloqueoSession

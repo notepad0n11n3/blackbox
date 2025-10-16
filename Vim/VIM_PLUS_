@@ -1,0 +1,45 @@
+						Ctrl 6    ===   Ctrl ^       'saltar entre los 2 ultimos archivos abiertos(vim:: files  vim:: buffers)'
+
+						vim ::: tabs   (muestra el contenidoDetallado de todas las pestanas ... <3 <3 <3)
+
+### :term				
+						CERRAR	Term
+
+														'Ctrl d Ctrl w q'    ...ojo, puedes cerrarCUALQUIERtERMINAL con Ctrl-d... <3 <3 <3
+														'Ctrl \ n  Shift Z Q'  ...esto cierro todo el split, no solo el term... <3 <3 <3 <3
+
+
+	vim::: term htop	(cuando son aplicaciones que se deben cerrar manualmente, aun mantiene el programaActivo <3)
+	vim::: term watch -n 1 ls -lah				"Ejecuta el comando  'watch -n 1 ls -lah'  en la terminal... <3 <3 <3 "
+
+	vim::: term whatweb https://0xword.com      =>   vim::: set modifiable			"te dejara editar el output en un nuevo buffer... <3 <3 <3"
+
+	vim::: term bash -c "echo Hello, World!"
+	vim::: term bash -c "source $HOME/.zshrc_self && 0n11n3 -f"				("en esta es mejor .zshrc_self que .zshrc, .zshrc da errores :( ")
+	vim::: term bash -c "source $HOME/.zshrc_self && 0n11n3 -c"
+
+
+### Acceder a la ubicaci[on actual del archivo
+	
+		 : let mango=expand('%:p') | execute 'cd ' . mango | term
+
+		: let mango=expand('%:p')
+		: execute 'cd ' . mango
+		: term
+
+###		Salta entre los comando anteriores ':'		(up/down)
+		: Ctrl p						'up'
+		: Ctrl n						'down'
+
+
+### INGRESAR LA LINEA FOCUS AL MODO COMANDOS
+
+			c_Ctrl r %			'FULL PATH del directorio actual'... <3 <3 <3
+
+									c_Ctrl r l      (inserta la linea focus al modoComandos post ':' )
+									c_Ctrl r " 		(pega la linea post yy ...<3 <3 <3)
+
+									t_Ctrl w " "		(pega en al terminal':term' el registro "  yy ) ... <3 <3 <3 
+
+  #  Pasar linea completa al modo comandos ':'  interesante pero NADA PRACTICO :U
+		: Ctrl-r =getline('.') <CR>									<CR>  ---  ENTER         ( interesante... :3  <3 )

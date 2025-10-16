@@ -1,0 +1,148 @@
+            Ctrl o     Ctrol i    ('normalMode'  avanzar/retroceder ultimas posiciones del cursorFocus )
+
+    dwi dWi       w 'usa como limite los " " espacios '       W 'usa como limite espacio y caracteresEspeciales "[;(.!*...etc"  '     esto3asld!__asdf(a;sdlffam_"";sdasdfi./>)[]; 
+
+            vim:: pwd               vim:: cd $burn              vim:: cd -     'like a bash <3'
+
+  b       regresa palabra focusFinal endWord
+  B       regresa palabra focusFinal inicioWord
+  e       avanza palabra focusFinal endWord
+  w       avanza palabra focusFinal inicioWord
+
+                                                                    vim::: help CTRL-W_CTRL-W             Ctrl w w   'intercambiar focusPaneles/divisiones'
+       Ctrl w T    'independizar panel actual a una pesta~a'
+
+       Ctrl w h   go panel izquierdo           Ctrl w l   go panel derecho              Ctrl w k   go panel superior         Ctrl w j   go panel inferior
+
+       Ctrl w H   panel_Actual aLaDerecha      Ctrl w L   panel_Focus aLaIzquierda      Ctrl w K   panel_Focus arriba        Ctrl w J   panel_Focus abajo
+
+       Ctrl w R   'rotate panes <3 <3...'
+
+			 Ctrl w q   like a :q
+
+### DIVISION DE PANTALLA EXTRA PANEL PANELES	    ' :h window-moving '      ' :h tabpage   "pesta~as" '
+          
+          Ctrl w T       independizar panel actual a una pesta~a 
+							vim ::: tabs   (muestra el contenidoDetallado de todas las pestanas ... <3 <3 <3)
+
+          Ctrl w c       cerrar panel   ' : cl[ose] '
+          Ctrl w o       mantener el panel actual y cerrar el resto   ' :on[ly]  :tabo[nly] '
+
+          Ctrl w s       panel horizontal archivoActual
+          Ctrl w v       panel vertical archivoActual
+          Ctrl w n       panel archivoNuevo
+
+          Ctrl w _       maximizar altura panel actual  ( Ctrl w =   'iguala el tama~o de todos los paneles')
+          Ctrl w |       maximizar altura panel actual  ( Ctrl w =   'iguala el tama~o de todos los paneles')
+          Ctrl w =     restaura/iguala todos los paneles <3 <3 <3...
+
+       [N]Ctrl w _       la altura sera de [N] filas.    ""  30 Ctrl w _  ""
+       [N]Ctrl w |       la altura sera de [N] filas.    "" 119 Ctrl w |  ""
+
+          Ctrl w -      Ctrl w +              'decrese/increase current panel height'
+          Ctrl w <      Ctrl w >              ''
+
+
+### ## # ::: vim .
+                  {
+                    e   'entrar en la carpeta'
+                    q   'regresar una carpeta'
+
+                    O   'expandir de manera recursiva'
+                    o   'expandir/contraer contenido deCarpeta' 'puedeAbrirElArchivo enLaVentana ACTUAL </3'
+                    x   like  o
+                    X   cierra todo lo expandido por 'O'
+
+                    t  open in new tab
+                    T  open in new tab silently
+
+                    i   open split                <3 <3 <3 <3
+                    gi  preview split silently
+                    s   open vsplit
+                    gs  preview vsplit silently
+
+                    p   focus a la carpeta contenedora  
+
+                            regresa una carpeta like  cd ..
+                    u   regresa una carpeta atras like cd .u
+                    U
+                  }
+
+
+]p        Ajusta la identaci[on al copiar
+
+#JUMPT POINT  (MARK marcas) 
+      las marcas a-z  son marcas locales
+      las marcas A-Z  son marcas GLOBALES (saltoEntreArchivos 'Dentro dLaMisma Session de VIM' ) </3 <3 <3
+
+                        -->  $HOME/.viminfo          guarda el historial de marks, jumps, modificaciones, etc... <3 <3 <3
+                        vim:: wviminfo      wv     'write .viminfo file'
+                        vim:: rviminfo      rv     'read  .viminfo file' 
+
+  m<caracterNumber>  asignar punto de salto(NORMAL_MODE)
+  '<caracterNumber>  ' salta al punto de salto(NORMAL_MODE) 
+
+  ['  salta entre todos los marks generados (inicio/fin)
+  ]'  salta entre todos los marks generados (fin/inicio)
+
+  vim:: marks             'lista todos los marks'
+  vim:: marks cA          ''
+  vim:: delmarks a-z    <3                      vim:: delmarks A-Z a-z 0-9    ('se puede eliminar todo de una :) ')
+  vim:: delmarks A-Z    <3 <3 <3 
+  vim:: delmarks 0-9
+      : delmarks \"	      delete mark "  ( \'  \[  \]  \^  \.   )
+      : delmarks! 	      delete all lowercase marks for the current buffer (a-z)
+
+    vim:: 'g,'k  s/mango/MANGO/g       tambi[en sirve para rangos <3 <3 <3
+#JUMPT POINT 
+    
+
+#BUSQUEDA EN LINEA
+  fs        busca la proxima 's' del focus al final de la linea
+  Fs        busca la proxima 's' del focus al inicio de la linea
+#BUSQUEDA EN LINEA end
+
+
+
+
+#REPETIR ACCIONES 
+  .    Repita la ultima acci[on  (dd, yy, etc... (pero no salta entre busquedas de linea  'fe fi Fi Fe' ) )
+  u    para regresa la acci[on
+
+  ;    Repite la [ultima acci[on de busqueda like 'fe Fe vfe'
+  ,    regresa entre los saltos de ';' postBusqueda en linea
+#REPETIR ACCIONES end
+
+
+#BORRAR LINEA HASTA CARACTER PROPIO
+  dt'caracterLimite'  borrar desde el focus hasta el caracterLimite introducido '[,a,1,',etc...' <3 <3 <3
+  ct'caracterLimite'
+
+  dT'caracterLimite'  igual pero borra hacia el inicio de la linea <3 <3 <3
+  cT'caracterLimite'
+#BORRAR LINEA HASTA CARACTER PROPIO end
+
+
+      i === inside     a === around
+
+vi(     selecciona todo dentro de (,{,',",[,<
+vi[
+vi{
+va"
+
+vw
+
+di(     elimina todo dentro de (
+da(
+
+yi[     copio todo dentro de [
+ya[
+
+vffs    seleciona desde el focus hasta la proxima 's' de la linea
+
+
+        
+                me_function(arg: some::long::type)after -> Result< {
+F) yiW f< p   se posiciona en ( pero copia la palabra anterios 'some::lo...::type'
+              con yiw(w lowerCase) copia ')' literal 
+

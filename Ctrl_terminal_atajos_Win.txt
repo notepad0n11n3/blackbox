@@ -1,0 +1,58 @@
+														Ctrl-m			=====			Ctrl-j(unix) ....<3 <3 <3			{solo en CMD, noPowershell :u ':::powershell -command 'firefox.exe --private-window "..."''}
+
+    Win  r cme.exe  Enter
+    Win  r cmd.exe  Ctrl Shift Enter      (iniciar programa como administrador)
+
+F8            cambia entre los comandosEjecutados del historial
+
+F7            muestra historial de los comandos ejecutados
+                f     subir enListaComandos postF7
+                v     bajar enListaComandos postF7
+Alt F7        BORRA el historial de comandos ejecutados
+
+F5        subeImprime unoXuno en el historial de comandos
+F3            ultimo comando ejecutado
+
+Ctrl h          eliminar caracter
+
+Ctrl flechaUp     scroll para arriba, terminal                  <3 <3 <3 <3 <3
+Ctrl flechaDown                                                 <3 <3 <3 <3 <3 
+
+Ctrl Left       saltar entre palabras(like a alt+b)
+Ctrl Right      saltar entre palabras(like a alt+f)
+
+Insert        sobrescribir 
+
+Ctrl flechaRight    salta de palabra en palabra => derecha
+Ctrl flechaL                                    <= izquierda
+
+
+Ctrl c     like a unix, tambi[en borra todo lo que se este escribiendo en la entrada
+Ctrl a    // Seleciona toda la linea para copiar (Ctrl c solo copia si primero se selecciona algoPrimero, si no funciona comoEn Unix, termina el proceso)
+
+
+
+
+win + l  =  BLOQUEAR PANTALLA
+
+win + r  =  ejecutar 
+
+win + i  =  settings del sistema(windowsUpdate)
+
+win + e  =  explorador de archivos
+
+win + x  =  menuContextual del logo de windows(inferiorIzquierda diskManager/deviceManager/system, etc...)
+
+Win + d  =  minimiza/restaura las ventanas
+
+win + numberHere = salta entre las aplicaciones abiertas (1,2,3,4,5... (presionaElMismoNumero para saltar entre las subPestanas de la misma aplicaci[on))
+
+
+win + p  =  miniMenu_opciones proyectarPantalla (extended/duplicated/secondScreen, etc...)
+
+win + a  =  miniMenu_opciones bluetooh/wifi/brillo/sonido/modoVuelo etc...
+
+win + v  =  miniMenu_CLIPBOARD
+
+win + n  =  notificaciones
+win + c  =  microsoft Teams

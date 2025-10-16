@@ -1,0 +1,7 @@
+::: python -c "from os import system; system('killall -9 vim')"                  //    -c
+
+::: ruby -e 'system("killall -9 vim")'                                           //   -e
+
+::: bash -c 'chiri=1; moya=2; echo -e "\n\t$((${chiri}+${moya}))\n"'             //    -c 
+
+

@@ -1,0 +1,34 @@
+
+
+### solo muestra archivos pero ignora los *.txt ...<3 <3 <3
+	::: find . ! -name \*.txt  -type f
+																			(el espacio entre ! es importante...!!!)
+
+
+
+### ejecuta todos los archivos encontrados en vim, los mete como buffers... <3 <3 <3
+
+	::: find . -type f ! -name \*.zip -exec vim {} +
+
+					! -name "*.zip": que no terminen en .zip.
+
+					-exec vim {} +: ejecuta vim con todos los archivos encontrados.
+
+					{} se reemplaza por los nombres de archivo.
+
+		+ al final agruparán en una sola llamada a vim, como si hicieras vim archivo1 archivo2 archivo3....
+
+
+
+### filtra varios tipos de extension.   *.html *.js *.c
+
+	::: find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.c" \)
+
+	::: find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.c" \) -exec vim -p {} +
+
+	::: find . -type f ! \( -name \*.svgz -o -name \*.qml \) -exec vim {} +
+
+	
+
+### abrir archivos .nse (metasploit)	:: vim $(locate .nse)
+	::: find / -type f -name \*.nse 2>/dev/null -exec vim {} +

@@ -1,0 +1,15 @@
+				            @   ==   alt m
+
+          @ : set status off/on  ... <3 <3 <3
+
+
+ @ : run "ls"
+				
+ @ : run -b "ls"             ( -b ejecuta en segundo plano )
+		
+		@ : 
+				run -b "whoami | tr -d '\n' | xclip -sel clip"      ... <3 <3 <3
+        run -b "firefox & burpsuite & qtermial"
+
+
+				Ctrl-m  ==  Enter		...<3

@@ -1,0 +1,60 @@
+
+    \e["colorCodeHere"m  ==>  Iniciamos el color que deseamos, tenemos que cerrar con \e[0m 
+    \e[0m   ==>  USAMOS EL CODIGOsPECIAL 0 para resetear el colorTexto al color normal/default
+
+echo -e "\e[31m panda8hat \e[0m"
+
+redColor="\e[31m"
+endColor="\e[0m"
+greenColor="\e[32m"
+
+echo -e "${redColor} panda8hat ${endColor}"
+echo -e "${greenColor} panda8hat ${endColor}"
+
+
+### estilo de letra
+
+italicRed="\e[3;31m"
+endColor="\e[0m"
+
+    \e[tipoDeLetra;colorBackground;colorTxt\m
+
+| Code --- Description
+|  0 ---->  Reset/Normal
+|  1 ---->  Bold text
+|  2 ---->  Faint test     backgroundText
+|  3 ---->  Italics
+|  4 ---->  Underlined text
+
+Color  	  ForegroundCode 	BackgroundCode
+  Black         30            40
+  Red   	      31       	    41
+  Green 	      32 	          42
+  Yellow 	      33 	          43
+  Blue 	        34 	          44
+  Magenta 	    35 	          45
+  Cyan 	        36 	          46
+  Light Gray 	  37 	          47
+  Gray 	        90 	          100
+  Light Red 	  91 	          101
+  Light Green 	92 	          102
+  Light Yellow 	93 	          103
+  Light Blue 	  94 	          104
+  Light Magenta 95 	          105
+  Light Cyan 	  96 	          106
+  White 	      97 	          107
+
+
+
+        
+echo -e "\e[40;33m panda8hat \e[0m"  ## background NEGRO texto AMARILLO <3 <3 <3 <3 <3 <3
+
+echo -e "\e[3;40;33m panda8hat \e[0m" ## background NEGRO texto AMARILLO y CURSIVA/ITALIC <3<3<3<3<3<3<3<3<3<3********
+
+echo -e "\e[1;107;35m panda8hat \e[0m" # backgroundBLANCO texto MORADO y NEGRITA
+
+
+echo -e "\e[0;31m  panda8hat  \e[0m"
+echo -e "\e[3;33m  panda8hat  \e[0m"
+
+

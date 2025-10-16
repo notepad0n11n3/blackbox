@@ -1,0 +1,13 @@
+
+
+::: Get-ChildItem Env:              lista las variables de entorno de systema
+                  env:
+
+
+
+:::  $env:USERPROFILE
+
+::: echo  $env:USERPROFILE
+
+
+::: Get-ChildItem $env:USERPROFILE\Downloads\*.exe

@@ -1,0 +1,44 @@
+
+                          &&  &  
+  Write-Host $?           # imprime el codigo de estado como el Linux pero solo True/False (creo :u)
+
+            & == ;
+            && == ;if($?){comandHere}       si el comando anterios se ejecutoConExito ejecutaSiguienteComando
+ 
+ ::: clear;if($?){Get-ChildItem};if($?){Get-ExecutionPolicy}
+
+  Comandos PowerShell
+
+  ::: Get-Help Get-ChildItem
+
+  ::: Get-ChildItem           like a cd/ls
+
+
+  ::: Get-ExecutionPolicy             //muestra los permisos que tenemos para ejecutar scripts
+              
+        Restricted -no permite la ejecuci[on de scripts, PowerShell solo modoInteractivo, opci[onPredeterminada
+        AllSigned  -ejecuci[on solo de scripts autenticados.  Opci[on + restrictivo
+        RemoteSigned -solo deben estar autenticados los scripts que procedan de una ubicaci[on remota(descargados)
+        Unrestricted  -ningun tipo de restricci[on   :)
+  
+  ::: Set-ExecutionPolicy RemoteSigned
+
+  ::: Get-Variable                      --variables de entorno :)
+
+
+  Tipos De Datos:
+
+          string   char
+          int   -entero de 32bits
+          long  -entero de 64bits
+
+          single    -n[umero flotante de 32bits
+          double    -n[umero flotante de 64bits
+
+          datetime        -Fecha y Hora 
+
+          bool        -valor l[ogico   True o False
+
+          array     -Conjunto de Valores
+
+          hashtable     -tabla bidimensional

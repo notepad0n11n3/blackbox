@@ -1,0 +1,32 @@
+
+
+::: sudo apt-get  remove --purge  hollywood -y
+
+
+
+
+#INSTALAR .DEB 
+ 
+  # DPKG-dpkg
+    ::: sudo dpkg -i ./google-chrome-stable_current_amd64.deb
+
+      if problemasDependenciasFaltantes
+        ::: sudo apt install -f
+
+  #ELIMINAR PAQUETA con el comando DPKG-dpkg
+    ::: sudo dpkg -r google-chrome-stable
+    ::: sudo apt-get remove nombre_del_paquete
+
+
+
+#INSTALAR .DEB  mediante APT    <-- tambi[en se instalar[an todas las dependencias deLaAplicaci[on necesarias
+
+::: sudo apt install ./google-chrome-stable_current_amg64.deb
+    ..
+    Do you want to continue? [Y/n]
+ 
+
+  # ELIMINAR/DESINSTALAR usando APT
+    ::: sudo apt  remove  google-chrome-stable     <--  --purge no testeado :/
+        ..
+        Do you want to continue? [Y/n]

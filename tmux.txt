@@ -1,0 +1,200 @@
+															<3 <3 <3   @   ==   alt m    <3 <3 <3
+
+                                      @  ->  like_a  ->  Ctrl k/a/b       
+                                      @@    Ctrl k  sin_Soltar            @ C-c
+
+          @ d   no congela las sesiones, siguen corriendo en segundo plano, aircrack :)
+
+          @ f   buscar_porNombreVentana
+          @@ f  saltar_aSessionPorNombre
+
+          @ =   lista de clipboard de tmux
+
+
+							kill-pane -a				" == a :only en VIM ...<3 <3 <3"		 --all
+							kill-pane -t 1    (cierra el split 1 ...<3 <3 <3)
+
+							kill-window -a			" == a :tabonly en VIM ...<3 <3 <3"   --all
+																				 :tabo
+							kill-window -t 2   (cierra la pestana 2 ... <3 <3 <3)
+							kill-window -all           ... Cierra todo menos la Ventana ACTUAL... <3 <3 <3 <3
+											    -a
+
+									--session  -s
+
+          @ : set status off/on  ... <3 <3 <3
+
+### Ejecucion de comandos desde Tmux... <3 <3 <3 <3		{{el prompt de comando tiene los atajos de teclado Ctrl-a Ctrl-e Ctrl-b Ctrl-f Alt-b Alt-f Ctrl-w Ctrl-u ...<3 <3 <3 <3 <3}}
+
+				 @ : run "ls"
+				 @ : run -b "ls"             ( -b ejecuta en segundo plano )
+			
+			@ : 
+					run -b "whoami | tr -d '\n' | xclip -sel clip"      ... <3 <3 <3
+					run -b "firefox & burpsuite & qtermial"
+
+SESSION		└─$ tmux new-session -s "Bomb_maybe" -c $burn -n MangO					└─$ tmux new-session -d -s "Bomb_maybe" -c $burn -n MangO		......<3 <3 <3 <3 (-d la creaDesacoplada detached <3)
+							sessions should be nested with care, unset $TMUX to force
+
+																		
+  ::: tmux new -s "nameSession" -c $burn -n "nameWindow"
+  ::: tmux new -s nameSession
+  @ : new -s nombreSession -c $HOME -n "nameWindow"
+  @@ c      nueva session ... <3 <3 <3 <3     @ C-c
+
+  @ $   rename SESSION   RENAME  session                      *** ***
+
+  @ d    detached session
+  ::: tmux a    conecta ultimaSession usada
+  ::: tmux attach -t nameSessionHere  :: tmux a -t nameHere   *** *** ***
+
+  @ s     lista_Sesiones  extendido, puedes saltar ingresandoNumeroSession de la lista     !!!  M-a  es Alt a   ( 0 9 )
+  @ w     lista_Sesiones  minimalista, puedes saltar ingresandoNumeroSession de la lista   !!!  M-a  es Alt a   ( 0 9 )
+  @ (    SALTAR ENTRE SESSIONES.....                          *** *** *** 
+  @ )    BACK ENTRE SESSIONES...
+
+  @ : kill-session -a        // cerrarTodasLasSessionesMENOS laActual
+  @ : kill-session -t sessionName   // cerrarLaSession sessionName
+  @ : kill-ses -t sessionName     @ : kill-ses -a
+
+*** DIVISIONES{{
+		kill-pane -a			" == a :only en vim ...<3 <3 <3"
+
+	@ : select-pane 0						"selecciona el split/panel 0"
+
+  @ -   //divisionHorizontal           @ "    like_aVim  vnew      
+  @ _   //divisionVertical             @ %    like_aVim  new 
+ 
+  @ !                         //independizar exclamaci[on en tabnew  *** *** *** 
+  @ : join-pane -s 1 -t 3     //unir ultimoPanelUsado de la pesta~a 1  a  la pesta~a 3
+  @ : join-pane -t 3					// unir panelActual(division)  a  la pesta~a 3 ... <3 <3 <3
+
+	# Join pane a la primera ventana '0' 
+		@ 0														// go window 0
+			@ : join-pane -s ? -t 1			// si... -t 1 
+									 no funciona -t 0 pero si con -t 1 estando en panel 0 (raro)    ...<3 <3 <3
+
+  @ q   numero de paneles en ventana actual
+  @ q 0...9       saltar de division por numero ... ... ... <3 <3 <3
+
+  @ MAYUS H/J/K/L      //modificarDimensi[onDivision
+  @ z  dar zoom a la divisionFocus          *** *** *** 
+  @ ;       // salta[UltimaDivisionUsada  *** *** *** *** **
+  @ o @ b   // saltaEntreDivisiones antiHorario
+
+  @ : setw synchronize-panes       //sinconizar paneles ***
+  @ SPACE         // 'teclaEspaico'  reorganiza_de_manera aleatoria lasDivisiones
+  @ { o }   intercambiar divisiones  INTERCAMBIAR DIVISIONES   horario/antiHorario    *** ***
+  @ < o >   intercambiar divisiones  INTERCAMBIAR DIVISIONES
+
+  @ x    cerrar solo panel  *** *** *** *
+
+		### MOVER/intercambiar split/SPLIT divisiones/DIVISIONES
+			
+			@ : swap-pane -t splitTarged				(lo intercambia con el split actual'Focus')
+			@ : swap-pane -s splitSource -t splitTarged
+
+			@ : swap-pane -s 8 -t 6 ; swap-pane -s 5 -t 29			"podemos ejecutar mas de un comando con ; ...<3 <3 <3"
+
+*** DIVISIONES }}
+
+VENTANAS
+  @ ,    rename ventanaActual
+
+  @ c    ventanaNueva   *** *** 
+  @ : new-window -c $HOME/Desktop/burningArea  -n nameWindow         //  nueva pesta~a con ruta personalizada <3
+  @ : neww -c $HOME/Desktop/burningArea -n nameWindow   
+
+  @ Ctrl i   cambiar ventana anterior ( @ 1   @ 2   @ 3 )     @ C-i   //sinSoltar Ctrl k i   Alt-a Ctrl-i
+                             echo  "bind-key C-i last-window " >> ~/.tmux.conf      funciona <3 <3 <3
+   @ Ctrl - i  ===  @ Tab
+
+  @ "numero_Ventana_Here"   saltar entre ventanas
+  @ : swap-window -s 1 -t 3   pestana "1" a la posicion "3"  " -s currentNumber  -t targedNumber "
+  @ : swap-window -t 0    pestana actual a la posicion "0"    -t targedNumber ...<3 <3 <3
+
+  @ &   cerrar ventana      *** *** *** *
+
+VI MODE vi mode VI MODE vi mode 
+  @ : setw -g mode-keys vi      teclas vim para usar con @ [  *** *** *** ***
+    copiar Vimode  Espacio para seleccionar despues enter,  pegar con @ ]
+
+					COPIAR / BUSCAR				@ [      'modo copia'							Ctrl-v   alterna el resaltado por bloque/linea... <3 <3 <3
+
+								@ [ Ctrl-v Espace   'like v en c_vim, selecciona por bloque para seleccionar con Espacio'
+
+									ESPACIO    modoSelecci[on
+										ENTER      para copiar ' Ctrl j == ENTER    READY...<3'
+											@ ]     pegarPaste
+
+								x        "crea una marca"     "ideal para usar con V o Ctrl-v"
+								Atl-x		 "salta entre la marca y la ultima posici[on del cursor... <3 <3 <3"
+
+								@ [  ?   'busca antes del focus'      /// q para salir
+								@ [  /   'busca despues del focus'    /// q para salir
+
+*** EXTRA
+  ::: tmux list-sessions   :: tmux ls
+
+  @ t    reloj :)
+  @ q    numberPanel
+
+  @ m  resaltaMARCA panelFocus
+
+
+
+
+Sí, en Vim existen varios modos y contextos en los que diferentes combinaciones de teclas pueden tener comportamientos específicos. Aparte de `i_` (modo de inserción) y `c_` (modo de comandos), hay otros prefijos de ayuda que se refieren a distintos modos y tipos de operación en Vim. Aquí hay un resumen de algunos de ellos:
+
+### 1. **Modo Normal (Normal Mode)**
+
+- **Prefijo de Ayuda**: `n_`
+- **Ejemplo de Comando**: `:help n_Ctrl-a`
+- **Descripción**: Se refiere a las combinaciones de teclas en el modo normal, donde puedes moverte por el texto, eliminar texto, copiar y pegar, etc. Por ejemplo, `Ctrl-a` en el modo normal se usa para incrementar números.
+
+### 2. **Modo Visual (Visual Mode)**
+
+- **Prefijo de Ayuda**: `v_`
+- **Ejemplo de Comando**: `:help v_Ctrl-a`
+- **Descripción**: Se refiere a las combinaciones de teclas en el modo visual, donde puedes seleccionar texto. Por ejemplo, `Ctrl-a` puede tener un comportamiento especial cuando seleccionas texto.
+
+### 3. **Modo de Selección (Select Mode)**
+
+- **Prefijo de Ayuda**: `x_`
+- **Ejemplo de Comando**: `:help x_Ctrl-a`
+- **Descripción**: Se refiere al modo de selección, donde puedes seleccionar texto de una manera más flexible que en el modo visual. Este modo se usa menos frecuentemente, pero es relevante en ciertas configuraciones.
+
+### 4. **Modo de Comando (Command-line Mode)**
+
+- **Prefijo de Ayuda**: `c_`
+- **Ejemplo de Comando**: `:help c_Ctrl-a`
+- **Descripción**: Se refiere al modo de comandos (`:`), donde introduces comandos de Vim. En este contexto, `Ctrl-a` puede ser usado para autocompletar comandos.
+
+### 5. **Modo de Insertar en la Línea de Comandos (Insert Mode in Command-line Mode)**
+
+- **Prefijo de Ayuda**: `i_` cuando se refiere a la línea de comandos.
+- **Ejemplo de Comando**: `:help i_Ctrl-a` en la línea de comandos.
+- **Descripción**: Se refiere a cuando estás en el modo de inserción mientras editas una línea de comandos (`:`). Aunque no es un modo separado per se, la ayuda puede diferenciar el comportamiento en este contexto.
+
+### 6. **Modo de Terminal (Terminal Mode)**
+
+- **Prefijo de Ayuda**: `t_`
+- **Ejemplo de Comando**: `:help t_Ctrl-a`
+- **Descripción**: Se refiere al modo de terminal (`:term`), donde puedes interactuar con terminales dentro de Vim. Aquí, `Ctrl-a` puede tener comportamientos específicos al interactuar con el terminal.
+
+### Otros Modos y Contextos
+
+- **Modo de Marcado (Mark Mode)**: `m_`
+- **Modo de Selección Visual (Visual Mode)**: `v_`
+- **Modo de Comando (Command-line Mode)**: `c_`
+- **Modo de Insertar en la Línea de Comandos (Insert Mode in Command-line Mode)**: `i_`
+
+### Cómo Usar Estos Prefijos
+
+Para buscar ayuda sobre un comando específico en un modo particular, usa el prefijo adecuado. Por ejemplo:
+
+- `:help n_Ctrl-a` para obtener información sobre `Ctrl-a` en el modo normal.
+- `:help v_Ctrl-a` para información sobre `Ctrl-a` en el modo visual.
+- `:help t_Ctrl-a` para el modo de terminal.
+
+Cada uno de estos prefijos te ayudará a obtener información más específica sobre el uso de combinaciones de teclas en diferentes modos de Vim. Si no estás seguro de qué prefijo usar, puedes comenzar con `:help Ctrl-a` para obtener una descripción general y luego buscar información más específica en función del contexto.

@@ -1,0 +1,5 @@
+
+Ctrl + i        identacion
+Ctrl + c        like a zz  pero no deja repetir comando '22 o panda8hat'
+
+Ctrl + o        una acci[on en modo visual

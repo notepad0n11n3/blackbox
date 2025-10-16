@@ -1,0 +1,166 @@
+
+				C-x C-c			(save-buffers-kill-emacs)
+
+		ojO.....-> -> ->   C-x u     (es diferente a)   C-x C-u
+		ojO.....-> -> ->   C-x b     (es diferente a)   C-x C-b
+
+	   M-x help ... <3 <3 <3 <3 <3 <3 .........!!!
+
+   C-g  'like <Esc>  Ctrl \ n  , vale para cancelar comandos y keybinding'
+
+    C-/  (UNDO... <3 <3 <3 <3  100% real no fake  :3  <3 <3 <3)
+	C-x  u   (undo...  la u con el Ctrl suelto men... <3 <3 <3)    unos de estos 2 est redo, dale una probada
+
+	C M _    (Ctrl Alt _)  'undo REDO... <3 <3 <3 100% realNoFAKE :3'
+
+   C-x Left/Right     Saltar/Regresar al buffers anterior .... <3 <3 <3 <3
+
+	C-x-z   'repeat... ultimo comando y keybinding ... <3 <3'
+### MOVIMIENTOS BASICOS
+
+    C-f     Move forward a character
+    C-b     Move backward a character
+    M-f     Move forward a WORD
+    M-b     Move backward a WORD
+
+        C-n     Move to next line
+        C-p     Move to previous line
+
+        C-a     Move to beginning of line
+				M-m M-m Ir al primer caracter like ^ en vim ...<3 <3 <3 ('doble M-m por el prefix de tmux, es el mismo pa :u')
+        C-e     Move to end of line
+
+        M-a     Move back to beginning of sentence
+        M-e     Move forward to end of sentence
+
+	M - <   (like gg en vim)
+	M - >   (like G en vim)
+
+	C - v   'like Ctrl-d en vim'
+	M - v	'like Ctrl-y en vim'
+
+
+### REPETICION DE ATAJOS... <3 <3 <3 <3
+    
+    C-u 8 C-f		'avanza 8 caracteres'
+    C-u 8 M-f		'avanza 8 palabras'	
+
+    C-u 8 C-p		'subir 8 lineas'
+    C-u 8 C-n		'baja 8 lineas'
+
+    C-u 8 C-h		'elimina 8 caracteres'
+    
+    C-u 8 a		'aaaaaaaa' ... <3 <3 <3
+
+### BORRAR
+
+    C-h		'delete char like bash/zsh'
+    C-k		'elimina del focus a final de la linea... <3 <3'
+
+### Marcar 
+
+    C-<Espace>   'like Ctrl-v en vim, C-g puedeApagar el highlight pero el mark seguira activo para poder eliminar... <3 <3 <3'
+
+       'C-h'  'C-w'  los 2 validos para borrar lo seleccionado...<3
+
+### REMPLAZAR STRINGS tienes que seleccionar... (C-Espace)
+    M-x repl s
+    M-x replace-string 'pressEnter'   
+    		       (te va a pedir:
+		       	      primero: el stringTarged
+			      segndo: el remplazo)
+
+		M-%      ('esto esta mucho mejor... <3 <3 <3')
+       
+### Copiar/Eliminar  PEGAR
+
+    C-y 'Pega lo ultido eliminado, like p post dd en vim' 'C-d es como /dev/null'
+    M-y TAB    'like a registros en vim ...<3 interesante'
+
+### BUFFERS
+
+    C-x C-b	'List buffers'
+    C-x b       'espera el input, nombre del buffer... <3 <3 <3 :3 '
+
+    		"se puedes usar uno encima/seguido de otro...!!! <3 <3 <3"
+		    C-x 1 para cerrar todo menos el focus
+
+   # Buffer *Messages*  'list todos los mensajes de la barraEstado <3'
+
+     C-x Left/Right  'Retroceder/Avanzar entre los buffers en splitFocus... <3 <3'
+
+### SUSPENDER SECCION DE EMACS
+    C-z   'SUSPENDE LA SESSION... <3 '
+    	  fg 
+	  %emacs
+### GUARDAR
+
+    C-x s  'el mitico guardar'       no estoy seguro..??
+    C-x C-s 'el mitico guarda COMO'  no estoy seguro..??
+
+        C-x C-s         Save buffer to file
+        C-x s           Save some buffers to their files
+
+### SEARCH STRING
+
+    C-s	   ('search like f en vimNormalMode')
+    C-r	   ('search like F en vimNormalMode')
+
+    	   press C-s  o  C-r  para saltar like n  N   en vim
+### BUSCAR CARPETAS/FICHEROS
+
+    C-x C-f	'buscar Fichero: '
+    C-x C-d	'abrir carpeta: '
+
+### PANELES DIVISIONES
+
+    C-x 2	'horizontal split/division'
+    C-x 3	'vertical split/division'
+
+    C-x 0     'cerrar panel/split Focus'
+    C-x 1     'like :only en vim...<3'
+    
+    C-x 4 C-f   'abrir enSplit el archivo: '
+
+    C-x o     'Saltar entre los splits'
+
+### TABS PESTANAS
+    
+C-x t RET       tab-switch
+C-x t C-r       find-file-read-only-other-tab
+C-x t 0         tab-close
+C-x t 1         tab-close-other
+C-x t 2         tab-new
+C-x t G         tab-group
+C-x t M         tab-move-to
+C-x t N         tab-new-to
+C-x t O         tab-previous
+C-x t b         switch-to-buffer-other-tab
+C-x t d         dired-other-tab
+C-x t f         find-file-other-tab
+C-x t m         tab-move
+C-x t n         tab-duplicate
+C-x t o         tab-next
+C-x t p         project-other-tab-command
+C-x t r         tab-rename
+C-x t t         other-tab-prefix
+C-x t u         tab-undo
+
+
+### SHELL COMMAND
+
+    M-!    'ejecuta el comando: '
+		M-x eshell	'ejecuta la terminalNativa de EMACS...<3'
+
+---------------------- Notes === Extra === Tips +++ CURIOSIDADES ---------------
+
+		       M-q   	 ('like J en vim... <3')
+    *** autoIdentacion Nativa
+        con Enter mantiene la identacion de la linea anterior
+	con Ctrl-j nelll men... :'u   me dueles emacs <\3  (usa Tab men :v)
+
+    *** AUTOSAVE    #main.c#
+        recuperar el autoguardado:
+             ingresa al archivo original y dale:
+	         M-x recover-this-file
+       

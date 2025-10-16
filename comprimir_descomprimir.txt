@@ -1,0 +1,37 @@
+//LISTAR ARCHIVOS COMPRIMIDOS
+  ::: 7z l archivo.zip         // (si... l sin - )
+
+ARCHIVOS .zip
+  Comprimir:
+    ::: zip archivo.zip carpeta
+  Descomprimir:
+    ::: unzip archivo.zip
+    ::: unzip archivo.zip -d carpetaName
+
+ARCHIVOS .tar.gz
+  Comprimir:
+    ::: tar -czvf empaqutado.tr.gz  /carpeta/a/empaquetar/
+  Descomprimir:					'valido para  .tgz tambien <3'
+    ::: tar -xzvf archivo.tar.gz
+
+ARCHIVOS .tar
+  Empaquetar:
+    ::: tar -cvf paquete.tar  /dir/a/comprimir/
+  Desempaquetar:
+    ::: tar -xvf paquete.tar
+
+ARCHIVOS .gz
+  Comprimir:
+    ::: gzip -9 index.php
+  Descomprimir:
+    ::: gzip -d index.php.gz
+
+ARCHIVOS .rar
+  Comprimir:
+    ::: rar a nombreFichero_comprimido.rar  nombreFichero_aComprimir
+    ::: rar a nombreFichero_comprimido.rar  *
+
+  Descomprimir:
+    ::: unrar x nombre_del_rar.rar
+    ::: unrar x nombre_del_rar.rar /ruta/destino/descomprimido
+
