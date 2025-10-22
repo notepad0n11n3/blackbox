@@ -8,6 +8,7 @@ vim:: imap ;l <Esc>
 
 											
 																											"Ctrl-[  == Ctrl-\-n  ===  Esc  ==  Ctrl-c"
+	vim:: w|!gcc % -o %< && clear && './%<'    (las comillasSimples aprueba de errores... <3 <3 <3  ./%<  %<  )
 
 ### MODO-COMANDOS ONELINER ... <3 <3 <3
 	vim:: tabnew | Ex $burn | call Lterm() ... <3 <3 <3																					ejecuta todo en la nueva pestana... <3 <3 <3
