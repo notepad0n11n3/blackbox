@@ -48,8 +48,15 @@ vim:: imap ;l <Esc>
 
 ### EJECUTAR CON EL PROGRAMA PREDETERMINADO EL FOCUS
 
-		gx "go url under the cursor (normalMode), focus en el http"  gf "go file under the cursor (controlMode)"
+		gx   (open url under the cursor (normalMode), focus en el http  )
+		:.normal gx			(abre la linea actual en el navegadorPorDefecto)
+		:10normal gx		(abre linea 10 en el navegador)
+		:'<,'>normal gx			(selecciona con V las lineas a abrir en el navegador)
 
+		gf	 (go file under the cursor (controlMode)  )
+		:.normal gf			(abre el archivo/fulPath de la linea actual)
+		:10normal gf		(abre el archivo/fullPath de la linea 10)
+		:'<,'>normal gf			(NO FUNCIONA CON gf... OJO ojo OJO...).... no no no no
 
 
 ### INFO DEL ARCHIVO EN EDICION
