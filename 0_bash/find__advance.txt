@@ -10,13 +10,13 @@
 
 	::: find . -type f ! -name \*.zip -exec vim {} +
 
-					! -name "*.zip": que no terminen en .zip.
+				! -name "*.zip"      que no terminen en .zip.
 
-					-exec vim {} +: ejecuta vim con todos los archivos encontrados.
+				-exec vim {} +       ejecuta vim con todos los archivos encontrados.
 
-					{} se reemplaza por los nombres de archivo.
+					{}        se reemplaza por los nombres de archivo.
 
-		+ al final agruparán en una sola llamada a vim, como si hicieras vim archivo1 archivo2 archivo3....
+					+   al final agruparán en una sola llamada a vim, como si hicieras vim archivo1 archivo2 archivo3....
 
 
 
@@ -25,6 +25,7 @@
 	::: find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.c" \)
 
 	::: find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.c" \) -exec vim -p {} +
+	::: find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.c" \) -exec vim -o {} +
 
 	::: find . -type f ! \( -name \*.svgz -o -name \*.qml \) -exec vim {} +
 
