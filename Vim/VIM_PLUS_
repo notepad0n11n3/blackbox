@@ -34,7 +34,8 @@
 
 ### INGRESAR LA LINEA FOCUS AL MODO COMANDOS
 
-			c_Ctrl r %			'FULL PATH del directorio actual'... <3 <3 <3
+			c_Ctrl r %			'FULL PATH del archivo actual		 % '... <3 <3 <3
+			c_Ctrl r #			'FULL PATH del archivo anterior  #'... <3 <3 <3
 
 									c_Ctrl r l      (inserta la linea focus al modoComandos post ':' )
 									c_Ctrl r " 		(pega la linea post yy ...<3 <3 <3)

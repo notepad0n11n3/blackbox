@@ -471,7 +471,8 @@ argument for the command, which has a different meaning.  For example:
 				c_Ctrl r p			'muestra la ruta completa para poder usar el :tabnew  '
 
 
-				c_Ctrl r %    'FULL PATH del directorio actual'... <3 <3 <3
+			c_Ctrl r %			'FULL PATH del archivo actual    % '... <3 <3 <3
+			c_Ctrl r #			'FULL PATH del archivo anterior  # '... <3 <3 <3
 
 
 
