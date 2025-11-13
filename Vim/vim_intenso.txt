@@ -132,6 +132,9 @@ xset q | grep "Caps Lock" | sed -E 's/ +/ /g' | cut -d' ' -f3,5 | tr -d "\n"
 
   		vim::: saveas $down/test.c
    			 ::: saveas $down/ 'Ctrl-r ='  expand('%:t')
-										c_Ctrl-r =   ( ahora dale expand('%:t')  )  ingresara el nombre del archivo actual a : ...<3 <3 <3 <3
+
+				c_Ctrl-r =   ( ahora dale expand('%:t')  )  ingresara el nombre del archivo actual a : ...<3 <3 <3 <3
+
+					:::	saveas $down/saveas.txt|!rm # | call Lcd()
 
 
