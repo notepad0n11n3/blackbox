@@ -135,6 +135,6 @@ xset q | grep "Caps Lock" | sed -E 's/ +/ /g' | cut -d' ' -f3,5 | tr -d "\n"
 
 				c_Ctrl-r =   ( ahora dale expand('%:t')  )  ingresara el nombre del archivo actual a : ...<3 <3 <3 <3
 
-					:::	saveas $down/saveas.txt|!rm # | call Lcd()
+					:::	saveas $down/saveas.txt|execute "!rm #"|call Lcd()
 
 
