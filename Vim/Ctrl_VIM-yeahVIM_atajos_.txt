@@ -55,6 +55,8 @@ Ctrl w  Ctrl h     // salta al panel de la derecha
 Ctrl w  Ctrl k     // salta al panel de arriba
 Ctrl w  Ctrl j     // salta al panel de abajo
 
+Ctrl f	'Avanza una pantalla'
+Ctrl b	'Retrocede una pantalla'
 
 *** *** *** 
 
