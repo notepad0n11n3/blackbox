@@ -13,8 +13,10 @@
 echo $? == 0   ===== exit 0  como una salida exitosa del comando anterior 
 
 
-::: echo $0     # muestra que tipo de shell con el que estamos
-::: $0     # solo $0 EJECUTA UNA SHELL solo funciona en bash, no en zsh , ES MUY UTIL CSM :)
+::: echo $$     "PID del shell actual"
+
+::: echo $0    "muestra que tipo de shell con el que estamos"
+::: $0         "solo $0 EJECUTA UNA SHELL solo funciona en bash, no en zsh , ES MUY UTIL CSM :)"
 
 ::: tty    # whatis tty
 
@@ -26,18 +28,21 @@ ssh bandit @bandit.labs.overthewire.org -p 2220
 STDR  STDIN STDR  STDIN *******
       ls -l /dev/null   XD mv /* /dev/null  
       
-::: comandoHere 2>/dev/null    error STDR
+::: comandHere 2>/dev/null    STDR -> /dev/null
       2>&1  STDR a STDIN
-::: comandoHere >/dev/null   STDIN al /dev/null
+			&>/dev/null    stdout/stderr -> /dev/null
+
+::: comandHere >/dev/null   STDIN al /dev/null
   : firefox > /dev/null 2>&1
 
           ::: firefox >/dev/null 2>&1  &  disown
           ::: firefox &>/dev/null  &  disown
 
-::: comando &     ejecuta comando en segundoPlano
-::: jobs      muestra segundo plano en ejecuci[on 
-::: disown         independiza sedungoPlano
-******
+## comandos segundo plano , independizar
+	::: comando &     ejecuta comando en segundoPlano
+	::: jobs      muestra segundo plano en ejecuci[on 
+	::: disown         independiza sedungoPlano
+
 
 ::: cat ./-  :: cat /home/bandit1/- :: cat /home/bandit1/* (cat a todo) 
 ::: cat $(pwd)/-
@@ -47,36 +52,29 @@ STDR  STDIN STDR  STDIN *******
 ::: find / -user usuarioHere -group groupHere 2>/dev/null 
 
 
-PERMISOS PERMISOS PERMISOS PERMISOS **********
+## PERMISOS PERMISOS PERMISOS PERMISOS
 
-:::lsattr +i archivo.txt
-:::lsattr -e archivo.txt
-
-*********
-
-::: time comandoHere  
-      muestra el tiempo de ejecuci[on de un comando
+	:::lsattr +i archivo.txt
+	:::lsattr -e archivo.txt
 
 
-FIND FIND FIND FIND *********
+::: time comandHere  "muestra el tiempo de ejecuci[on de un comando"
 
-:::find . -size 1033c -group groupHere -user userHere
-    bytes c 
 
-**********
+## FIND find
+			:::find . -size 1033c -group groupHere -user userHere
+				bytes c 
 
-AWK AWK AWK AWK AWK AWK ********
+## AWK awk
 
-::: awk '/sauronUp/' data.txt | awk '{print $1}'
-      like a grep...  pero m]as lento
+		::: awk '/sauronUp/' data.txt | awk '{print $1}'
+					like a grep...  pero m]as lento
 
-::: awk 'NR==19994'  inprime la linea n[umero 
+		::: awk 'NR==19994'  inprime la linea n[umero 
 
-::: awk '{print $2}' inprime el segundo argumento
+		::: awk '{print $2}' inprime el segundo argumento
 
-::: awk 'NF{print $NF}'  imprime el ultimo argumento
-
-*******
+		::: awk 'NF{print $NF}'  imprime el ultimo argumento
 
 
 ::: uniq -u  muestra las lineas que no se repiten
@@ -87,114 +85,94 @@ AWK AWK AWK AWK AWK AWK ********
 ::: strings archivo.txt print the strings of printable characters in files.
 
 
-CODIFICACI[ON BASE 64 BASE64 base64 *********
+## CODIFICACI[ON  BASE64 base64
 
-::: echo "hola que tal" | base64  #codifica la cadena en  base 64
-::: echo "hola que tal" | base64 | base64 -d #decodifica la cadena 
-::: cat data.txt | base64 -d
+		::: echo "hola que tal" | base64  #codifica la cadena en  base 64
+		::: echo "hola que tal" | base64 | base64 -d #decodifica la cadena 
+		::: cat data.txt | base64 -d
 
-*********
-
-MOSTRAR EN HEXADECIMAL **************
-::: echo "Hola que tal " | xxd
-::: *** | xxd | xxd -r    #revierte el xxd
-::: echo "HOLA QUE TAL" | xxd -ps #solo muestra el hexadecimal
-*****************
+## MOSTRAR EN HEXADECIMAL
+		::: echo "Hola que tal " | xxd
+		::: *** | xxd | xxd -r    #revierte el xxd
+		::: echo "HOLA QUE TAL" | xxd -ps #solo muestra el hexadecimal
 
 
-TYPO DE ARCHIVO tipo de archivo TIPO DE ARCHIVO******
-::: file archivo  #print tipo de archivo
-*****
+## TYPO DE ARCHIVO tipo de archivo
+	::: file archivo  #print tipo de archivo
+
+## DESCOMPRECI[ON DESCOMPRECI[ON
+		::: 7z data.gzip
+		::: 7z l data.gzip  # muestra archivosComprimidos sin descomprimier like a ls
+		::: 7z x data.gzip  # EXTRAER ARCHIVO
+
+## grep avanzado GREP AVANZADO
+		::: 7z l data.zip | grep "name" -A 2 
+					# print 2 lineas extra por DEBAJO de lineaName
+		::: 7z l data.tar | grep "name" -B 2
+					# print 2 lineas extra por ARRIBA de la lineaName
+		::: 7z l data.gzip | grep "name" -C 2
+					# print 2 lineas extra por ARRIBA y ABAJO
 
 
-DESCOMPRECI[ON DESCOMPRECI[ON ***********
-::: 7z data.gzip
-::: 7z l data.gzip  # muestra archivosComprimidos sin descomprimier like a ls
-::: 7z x data.gzip  # EXTRAER ARCHIVO
-********
+### clave privada ssh CLAVE PRIVADA SSH
 
-grep avanzado GREP AVANZADO ********
-::: 7z l data.zip | grep "name" -A 2 
-      # print 2 lineas extra por DEBAJO de lineaName
-::: 7z l data.tar | grep "name" -B 2
-      # print 2 lineas extra por ARRIBA de la lineaName
-::: 7z l data.gzip | grep "name" -C 2
-      # print 2 lineas extra por ARRIBA y ABAJO
-******
+		::: cd /root/
+		 :: vim /etc/ssh/sshd_config
+		 v: /PermitRootLogin yes      :wq
 
+		 :: service ssh start  :: service ssh restart
+		 .: service ssh status
 
-clave privada ssh CLAVE PRIVADA SSH ********
+		 :: ssh-keygen #Creamos claveSsh, enterAtod 
+		 :: ls
+		 utput: id_rsa  id_rsa.pub
 
-::: cd /root/
- :: vim /etc/ssh/sshd_config
- v: /PermitRootLogin yes      :wq
+		 :: ssh -i sshkey.private bandit14@localhost
 
- :: service ssh start  :: service ssh restart
- .: service ssh status
-
- :: ssh-keygen #Creamos claveSsh, enterAtod 
- :: ls
- utput: id_rsa  id_rsa.pub
-
- :: ssh -i sshkey.private bandit14@localhost
-
-::: ssh -i id_rsa bandit17@localhost
-*******
-
-bash avanzado BASH AVANZADO ******************
-
-::: echo '' >/dev/tcp/127.0.0.1/30000 2>/dev/null 2>&1 ##Envia una cadena de texto por el puerto 30000
-                                                       ##ver resultado con echo $?
-
-::: bash -c "comandos here" 2>/dev/null 
-    bash -c "comandos here" 2>/dev/null && echo "[*] Puerto abierto" || echo "[*] Puerto cerrado"
-
-  
-****************************
-
-PUERTOS puertos TELNET telnet nc NC  *********
-::: echo "BfMYroe26WYalil77FoDi9qh59eK5xNr" | nc localhost 30000  ## envia la cadena de texto por el puerto 30000
-
-==: telnet localhost 30000
-  .: 4wcYUJFw0k0XLShlD
-  
-*****************************
-
-encriptacion ssl ENCRIPTACION SSL ********
-
-::: openssl s_client -connect 127.0.0.1:30001
-
-*******************
-
-grep avanzado GREP AVANZADO ****************
-::: cat aeo8.txt | head -n5 | grep -v "sauron" 
-        ##muestra todo menos la linea(s) que contengan "sauron"
-
-::: cat archivo.txt | grep -E "^aeo8|^panda8hat"  filtrara por los 2 aeo8 y panda8hat
-==: cat archivo.txt | grep "^aeo8\|^panda8hat"   sin el -E tenemos que usar el \ para el |
-****************************
-
-diferencia entre 2 archivos******************
-DIFERENCIA ENTRE 2 ARCHIVOS******************
-::: diff archivoAntiguo.txt archivoNuevo.txt
-*****************************
-
-permisos directorio PERMISOS DIRECTORIO ********
-::: chmod 777  ../carpetaHere  # si 2.. no 1 . 
-*******************
+		::: ssh -i id_rsa bandit17@localhost
 
 
-ejecucion de comando continuo**************
-EJECUCION DE COMANDO CONTINUO**************
+### ### ### bash avanzado BASH AVANZADO ******************
 
-::: watch -n 1 ls -l
-        ## cada 1 sagundo ls -l en ubicacion actual
-***********************
+		::: echo '' >/dev/tcp/127.0.0.1/30000 2>/dev/null 2>&1 ##Envia una cadena de texto por el puerto 30000
+																													 ##ver resultado con echo $?
+
+		::: bash -c "comandos here" 2>/dev/null 
+				bash -c "comandos here" 2>/dev/null && echo "[*] Puerto abierto" || echo "[*] Puerto cerrado"
 
 
-directorio temporal DIRECTORIO TEMPORAL********
-::: mktemp -d     # atento al output de la ruta del directorio temporal :)
-*****************
+## PUERTOS puertos TELNET telnet nc NC
+		::: echo "BfMYroe26WYalil77FoDi9qh59eK5xNr" | nc localhost 30000  ## envia la cadena de texto por el puerto 30000
+
+		==: telnet localhost 30000
+			.: 4wcYUJFw0k0XLShlD
+
+## encriptacion ssl ENCRIPTACION SSL
+
+		::: openssl s_client -connect 127.0.0.1:30001
+
+## grep avanzado GREP AVANZADO
+		::: cat aeo8.txt | head -n5 | grep -v "sauron" 
+						##muestra todo menos la linea(s) que contengan "sauron"
+
+		::: cat archivo.txt | grep -E "^aeo8|^panda8hat"  filtrara por los 2 aeo8 y panda8hat
+		==: cat archivo.txt | grep "^aeo8\|^panda8hat"   sin el -E tenemos que usar el \ para el |
+
+
+## DIFERENCIA ENTRE 2 ARCHIVOS
+	::: diff archivoAntiguo.txt archivoNuevo.txt
+
+## PERMISOS DIRECTORIO PERMISOS DIRECTORIO
+	::: chmod 777  ../carpetaHere  # si 2.. no 1 . 
+
+
+## EJECUCION DE COMANDO CONTINUO
+	::: watch -n 1 ls -l
+					## cada 1 sagundo ls -l en ubicacion actual
+
+
+## directorio temporal DIRECTORIO TEMPORAL
+	::: mktemp -d     # atento al output de la ruta del directorio temporal :)
 
 
 

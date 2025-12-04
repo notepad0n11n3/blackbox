@@ -3,13 +3,13 @@
         ## AUTO---    APT UPDATE  APT-GET FULL-UPGRADE      oneline :)
   # Es suficiente 1 solo ingreso de clave root para las demas ejecuciones :) 
   # obviamente no te va a dejar abrir la carpeta /root/ si no vuelves a ingresar la clave :u
-#ssudo="ZnV0Z3VpbXVsaGFjazhrYWwK";echo ${ssudo}|base64 -d | sudo -S apt update -y #&& clear && echo -e "\n\n\n\t\t\t full-upgrade GO \n\n" && sleep 2 && sudo apt-get full-upgrade -y  
+#ssudo="password_userSudo_here_base64";echo ${ssudo}|base64 -d | sudo -S apt update -y #&& clear && echo -e "\n\n\n\t\t\t full-upgrade GO \n\n" && sleep 2 && sudo apt-get full-upgrade -y  
 
 
 echo -e "\n\n\t\t GOGOGOOGOGOGOGOGOGOGOOGOGOGOG..... \n\n\t\t"
 
 
-newDes="ZnV0Z3VpbXVsaGFjazhrYWwK"
+newDes="SnM0Z3MpbXMsoGFjozhrYWulK" # password en base 64 here
 
 #echo "${newDes} | base64 -d "   | sudo -S cat /root/roti.txt    ##  Ac[a tiene un output limpio, solo el cat del archivo en /root/
 echo "${newDes}" | base64 -d | sudo -S cat /etc/passwd > deleteHere.tmp && if [ $(wc -w deleteHere.tmp | awk '{print $1}') -ge 1 ]; then clear; cat deleteHere.tmp; else clear;echo -e "\n\n\t\t error error... "; fi
