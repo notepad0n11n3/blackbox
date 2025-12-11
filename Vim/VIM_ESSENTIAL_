@@ -6,6 +6,10 @@ vim:: imap ;l <Esc>
 											vim::: help :      vim::: help Ctrl   vim::: help i_Ctrl-o 'insertMode'  vim::: help c_CTRL-R		vim::: help t_Ctrl-w 'termMode'
 											vim::: help :      vim::: help Ctrl   vim::: help i_Ctrl-o 'insertMode'  vim::: help c_CTRL-R		vim::: help t_Ctrl-w 'termMode'
 
+### JOIN sin espacios... <3 <3 <3
+		
+			J			"JOIN   CON   espacios entre el ^ u $ de las lineas"
+			gJ		"JOIN   SIN   espacios entre el ^ y $ de las lineas"
 											
 																											"Ctrl-[  == Ctrl-\-n  ===  Esc  ==  Ctrl-c"
 	vim:: w|!gcc % -o %< && clear && './%<'    (las comillasSimples aprueba de errores... <3 <3 <3  ./%<  %<  )
@@ -52,6 +56,7 @@ vim:: imap ;l <Esc>
 		:.normal gx			(abre la linea actual en el navegadorPorDefecto)
 		:10normal gx		(abre linea 10 en el navegador)
 		:'<,'>normal gx			(selecciona con V las lineas a abrir en el navegador)
+		:%normal gx
 
 		gf	 (go file under the cursor (controlMode)  )
 		:.normal gf			(abre el archivo/fulPath de la linea actual)
