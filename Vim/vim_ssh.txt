@@ -1,4 +1,7 @@
 
+::: vim scp://user_vps@ip_vps//
+::: vim scp://user_vps@ip_vps//home/user_vps/Downloads/test.txt				"no olvides el doble //"
+
 ### Acceder a carpeta delServer por :Ex  ...<3 <3 <3 
 		::: e scp://user_name@ip_here//
 
