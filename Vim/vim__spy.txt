@@ -2,4 +2,13 @@
 
 ::: vim -i NONE -u NONE .
 													vim:: vim -i NONE ### No lee ni escribe .viminfo
-													vim:: vim -u NONE ### No lee ni escribe .vimrc
+													vim:: vim -u NONE ### No lee ni escribe .vimrc		"sin el .vimrc no funcionara plugin's nativos como :Ex :( "
+
+::: vim -i NONE -c 'set number relativenumber numberwidth=1 sw=2 tabstop=2 softtabstop=2 wrap noswapfile | map <C-j> <CR> | nnoremap <C-s> :w<CR>' .
+
+
+
+***   Targed =>  .bashrc     .zshrc     ...<3 <3 <3
+alias vim='vim -i NONE -c "set number relativenumber numberwidth=1 sw=2 tabstop=2 softtabstop=2 wrap noswapfile | map <C-j> <CR> | nnoremap <C-s> :w<CR>"'
+
+															set laststatus=2		"optional"
