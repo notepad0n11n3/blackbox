@@ -1,14 +1,25 @@
 // pushd popd  tambi[en funciona en windows <3
 
 ::: pushd rutaDestino
+::: pushd .            ("Guarda el path actual pre cd")
 
+::: dirs				("todo en una linea")  ::: dirs -p			("saltos de linea x path")
 ::: dirs -v
     
     0  /home
     1  /var        <-<-<-<--
     2  /tmp                |
-                           |
- :: cd ~1        // go  /var/    :)
+    3  /dev                |
+
+ :: cd ~1        // go  /var/    :)  (no olvides el pushd .  , el elemento 0 de la pila no se guarda por default)
+        8
+
+::: popd		 ("salta al siguiente path en la pila, [Last Input Firts Output] ")
+::: popd -0  ("elimina el ULTIMO elemento de la pila")
+          3
+::: popd +0  ("elimina el PRIMER elemento de la pila")
+          2
+::: pushd						("sin argumentos salta entre los 2 primeros de la pila, like cd - pero con datos de la pila")
 
 
 ::: dirs -c   /// clear buffer
@@ -16,9 +27,6 @@
 =================================
 
 ::: cd -           /// salta al ultimo directorio en el que estabas, sin limite de usos :)  <3
-
-
-
 
 ::: echo $PWD
 ::: echo $OLDPWD
