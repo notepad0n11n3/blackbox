@@ -22,6 +22,8 @@ vim:: imap ;l <Esc>
 	vim:: tabnew | execute 'read! cat /etc/passwd' | execute ' %! grep sh$' | call Lterm()			ejecuta todo en la nueva pestana... <3 <3 <3
 	vim:: tabnew | call Mvnb('-ip')
 
+	vim:: execute 'call Mvnb()' | execute '%s/$/:80/g|noh' | execute '%normal gx'			"x89pMode scriptkittyTURUBO"
+
 	vim:: !clear && source $HOME/.zshrc && 0n11n3 -c
 	vim:: |Whereami																	(' | no ! , para poder seguir usando comando con : y ver todo el historial{output} de los comandos anteriores... <3 <3 <3')
 
