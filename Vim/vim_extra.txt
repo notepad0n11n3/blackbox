@@ -70,6 +70,12 @@ comentar linea en cualquier lenguaje, modi visual (;l)  Shift + 7 (noFuncionaEnM
 													https://10.10.10.10:445
 													http://10.10.10.10:445
 
+			:'<,'>s/[()]/"/g			 :'<,'>s/[aeiou]/_/g			"remplaza todo dentro de [] ... <3 <3 <3, no palabras completas, SOLO CARACTERES Y SIMBOLOS SUELTOS"
+			:.s/\v(test|tost)/new_word/g										"\v  regex PALABRAS COMPLETAS ...<3 <3 <3"
+
+			:s/\(test\)/\1!!!/g					\(\) == \v()    ,   \1 grupo de captura
+			:s/\v(test)/\1!!!/g
+
 ### Completar... <3 <3
 
 			i_CTRL-e		Insert the character which is below the cursor.

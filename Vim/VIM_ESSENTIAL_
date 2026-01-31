@@ -55,15 +55,22 @@ vim:: imap ;l <Esc>
 ### EJECUTAR CON EL PROGRAMA PREDETERMINADO EL FOCUS
 
 		gx   (open url under the cursor (normalMode), focus en el http  )
-		:.normal gx			(abre la linea actual en el navegadorPorDefecto)
-		:10normal gx		(abre linea 10 en el navegador)
-		:'<,'>normal gx			(selecciona con V las lineas a abrir en el navegador)
-		:%normal gx
+		:.normal gx															"abre la linea actual en el navegadorPorDefecto"
+		:10normal gx														"abre linea 10 en el navegador"
+		:'<,'>normal gx															"selecciona con V las lineas a abrir en el navegador"
+		:exec '1normal gx' | exec '3normal gx'							"linea 1 y linea 3...<3"
 
-		gf	 (go file under the cursor (controlMode)  )
-		:.normal gf			(abre el archivo/fulPath de la linea actual)
-		:10normal gf		(abre el archivo/fullPath de la linea 10)
-		:'<,'>normal gf			(NO FUNCIONA CON gf... OJO ojo OJO...).... no no no no
+		:%normal gx
+		:%!xargs -n1 firefox --new-tab													" por %! va a sobre escribir la salida el comando en el buffer actual"  " -n1   para linea x linea... <3 <3 <3"
+		:%!xargs -I {} firefox {} &>/dev/null & 
+
+		:!xargs -n1 firefox --new-tab &>/dev/null < % & disown				"no sobreescribe el buffer actual con  < %   "
+		:g/^http:/normal gx						:g/palabra-clave/normal gx    ...<3 <3 <3 <3 <3
+
+			gf	 (go file under the cursor (controlMode)  )
+		:.normal gf															"abre el archivo/fulPath de la linea actual"
+		:10normal gf														"abre el archivo/fullPath de la linea 10"
+		:'<,'>normal gf															"NO FUNCIONA CON gf... OJO ojo OJO...".... no no no no
 
 
 ### INFO DEL ARCHIVO EN EDICION
