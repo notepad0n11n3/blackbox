@@ -53,16 +53,48 @@ vim:: imap ;l <Esc>
 																			vim:: r! echo #:h		:p		'path archivo anterior'
 
 ### EJECUTAR CON EL PROGRAMA PREDETERMINADO EL FOCUS
+			"<cWORD>"	==	"<cfile>"  !!==   %		  ,			%=>CurrentFile  , <cWORD> <cfile> => CurrentLine
+																															"cmdline-special variables"
+
+									vim:!firefox --private-window "<cfile>"   (abre linea focus en firefox like gx ...<3 <3 <3)
 
 		gx   (open url under the cursor (normalMode), focus en el http  )
+		:%normal gx
 		:.normal gx															"abre la linea actual en el navegadorPorDefecto"
 		:10normal gx														"abre linea 10 en el navegador"
+
 		:'<,'>normal gx															"selecciona con V las lineas a abrir en el navegador"
+		:'<,'>!while read url;do firefox --private-window "$url";done
+		:%w !grep '^https' | while read url;do firefox --private-window "$url";done     "con :%w !  noTOCASelBUFFER...<3 <3 <3"
+
+
+				127.0.0.1
+		 :%w |xargs -n1 ping -c 4 -4      ...<3 <3 <3 <3
+
+
 		:exec '1normal gx' | exec '3normal gx'							"linea 1 y linea 3...<3"
 
+								*** *** Firefox normal o --private-window  tienen que estar preAbiertos para no dar errores :(
 		:%normal gx
-		:%!xargs -n1 firefox --new-tab													" por %! va a sobre escribir la salida el comando en el buffer actual"  " -n1   para linea x linea... <3 <3 <3"
-		:%!xargs -I {} firefox {} &>/dev/null & 
+		:g/http/ normal gx
+		:g/https\?/ normal gx				"http y https ....<3 <3 <3"
+
+		:silent g/^https\?/!firefox --private-window "<cfile>" ....<3 <3 <3
+
+		:% !xargs -n1 firefox --new-tab													" :% ! va a sobre escribir la salida el comando en el buffer actual, usa :%w !  para no sobreEscribir elBufferActual"  " -n1   para linea x linea... <3 <3 <3"
+		:!xargs -n1 firefox --new-tab < %
+
+		:% !xargs -I {} firefox {} &>/dev/null & 
+
+		:%w !xargs -I {} firefox "{}"  ~~~   :!xargs -I {} firefox "{}" < %
+
+									:%w !     :% !      ===>>>> Buffer actualMODIFICADO del archivoActual    (:%w !  escribe el buffer como stdin para los comando sin modificar el buffer, :% !  remplaza el buffer con el stdout de los comandos)
+									:!.......  < %			====>>> BufferGUARDADO del archivoActual
+
+		:%w ! grep -E "^https?" | while read owo;do firefox --private-window ${owo};done			-E " s?"  http y https ....<3 <3 <3
+		:%w ! grep -E "^https?" | while read owo;do firefox --private-window $owo;done			  -E " s?"  http y https ....<3 <3 <3
+
+		:! grep -E  "^https?"  %  |  xargs firefox --private-window
 
 		:!xargs -n1 firefox --new-tab &>/dev/null < % & disown				"no sobreescribe el buffer actual con  < %   "
 		:g/^http:/normal gx						:g/palabra-clave/normal gx    ...<3 <3 <3 <3 <3
@@ -72,13 +104,17 @@ vim:: imap ;l <Esc>
 		:10normal gf														"abre el archivo/fullPath de la linea 10"
 		:'<,'>normal gf															"NO FUNCIONA CON gf... OJO ojo OJO...".... no no no no
 
+					gf ===  :e <cfile>			(":!echo <cfile> , imprime linea focus...<3")
+
+									vim:!firefox --private-window "<cfile>"   (abre linea focus en firefox like gx ...<3 <3 <3)
+
 
 ### INFO DEL ARCHIVO EN EDICION
 					vim:: echo expand('%:p')				"muestra el path absoluto con el nombre de archivo ...<3 <3 <3"			 vim:: echo expand('%:h')				: help %<
 					vim:: echo getcwd()							"muestra el path del AREA DE TRABAJO, no el path del archivo"
 					vim:: echo bufnr('%')					"muestra el numero del buffer actual"				bufnr('#')   'numero de buffer archivoAnterior'
 
-										%:h:p
+									%:h:p
 										%:p
 										%:t				'muestra solo el nombre del archivo en edicion...  <3 <3 <3   (  : echo expand('%:t')   ) '
 

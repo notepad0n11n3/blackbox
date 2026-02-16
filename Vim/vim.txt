@@ -2,6 +2,12 @@
      v:: help Ctrl -i     Ctrl i en normalMode
 		 ::: help :X							'encryption'
 
+
+*** *** Historial de comandos
+		::: rm $HOME/.viminfo
+		vim:: call histdel(':')				 (neovim y vim)
+
+
     x    (insertMode)  elimina caracter del focus a derecha    like a <--
     X    (insertMode)  elimina caracter del focus a izquierda  like a supr/Del
 
