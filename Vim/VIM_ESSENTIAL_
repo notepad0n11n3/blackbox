@@ -77,9 +77,10 @@ vim:: imap ;l <Esc>
 								*** *** Firefox normal o --private-window  tienen que estar preAbiertos para no dar errores :(
 		:%normal gx
 		:g/http/ normal gx
-		:g/https\?/ normal gx				"http y https ....<3 <3 <3"
+		:g/https\?/ normal gx				          "http y https ....<3 <3 <3"
+		:g/https\?/!firefox  "<cfile>"  & 		"http y https ....<3 <3 <3 <3 <3"   "<cfile>" === "<cWORD>"
 
-		:silent g/^https\?/!firefox --private-window "<cfile>" ....<3 <3 <3
+		:silent  g/^https\?/!firefox  --private-window  "<cfile>"  &>/dev/null  &     "noNecesitaTenerIniciadoFirefox...!!!"  ....<3 <3 <3 <3 <3
 
 		:% !xargs -n1 firefox --new-tab													" :% ! va a sobre escribir la salida el comando en el buffer actual, usa :%w !  para no sobreEscribir elBufferActual"  " -n1   para linea x linea... <3 <3 <3"
 		:!xargs -n1 firefox --new-tab < %
@@ -91,8 +92,8 @@ vim:: imap ;l <Esc>
 									:%w !     :% !      ===>>>> Buffer actualMODIFICADO del archivoActual    (:%w !  escribe el buffer como stdin para los comando sin modificar el buffer, :% !  remplaza el buffer con el stdout de los comandos)
 									:!.......  < %			====>>> BufferGUARDADO del archivoActual
 
-		:%w ! grep -E "^https?" | while read owo;do firefox --private-window ${owo};done			-E " s?"  http y https ....<3 <3 <3
-		:%w ! grep -E "^https?" | while read owo;do firefox --private-window $owo;done			  -E " s?"  http y https ....<3 <3 <3
+		:%w ! grep -E "^https?" | while read owo;do firefox --private-window ${owo};done			-E " s?"  http y https "noNecesitaTenerIniciadoFirefox...!!!"  ....<3 <3 <3 <3 <3
+		:%w ! grep -E "^https?" | while read owo;do firefox --private-window $owo;done			  -E " s?"  http y https "noNecesitaTenerIniciadoFirefox...!!!"  ....<3 <3 <3 <3 <3
 
 		:! grep -E  "^https?"  %  |  xargs firefox --private-window
 
