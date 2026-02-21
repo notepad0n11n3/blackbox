@@ -8,12 +8,16 @@
 		vim:: call histdel(':')				 (neovim y vim)
 
 
+*** *** comandos en coincidencias
+
     x    (insertMode)  elimina caracter del focus a derecha    like a <--
     X    (insertMode)  elimina caracter del focus a izquierda  like a supr/Del
 
 		v:: g/test						"muestra todas la coincidencias de 'test' en todo el documento... <3 <3 <3"
 		v:: g/test$/d					"elimina lo que termina en test del archivo... <3 <3 <3"
 		v:: g!/test$/d				"elimina TODO MENOS los que terminan en test... <3 <3 <3"
+		v:: g/^$/d					"Elimina lineas vacias"
+		v:: g/^\s*$/d				"Elimina cero o mas caracteres de espacio en blanco, espacios, tabs...<3 <3"
 
 							vim ::: tabs   (muestra el contenidoDetallado de todas las pestanas ... <3 <3 <3)
 

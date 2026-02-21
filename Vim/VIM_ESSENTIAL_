@@ -80,7 +80,8 @@ vim:: imap ;l <Esc>
 		:g/https\?/ normal gx				          "http y https ....<3 <3 <3"
 		:g/https\?/!firefox  "<cfile>"  & 		"http y https ....<3 <3 <3 <3 <3"   "<cfile>" === "<cWORD>"
 
-		:silent  g/^https\?/!firefox  --private-window  "<cfile>"  &>/dev/null  &     "noNecesitaTenerIniciadoFirefox...!!!"  ....<3 <3 <3 <3 <3
+		:silent  g/^https\?/!firefox  --private-window  "<cfile>"  &>/dev/\null  &     ( null == \null  "noNecesitaTenerIniciadoFirefox...!!!"  ....<3 <3 <3 <3 <3 )
+		:silent  g/^https\?/!firefox  --private-window  "<cWORD>"  &>/dev/\null  &     ( null == \null  "noNecesitaTenerIniciadoFirefox...!!!"  ....<3 <3 <3 <3 <3 )
 
 		:% !xargs -n1 firefox --new-tab													" :% ! va a sobre escribir la salida el comando en el buffer actual, usa :%w !  para no sobreEscribir elBufferActual"  " -n1   para linea x linea... <3 <3 <3"
 		:!xargs -n1 firefox --new-tab < %
