@@ -1,3 +1,9 @@
+
+*** tmux limpio, sin .tmux.conf
+		
+		::: tmux -f /dev/null
+
+
 				            @   ==   alt m
 
           @ : set status off/on  ... <3 <3 <3
