@@ -56,7 +56,8 @@ vim:: imap ;l <Esc>
 			"<cWORD>"	==	"<cfile>"  !!==   %		  ,			%=>CurrentFile  , <cWORD> <cfile> => CurrentLine
 																															"cmdline-special variables"
 
-									vim:!firefox --private-window "<cfile>"   (abre linea focus en firefox like gx ...<3 <3 <3)
+									vim:: !firefox  --private-window "<cfile>"           (abre linea focus en firefox like gx ...<3 <3 <3)
+									vim:: silent  !firefox  --private-window "<cfile>"   (abre linea focus en firefox like gx ...<3 <3 <3)
 
 		gx   (open url under the cursor (normalMode), focus en el http  )
 		:%normal gx
