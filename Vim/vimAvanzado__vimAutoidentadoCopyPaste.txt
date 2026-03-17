@@ -71,56 +71,68 @@
 
 ]p        Ajusta la identaci[on al copiar
 
-#JUMPT POINT  (MARK marcas) 
-      las marcas a-z  son marcas locales
-      las marcas A-Z  son marcas GLOBALES (saltoEntreArchivos 'Dentro dLaMisma Session de VIM' ) </3 <3 <3
 
-                        -->  $HOME/.viminfo          guarda el historial de marks, jumps, modificaciones, etc... <3 <3 <3
-                        vim:: wviminfo      wv     'write .viminfo file'
-                        vim:: rviminfo      rv     'read  .viminfo file' 
+### Mark JUMPT POINT  (Marks guardar posiciones) 
+							las marcas a-z  son marcas locales
+							las marcas A-Z  son marcas GLOBALES (saltoEntreArchivos 'Dentro dLaMisma Session de VIM' ) </3 <3 <3
 
-  m<caracterNumber>  asignar punto de salto(NORMAL_MODE)
-  '<caracterNumber>  ' salta al punto de salto(NORMAL_MODE) 
+																-->  $HOME/.viminfo          guarda el historial de marks, jumps, modificaciones, etc... <3 <3 <3
+																vim:: wviminfo      wv     'write .viminfo file'
+																vim:: rviminfo      rv     'read  .viminfo file' 
 
-  ['  salta entre todos los marks generados (inicio/fin)
-  ]'  salta entre todos los marks generados (fin/inicio)
 
-  vim:: marks             'lista todos los marks'
-  vim:: marks cA          ''
-  vim:: delmarks a-z    <3                      vim:: delmarks A-Z a-z 0-9    ('se puede eliminar todo de una :) ')
-  vim:: delmarks A-Z    <3 <3 <3 
-  vim:: delmarks 0-9
-      : delmarks \"	      delete mark "  ( \'  \[  \]  \^  \.   )
-      : delmarks! 	      delete all lowercase marks for the current buffer (a-z)
+			{{ minusculas archivo local, MAYUSCULAS salta entre archivosMarcados en el currentBuffer }}
 
-    vim:: 'g,'k  s/mango/MANGO/g       tambi[en sirve para rangos <3 <3 <3
-#JUMPT POINT 
+					m<caracterNumber>  asignar punto de salto(NORMAL_MODE)
+					ma
+					mA
+
+					'<caracterNumber>  ' salta al punto de salto(NORMAL_MODE) 
+					'a
+					'A
+					 
+					`a			(  `  salta exacatamente a la columna)
+					`A
+
+
+
+					['  salta entre todos los marks generados (inicio/fin)
+					]'  salta entre todos los marks generados (fin/inicio)
+
+					vim:: marks             'lista todos los marks'
+					vim:: marks cA          ''
+					vim:: delmarks a-z    <3                      vim:: delmarks A-Z a-z 0-9    ('se puede eliminar todo de una :) ')
+					vim:: delmarks A-Z    <3 <3 <3 
+					vim:: delmarks 0-9
+							: delmarks \"	      delete mark "  ( \'  \[  \]  \^  \.   )
+							: delmarks! 	      delete all lowercase marks for the current buffer (a-z)
+
+						vim:: 'g,'k  s/mango/MANGO/g       tambi[en sirve para rangos <3 <3 <3
     
 
-#BUSQUEDA EN LINEA
-  fs        busca la proxima 's' del focus al final de la linea
-  Fs        busca la proxima 's' del focus al inicio de la linea
-#BUSQUEDA EN LINEA end
+### BUSQUEDA EN LINEA
+					fs        busca la proxima 's' del focus al final de la linea
+					Fs        busca la proxima 's' del focus al inicio de la linea
 
 
 
 
-#REPETIR ACCIONES 
-  .    Repita la ultima acci[on  (dd, yy, etc... (pero no salta entre busquedas de linea  'fe fi Fi Fe' ) )
-  u    para regresa la acci[on
+### REPETIR ACCIONES 
+					.    Repita la ultima acci[on  (dd, yy, etc... (pero no salta entre busquedas de linea  'fe fi Fi Fe' ) )
+					u    para regresa la acci[on
 
-  ;    Repite la [ultima acci[on de busqueda like 'fe Fe vfe'
-  ,    regresa entre los saltos de ';' postBusqueda en linea
-#REPETIR ACCIONES end
+					;    Repite la [ultima acci[on de busqueda like 'fe Fe vfe'
+					,    regresa entre los saltos de ';' postBusqueda en linea
 
 
-#BORRAR LINEA HASTA CARACTER PROPIO
-  dt'caracterLimite'  borrar desde el focus hasta el caracterLimite introducido '[,a,1,',etc...' <3 <3 <3
-  ct'caracterLimite'
+### BORRAR LINEA HASTA CARACTER PROPIO
+					dt'caracterLimite'  borrar desde el focus hasta el caracterLimite introducido '[,a,1,',etc...' <3 <3 <3
+					ct'caracterLimite'
 
-  dT'caracterLimite'  igual pero borra hacia el inicio de la linea <3 <3 <3
-  cT'caracterLimite'
-#BORRAR LINEA HASTA CARACTER PROPIO end
+					dT'caracterLimite'  igual pero borra hacia el inicio de la linea <3 <3 <3
+					cT'caracterLimite'
+
+----------------------------------------------------------------------------------------
 
 
       i === inside     a === around

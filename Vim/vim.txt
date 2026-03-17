@@ -318,7 +318,9 @@ CMD desde Vim
 
 						:tabmove + número
 						:tabmove - número				ordenar las pestañas abiertas - + 
-						:tabmove $			enviar pestaña al final
+						:tabmove number     "0,1,2... con tabmove  pero con gt/gT inicia en 1... ojo "
+
+						:tabmove $			enviar pestaña al final   :tabmove
 						:tabmove 0			enviar pestaña al inicio
 									$ final de linea    0 inicio de linea   RECUERDA
 

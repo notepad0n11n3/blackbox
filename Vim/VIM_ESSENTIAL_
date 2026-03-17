@@ -235,6 +235,8 @@ vim:: imap ;l <Esc>
   {          cursor to the start of the current paragraph
   }          cursor to the end of the current paragraph
 
+
+### Marks  ,  Guardar posiciones: 
   m    m{A-Za-z}        set mark {A-Za-z} at cursor position
   '    '{a-zA-Z0-9}     cursor to the mark {a-zA-Z0-9} (funciona tambi[en con `)
 
