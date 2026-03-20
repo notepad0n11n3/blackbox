@@ -58,17 +58,17 @@ xset q | grep "Caps Lock" | sed -E 's/ +/ /g' | cut -d' ' -f3,5 | tr -d "\n"
 
     vim:: g/mango/put _    'inserta una lineaEnBlanco despu[es de la palabra mango' <3 <3
     vim:: g/\s\+$          'muestra los espacios y identaciones al final del archivo'
-                             :%s/\s\+$//      'elimina espacios/identaciones alFinal de linea del archivo'
-                             :%s/\s\+$//e     ' e no muestra 'pattern not found' si no hay espacios al final'
 
+									 :%s/\s\+$//      'elimina espacios/identaciones alFinal de linea del archivo'
+									 :%s/\s\+$//g
 
+									 :%s/\s\+$//e     ' e no muestra 'pattern not found' si no hay espacios al final'
 
 
         LOS REGISTROS NOMINALES NO SOLO ALMACENAN TEXTO, TAMBIEN LOS MACROS SE GUARDAN AHI...
             CUIDADO... puedes sobreescribir un texto con un macros y viceversa
 
     revisa los registros con (vim:: register 'todos los registros') (vim:: register a  'registro espec[ifico')
-
 
 ### Registros  (los registros sePueden usar enModo inserci[on(pegar) con Ctrl r <registrokey> )
 {
