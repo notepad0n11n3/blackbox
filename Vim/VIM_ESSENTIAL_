@@ -52,8 +52,12 @@ vim:: imap ;l <Esc>
 																			vim:: r! echo %:h		:p		'path archivo actual'      " %:p  path y archivo" 	r! echo %:p   /home/aeo8/.burningArea/vim/main.c
 																			vim:: r! echo #:h		:p		'path archivo anterior'
 
-### EJECUTAR CON EL PROGRAMA PREDETERMINADO EL FOCUS
-			"<cWORD>"	==	"<cfile>"  !!==   %		  ,			%=>CurrentFile  , <cWORD> <cfile> => CurrentLine
+
+### Obtener el cWORD cword cfile  Bajo el focus como variable de comandoVim 
+
+	    <cWORD>  <cfile>  <cword>     :echo expand('<cWORD>')    cWORD incluye ._//?!# etc... , cword solo palabras simples no caracteres especiales
+
+			"<cWORD>"	==	"<cfile>"  !!==   %		  ,			%=>CurrentFile  , <cWORD> <cfile> => word
 																															"cmdline-special variables"
 
 									vim:: !firefox  --private-window "<cfile>"           (abre linea focus en firefox like gx ...<3 <3 <3)
