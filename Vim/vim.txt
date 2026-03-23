@@ -435,6 +435,19 @@ CMD desde Vim
 			trim() eliminar del inicio y final todos los espacios, \t y \n ....<3 <3 <3 
 
 
+	:'<,'>s/.*/\=reverse(submatch(0))/g | noh					(invierte todo lo seleccionado)
+
+	:.s/.*/\=reverse(submatch(0))/g | noh							(invertir linea actual)
+	:put =reverse(getline('.'))												(invertir linea actual)
+
+	:.s/\(\w\+\) \(.*\) \(.*\)/ultimo \3 , medio \2 , primero \1, => Todo el Match: &/g | noh
+	:.s/\(\w\+\) \(.*\) \(.*\)/\='ultimo ' . submatch(3) . ' , medio ' . submatch(2)  . ', primero  ' . submatch(1) . ' , => Todo el Match: ' . submatch(0)/g | noh
+
+												GET /api/user?id=1 http/1.1
+
+	:.s/\(submatch(\d)\)/reverse(\1)/g|noh
+	:.s/\(\w\+\) \(.*\) \(.*\)/\='ultimo "' . reverse(submatch(3)) . '" , medio "' . reverse(submatch(2))  . '", primero  "' . reverse(submatch(1)) . '" , => Todo el Match: "' . reverse(submatch(0)) . '"'/g | noh
+
 ### COMENTAR CODIGO Y BORRADO DEL MISMO
 
 					'<,'>  : s/^/#  ó   //   ó <!---   /gc ó g   
@@ -673,6 +686,15 @@ argument for the command, which has a different meaning.  For example:
 					\1 \2 \3 \4...	Reutilizar grupos de captura 1, 2, 3, etc...
 					     &          Match completo    :'<, '>s/.*/test=> &/g
 
+					submatch(0)     Match completo 
+					submatch(1)     Grupo de captura 1   \1
+					submatch(2)     Grupo de captura 2   \2
+					submatch(3)     Grupo de captura 3   \3
+					submatch(4)     Grupo de captura 4   \4
+
+:put =map(range(1,5), {_,i -> 'submatch(' . (i-1) . ')'})
+
+
 								:%s/\(\w\+\) \(\w\+\)/\2 \1/     intercambia palabras
 
 
@@ -763,6 +785,32 @@ argument for the command, which has a different meaning.  For example:
 													[0-9]  [^0-9]
 													[[:space:]]  [^[:space:]]
 
+		:'<,'>s/.*/\="Test " . submatch(0) . " " . trim(system('whoami'))/g | noh
+
+		:'<,'>s/.*/\=reverse(submatch(0)) | noh
+
+
+		:.s/<\(.*\)>(\(.*\)){\(.*\)} / ultimo grupo : \3 , segundo grupo : \2 , primer grupo : \1 . FULLMATCH de grupos de Captura ==> &/g | noh
+		:.s/<\(.*\)>(\(.*\)){\(.*\)} / \= 'ultimo grupo : ' . submatch(3) . ' , segundo grupo : ' . submatch(2) . ' , primer grupo : ' . submatch(1) . ' . FULLMATCH de grupos de Captura ==> ' . submatch(0)/g | noh
+
+														<Test1>(teSt2){tesT3}
+
+		##  \{-}   -->>    <.\{-}>       agarra desde < hasta el > mas cercano
+			
+				<.*>  !=  <.\{-}>
+													  *     obtiene todo lo que pueda
+													 \{-}   obtiene lo minimo necesario
+
+			:.s/<.\{-}>//g  | noh          "ELIMINAR ETIQUETAS HTML"
+			:.s/<[^>]\+>//g | noh          "mas preciso"
+
+			  <header>one</header><body>two</body>			"Elimina etiquetas html"
+			  onetwo			
+
+				<a href="x">link</a>
+				link
+
+
 ### Vimscript vimscript funciones
 
 	## map(lista, 'expresion')					v:val  =  elemento actual
@@ -776,6 +824,8 @@ argument for the command, which has a different meaning.  For example:
 		:put =join(map(range(1,3), 'v:val * 2'))		==>   2 4 6
 
 		:put =join(range(1,100), ', ')              ==>   1, 2, 3,....
+
+		:put =map(range(1,3), {_,i -> '/api?id=' . i})
 
 		:put =range(1,5)->map({_,i -> 'line ' .. i})
 		:put =range(1,5)->map({_,i-> '=>Test: ' . i})
@@ -798,6 +848,7 @@ argument for the command, which has a different meaning.  For example:
 		:put =map(range(1,5), {_,i-> trim(expand('%:t')) . 'ewe' . i})
 
 		:put =split('root:x:0:0:root:/root:/usr/bin/zsh', ':')
+		:put =split(getline('.'), ':')					:.s/:/\r/g|noh      ( en vim \n == \r )
 
 					root:x:0:0:root:/root:/usr/bin/zsh
 						root
@@ -808,3 +859,23 @@ argument for the command, which has a different meaning.  For example:
 						/root
 						/usr/bin/zsh
 
+		:put =map(['user','admin'], {_,i -> 'https://site.com/api/'. i})
+						https://site.com/api/user
+						https://site.com/api/admin
+
+		:put =map(range(1,10), {_,i -> i % 2 == 0 ? i . ' par' : i . ' impar'})
+
+		:put =map(range(1,50), {_,i -> 'https://target.com/api?id=' . i  . '&xss=<script>alert(1)</script>'})
+
+		:put =join(split(getline('.'), ':'))
+		:put =split(getline('.'), '\s\+')				\s\+  'uno o mas espacios, " " \t'
+
+
+### execute  EXECUTE
+
+		:for l in [39,41] | execute l . 's/^/TODO: /'  | endfor | noh      "aplicar solo en linea 39 y 41"
+		:for i in [39,41] | execute i . 's/^/TODO: /g' | endfor | noh
+
+																:39,41s/^/TODO: /g|noh   "aplica en el rango 39-41, NO en lineas 39 y 41"
+
+		:execute 'normal! I' . 'Hello_Test:'
