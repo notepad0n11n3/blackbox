@@ -873,9 +873,13 @@ argument for the command, which has a different meaning.  For example:
 
 ### execute  EXECUTE
 
+									///   :set rnu				:set nornu							rnu == relativenumber				....<3 <3 <3			///
+
 		:for l in [39,41] | execute l . 's/^/TODO: /'  | endfor | noh      "aplicar solo en linea 39 y 41"
 		:for i in [39,41] | execute i . 's/^/TODO: /g' | endfor | noh
 
 																:39,41s/^/TODO: /g|noh   "aplica en el rango 39-41, NO en lineas 39 y 41"
 
 		:execute 'normal! I' . 'Hello_Test:'
+
+		:for i in [106,119,131] | execute i . 's/\(.*\)/\1|w ! sudo tee %' | endfor | noh
