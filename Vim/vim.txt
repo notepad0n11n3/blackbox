@@ -535,7 +535,9 @@ argument for the command, which has a different meaning.  For example:
 							test _ = { gamestate ;}
 
 ###  Vimscript interactivo dentro del command-line,  expression register,		  : Ctrl-r =
-			{{{   Ctrl-f    tambien te permite editar y ver su propio  historial....<3 <3 <3   }}}
+			{{{ Ctrl-r =  con  Ctrl-f    tambien te permite editar y ver su propio  historial....<3 <3 <3   }}}
+
+				Ctrl-r =  tambien se puede usar en insertMODE, i_Ctrl-r = Mvnb('-vpn') ....<3 <3 <3
 
 	## Comandos Shell
 		: Ctrl-r =  trim(system('whoami'))
@@ -568,6 +570,13 @@ argument for the command, which has a different meaning.  For example:
 												1666-06-26 19:27:26
 	 # Encontrar archivos
 		: Ctrl-r =  glob('*.py')
+
+ ## i_Ctrl-r =     Ctrl-r =  insert mode   <C-r>= 
+
+		i_Ctrl-r = Mvnb('-vpn')
+		i_Ctrl-r = trim(system('whoami'))
+		i_Ctrl-r = 1+1
+		i_Ctrl-r = strftime('%Y-%m-%d')
 
 ### Ejecutar comandos normales desde :
 
@@ -883,3 +892,44 @@ argument for the command, which has a different meaning.  For example:
 		:execute 'normal! I' . 'Hello_Test:'
 
 		:for i in [106,119,131] | execute i . 's/\(.*\)/\1|w ! sudo tee %' | endfor | noh
+
+
+
+### INSERT MODE AVANZADO
+
+ ## i_Ctrl-r =     Ctrl-r =  insert mode   <C-r>= 
+
+		i_Ctrl-r = Mvnb('-vpn')
+		i_Ctrl-r = trim(system('whoami'))
+		i_Ctrl-r = 1+1
+		i_Ctrl-r = strftime('%Y-%m-%d')
+		i_Ctrl-r = trim(system('curl -s ifconfig.me'))
+		i_Ctrl-r = trim(system('curl -s -4 ifconfig.me'))
+		i_Ctrl-r = expand('%:p')
+		i_Ctrl-r = expand('%:p:r') . ':' . line('.')
+		i_Ctrl-r = join(map(range(1,5), {_,i -> ' Mochimango:'.i}))
+
+ ## Identacion el modo insertar.... <3 <3 <3
+	
+		i_Ctrl-i		agrega identacion desde el focus
+		i_Ctrl-t		identa toda la linea en insertmode....<3 <3 <3
+		i_Ctrl-d		desindenta toda la linea en insertmode....<3 <3 <3
+
+ ## Autocompleta Autocompletar insertmode , usar Ctrl-n  Ctrl-p para navegar en el menuContextual
+		
+		i_Ctrl-x_Ctrl-f     autocompleta archivos del path actual
+		i_Ctrl-x_Ctrl-l			completa linea completas.... <3 <3 <3
+
+ ## Pegar registros
+
+		i_Ctrl-r "		 ultimo yy o dd, se sobreescribe       ( " sin Ctrl OJO...!!!)
+		i_Ctrl-r 0		 ultimo copy  yy											 ( 0 sin Ctrl OJO...!!!)
+		i_Ctrl-r 1		 ultimo delete  dd	  								 ( 1 sin Ctrl OJO...!!!)
+
+		i_Ctrl-r 2-9	 historial de deletes
+
+		i_Ctrl-r a			pre "ayy con "Ayy  agregar data al registro a ....<3 <3 <3  ( a sin Ctrl OJO...!!!)
+
+		i_Ctrl-r :    insertar comando anterior
+		i_Ctrl-r /		insertar busqueda anterior
+
