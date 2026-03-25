@@ -701,7 +701,7 @@ argument for the command, which has a different meaning.  For example:
 					submatch(3)     Grupo de captura 3   \3
 					submatch(4)     Grupo de captura 4   \4
 
-:put =map(range(1,5), {_,i -> 'submatch(' . (i-1) . ')'})
+			:put =map(range(1,5), {_,i -> 'submatch(' . (i-1) . ')'})
 
 
 								:%s/\(\w\+\) \(\w\+\)/\2 \1/     intercambia palabras
@@ -803,6 +803,12 @@ argument for the command, which has a different meaning.  For example:
 		:.s/<\(.*\)>(\(.*\)){\(.*\)} / \= 'ultimo grupo : ' . submatch(3) . ' , segundo grupo : ' . submatch(2) . ' , primer grupo : ' . submatch(1) . ' . FULLMATCH de grupos de Captura ==> ' . submatch(0)/g | noh
 
 														<Test1>(teSt2){tesT3}
+
+		:.s/\(test_word\)/\=toupper(submatch(1))/g          "to upper case test_word.... <3 <3 <3"
+	
+
+		:.s/\d\+\.\d\+\.\d\+\.\d\+\/\=Mvnb('-targed')/g|noh|w ! sudo tee %     "reemplazar ip's"
+		:.s/\d\+\.\d\+\.\d\+\.\d\+\/\=Mvnb('-vpn')/g   |noh|w ! sudo tee %
 
 		##  \{-}   -->>    <.\{-}>       agarra desde < hasta el > mas cercano
 			
