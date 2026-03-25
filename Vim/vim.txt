@@ -544,6 +544,7 @@ argument for the command, which has a different meaning.  For example:
 		: Ctrl-r =  trim(system('git branch --show-current'))
 		:r ! ls -lah  Ctrl-r =  expand('%')
 		:!git add Ctrl-r =  expand('%')
+		:! cp %:p i_Ctrl-r = getcwd()							"copia el archivo actual al area de trabajo actual, el getcwd() no siempre es el mismo que %:p , /etc/hosts  a  currentPath....<3 <3"
 
 	## Operadores  (  + - * /  )
 		: Ctrl-r =  1024 * 8
