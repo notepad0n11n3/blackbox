@@ -106,7 +106,12 @@ vim:: imap ;l <Esc>
 		:! grep -E  "^https?"  %  |  xargs firefox --private-window
 
 		:!xargs -n1 firefox --new-tab &>/dev/null < % & disown				"no sobreescribe el buffer actual con  < %   "
-		:g/^http:/normal gx						:g/palabra-clave/normal gx    ...<3 <3 <3 <3 <3
+
+		:g/^http:/normal gx						:g/palabra-clave/normal gx
+
+		:silent g/^https\?/!firefox '<cWORD>' &>/dev/\null & disown         .... <3 <3 <3 <3
+		:silent .g/^https\?/!firefox '<cWORD>' &>/dev/\null & disown        .... <3 <3 <3 <3
+		:silent '<, >'g/^https\?/!firefox '<cWORD>' &>/dev/\null & disown   .... <3 <3 <3 <3
 
 			gf	 (go file under the cursor (controlMode)  )
 		:.normal gf															"abre el archivo/fulPath de la linea actual"

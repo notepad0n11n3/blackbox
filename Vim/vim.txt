@@ -621,7 +621,11 @@ argument for the command, which has a different meaning.  For example:
 		:g/test						    " muestra todas la coincidencias de 'test' en todo el documento "
 		:g/test/d							" Eliminar lineas con el patron test en % "
 		:g/test$/d					"elimina lo que termina en test del archivo... <3 <3 <3"
+
 		:'<,'>g/test/d
+		:10,15g/test/s/test1/test2/g			"linea 10 y 15"
+
+		: .g/https\?!firefox '<cWORD>' &>/dev/\null & disown     " g se puede ejecutar en una sola linea . o en una seleccion '<, >'   ....<3 <3 <3"
 
 		:g!/test/d						" Eliminar TODO MENOS patron test en % "
 		:g!/test$/d				    " elimina TODO MENOS los que terminan en test... <3 <3 <3 "
@@ -635,7 +639,6 @@ argument for the command, which has a different meaning.  For example:
 
 		:g/test/normal dd
 
-		:10,15g/test/s/test1/test2/g			"linea 10 y 15"
 
  ##	  										:global dentro de :global .....
 		:g/class/g/print/d		" dentro de lineas con class, borra las lineas con print "
@@ -649,6 +652,7 @@ argument for the command, which has a different meaning.  For example:
 
 		: g/^$/d					"Elimina lineas vacias"
 		: g/^\s*$/d				"Elimina cero o mas caracteres de espacio en blanco, espacios, tabs...<3 <3"
+
 
 
 ###     PUT   put   insertar en el archivo    :put =EXPRESION    ( vimscript, shellOutput, ) 
