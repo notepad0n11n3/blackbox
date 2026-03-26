@@ -419,6 +419,7 @@ CMD desde Vim
       Ctrl v      modoVisual por bloques, con d es suficiente :)
                         c = d solo que este deja modoInserción
 
+			vim:: .s/\s/\r/g							"espacio por salto de linea, en :s \r es \n,  \n no funciona OJO.....!!!!"
 
       vim:: '<,'>s/\(\w.*\)/mi_array[0] = "\1";
                 
