@@ -76,6 +76,8 @@ comentar linea en cualquier lenguaje, modi visual (;l)  Shift + 7 (noFuncionaEnM
 			:s/\(test\)/\1!!!/g					\(\) == \v()    ,   \1 grupo de captura
 			:s/\v(test)/\1!!!/g
 
+			:'<, '>s/\(opcional\)\?/test/g						"grupo de captura OPCIONAL...!!! like  :g/https\?   ->   http y https ....<3 <3 <3 "
+
 ### Completar... <3 <3
 
 			i_CTRL-e		Insert the character which is below the cursor.

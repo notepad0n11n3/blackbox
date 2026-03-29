@@ -142,6 +142,38 @@ VI MODE vi mode VI MODE vi mode
   @ m  resaltaMARCA panelFocus
 
 
+*** *** Sockets sockets  tmux -L newSocket -f /dev/null
+*** *** no .tmux.conf
+
+		::: tmux -f /dev/null				           "-f solo funciona cuando el socket se inicia , -f $HOME/.tmux.conf_2"
+		::: tmux -L nameSocket -f /dev/null    "crea un nuevo socket independiente para no usar .tmux.conf"
+		::: tmux -L dev -f /dev/null
+		::: tmux -L prod -f /dev/null
+
+								"path ->>  /tmp/tmux-$(id -u)/     ==>>>       /tmp/tmux-1000/"
+										srwxrwx---  1 aeo8 aeo8   0 Mar 28 22:08 clean
+										srwxrwx---  1 aeo8 aeo8   0 Mar 25 17:58 default
+										srw-rw----  1 aeo8 aeo8   0 Mar 28 07:32 limpio
+
+										/tmp/tmux-1000/default: socket
+
+		::: tmux -L nameSocket list-sessions
+		::: tmux -L nameSocket ls
+
+   ***  Sessiones de Sockets
+
+			::: tmux -L default  ls				(" list-sessions   ==  ls ")
+			::: tmux -L def      ls				(" list-sessions   ==  ls ")
+			::: tmux -L defaults ls				(" list-sessions   ==  ls ")
+
+		::: tmux -L nameSocket attach
+		::: tmux -L nameSocket a
+
+		::: tmux -L nameSocket  -t nameSession
+
+		::: tmux -L nameSocket kill-server			"limpiar el socket/session creado, basta con cerrar y reiniciar para limpiar el /tmp/tmux-$(id -u)/default"
+						srwxrwx--- 1 aeo8 aeo8 0 Mar 25 17:58 /tmp/tmux-1000/default
+
 
 
 Sí, en Vim existen varios modos y contextos en los que diferentes combinaciones de teclas pueden tener comportamientos específicos. Aparte de `i_` (modo de inserción) y `c_` (modo de comandos), hay otros prefijos de ayuda que se refieren a distintos modos y tipos de operación en Vim. Aquí hay un resumen de algunos de ellos:

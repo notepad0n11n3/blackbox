@@ -816,6 +816,19 @@ argument for the command, which has a different meaning.  For example:
 		:.s/\d\+\.\d\+\.\d\+\.\d\+\/\=Mvnb('-targed')/g|noh|w ! sudo tee %     "reemplazar ip's"
 		:.s/\d\+\.\d\+\.\d\+\.\d\+\/\=Mvnb('-vpn')/g   |noh|w ! sudo tee %
 
+
+ ##  Grupos de captura OPCIONAL   \( \)\?         like  :.g/https\?/!....
+		:'<,'>s/^\s\+echo\(\s\+-E\)\?\s\+"\(\s\+\)/						"  \(\s\+TestOpcional\)  Grupo de captura OPCIONAL... like  :g/https\?/   ->  http y https ....<3 <3 <3 "
+
+
+		: '<,'>s/\(^\s\+echo\s\+\(-E\)\?\(\s\+\)\?"\)\s\+/\1\t/g
+
+		: '<,'>s/ \( ^\s\+echo\s\+ \(-E\)\? \(\s\+\)\? " \) \s\+ / \1\t /g
+
+															\(-E\)\?			"grupo de captura OPCIONAL con string -E"
+															\(\s\+\)\?		"grupo de captura OPCIONAL de \s\+   ' ', \t, \n"
+
+
 		##  \{-}   -->>    <.\{-}>       agarra desde < hasta el > mas cercano
 			
 				<.*>  !=  <.\{-}>
