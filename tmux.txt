@@ -160,7 +160,11 @@ VI MODE vi mode VI MODE vi mode
 		::: tmux -L nameSocket list-sessions
 		::: tmux -L nameSocket ls
 
+
    ***  Sessiones de Sockets
+
+							*** Lista los sockets y revisa si tienen sessiones activas.... <3 <3 <3 
+								 ::: ls -lah /tmp/tmux-$(id -u)/ | tail -n +4 | awk '{print $NF}' | xargs -I {} tmux -L {} ls
 
 			::: tmux -L default  ls				(" list-sessions   ==  ls ")
 			::: tmux -L def      ls				(" list-sessions   ==  ls ")
@@ -171,7 +175,8 @@ VI MODE vi mode VI MODE vi mode
 
 		::: tmux -L nameSocket  -t nameSession
 
-		::: tmux -L nameSocket kill-server			"limpiar el socket/session creado, basta con cerrar y reiniciar para limpiar el /tmp/tmux-$(id -u)/default"
+		::: tmux -L nameSocket kill-server	"cierra socket y sus sesiones, reiniciar limpia el /tmp/tmux-$(id -u)/*"
+
 						srwxrwx--- 1 aeo8 aeo8 0 Mar 25 17:58 /tmp/tmux-1000/default
 
 

@@ -8,8 +8,11 @@
 
 		::: ls -lah /tmp/tmux-$(id -u)/
 
-				drwx------  2 aeo8 aeo8  120 Mar 28 22:23 tmux-1000
-				srwxrwx---  1 aeo8 aeo8   0  Mar 25 17:58 /tmp/tmux-1000/nameSocket
+							drwx------  2 aeo8 aeo8  120 Mar 28 22:23 tmux-1000
+							srwxrwx---  1 aeo8 aeo8   0  Mar 25 17:58 /tmp/tmux-1000/nameSocket
+
+*** Lista los sockets y revisa si tienen sessiones activas.... <3 <3 <3 
+	::: ls -lah /tmp/tmux-$(id -u)/ | tail -n +4 | awk '{print $NF}' | xargs -I {} tmux -L {} ls
 
 
 				            @   ==   alt m
