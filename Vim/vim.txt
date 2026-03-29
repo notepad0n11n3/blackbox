@@ -141,11 +141,13 @@ BORRAR                   w 'usa como limite los " " espacios '       W 'usa como
     dG     borra de focus_a_finalArchivo
 
 COPIAR                   w 'usa como limite los " " espacios '       W 'usa como limite espacio y caracteresEspeciales "[;(.!*...etc"  '     esto3asld!__asdf(a;sdlffam_"";sdasdfi./>)[];
-    yy --- COPIAR LINEA COPIAR LINEA COPIAR LINEA COPIAR LINEA COPIAR LINEA
-    Y  --- COPIAR LINEA COP0AR LINEA COPIAR LINEA COPIAR LINEA COPIAR LINEA 
-    yw --- copiar palabra completa ( se pega con p ó P, se pega en la misma linea );
+    yy		--- COPIAR LINEA 
+    Y  		--- COPIAR LINEA 
+    yw 		--- copiar palabra completa ( se pega con p ó P, se pega en la misma linea );
     y$
     y0
+
+		:69y	---  COPIAR LINEA 69
 
 									c_Ctrl-r-"-"			(pega la linea focus en el como comandos...<3 <3 <3)
 
