@@ -56,6 +56,8 @@ vim:: imap ;l <Esc>
 ### Obtener el cWORD cword cfile  Bajo el focus como variable de comandoVim 
 
 	    <cWORD>  <cfile>  <cword>     :echo expand('<cWORD>')    cWORD incluye ._//?!# etc... , cword solo palabras simples no caracteres especiales
+																		:echo expand('<cword>')
+																		:echo expand('<cfile>')          cfile  funciona mejor para obtener path de archivos, con vimgrep /test/j  |  copen  funciona 10/10
 
 			"<cWORD>"	==	"<cfile>"  !!==   %		  ,			%=>CurrentFile  , <cWORD> <cfile> => word
 																															"cmdline-special variables"

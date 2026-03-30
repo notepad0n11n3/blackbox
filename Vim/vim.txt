@@ -628,6 +628,8 @@ argument for the command, which has a different meaning.  For example:
 		:10,15g/test/s/test1/test2/g			"linea 10 y 15"
 
 		: .g/https\?!firefox '<cWORD>' &>/dev/\null & disown     " g se puede ejecutar en una sola linea . o en una seleccion '<, >'   ....<3 <3 <3"
+												 '<cfile>'
+												 '<cword>'
 
 		:g!/test/d						" Eliminar TODO MENOS patron test en % "
 		:g!/test$/d				    " elimina TODO MENOS los que terminan en test... <3 <3 <3 "
