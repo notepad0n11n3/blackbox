@@ -86,21 +86,38 @@ comentar linea en cualquier lenguaje, modi visual (;l)  Shift + 7 (noFuncionaEnM
 
 
 ### MenuContextual  AutocompletadoNativo		(insertMode... <3 <3 <3)
+
     Ctrl n (insertMode) => 'bajar' lanza un menu contextual con las palabras del archivo, autocompletado noPlugin
     Ctrl p (insertMode) => 'subir'
+
+		i_Ctrl-x Ctrl-l					"autocompletado linea completa, like  for(int i=0; i<n; i++){"
+		i_Ctrl-x Ctrl-f					"autocompletado de ficheros/archivos del PATH ACTUAL y customPath....<3 <3 <3 <3"
+
+										vim_extra.txt											<-- Ctrl-x-f								(sube/baja con Ctrl-p/Ctrl-n)
+										/home/aeo8/Desktop/yuzu						<<- /home/Ctrl-x-f.....			(sube/baja con Ctrl-p/Ctrl-n)
 
 
       Shift + r    'normalMode'   remplazar
 
-      u      deshacer cambios
-      Ctrl + r    'normalMode' revertir ultima acci[on, sirve para contrarestar a u
+
+###  undo UNDO /  redo  REDO				undo blocks sequence
+
+	    	u            deshacer cambios, bloque undo
+		i_Ctrl-o u
+
+		Ctrl-r           'normalMode' revertir ultima acci[on, redo block sequence, sirve para contrarestar a u
+		i_Ctrl-o Ctrl-r
+
+		i_Ctrl-g u			 "empieza un nuevo bloque de undo, NO PRESIONES CTRL con la u AL FINAL o no funciona...!!!"
+		i_Ctrl-g U       "evita que rompa el bloque de undo, las flechas, insert o mi i_Ctrl-b empiezan un nuevo bloque de undo"
 
 
-      c ->  Change (cambiar)       i -> inside (dentro de)				 w ->  word (palabra)
-      d ->  Delete (borrar)				 a -> around (alrededor de)			 p ->  paragraph (parrafo)
-      y ->  Yank   (copiar)																				 " ->  Entrecomillado
-                                                              <    > ->  Entre estos simbolos < >
-                                                              (    ) ->  Entre estos simbolos ( )
+
+      c ->  Change (cambiar)       i -> inside (dentro de)				 w ->  word (palabra)								ciw
+      d ->  Delete (borrar)				 a -> around (alrededor de)			 p ->  paragraph (parrafo)          dap
+      y ->  Yank   (copiar)																				 " ->  Entrecomillado               ya" yi"
+                                                              <    > ->  Entre estos simbolos < >     ci<  di<  yi<  ca<  da< ya<
+                                                              (    ) ->  Entre estos simbolos ( )     ci(  di(  yi(  ca(  da( ya(
                                                               [    ]
                                                               {    }
 

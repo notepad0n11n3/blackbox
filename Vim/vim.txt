@@ -451,6 +451,11 @@ CMD desde Vim
 	:.s/\(submatch(\d)\)/reverse(\1)/g|noh
 	:.s/\(\w\+\) \(.*\) \(.*\)/\='ultimo "' . reverse(submatch(3)) . '" , medio "' . reverse(submatch(2))  . '", primero  "' . reverse(submatch(1)) . '" , => Todo el Match: "' . reverse(submatch(0)) . '"'/g | noh
 
+
+	## remplazar seleccion			:'<, '>s/  \%V...\%V  /
+
+		:'<, '>s/\%V\(.*\)\%V/"\1"/g			||||       :'<, '>s/ \%V \(.*\) \%V / test /g
+
 ### COMENTAR CODIGO Y BORRADO DEL MISMO
 
 					'<,'>  : s/^/#  ó   //   ó <!---   /gc ó g   
