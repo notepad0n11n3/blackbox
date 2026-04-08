@@ -17,3 +17,12 @@
 		::: find . -type f ! -name '*.mp4' -exec echo {} +				'MOSTRARA todos los archivos MENOS los .mp4 ...<3'
 
 		::: find . -type f ! -name '*.mp4' -exec rm {} +					'ELIMINARA todos los archivos MENOS los .mp4 ...<3'
+
+
+### xargs XARGS
+
+	::: echo 'ifconfig.me' > test.txt
+
+	::: xargs -a test.txt -I {} sh -c 'ping -c 4 -4 "{}" & curl -s "{}" & wait'
+
+						-a   evita cat/output

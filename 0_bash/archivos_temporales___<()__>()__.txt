@@ -1,0 +1,53 @@
+
+				cat /etc/passwd | vim -      ==!!      vim <(cat /etc/passwd)									Son Diferentes....!!!!
+
+				cat /etc/passwd | vim -      "envia la salida por el pipe"
+				vim <(cat /etc/passwd)			 "crea un archivo temporal con el output del comando"
+
+###		process substitution		sustitucion de procesos
+
+ ##  <()  Convierte output en input tipo archivo, usa descriptor de archivo como archivo temporal
+
+	::: vim <(cat /etc/passwd)				"abre un archivo temporal(descriptor de archivo /dev/fd/N ) que contiene la salida del comando(stdout/stderr)"
+																																										/dev/fd -> /proc/self/fd
+
+	 :: saveas $HOME/Desktop/test
+
+
+	::: diff <(cat /etc/passwd) <(cat /etc/group)				"diff trabaja con archivos no con output, pasa los archivos temporales a diff"
+
+	::: diff <(ls | sort) <(ls /tmp | sort)
+
+	::: diff <(echo hola) <(echo mundo)
+
+	 :: echo hola > /dev/fd/63 &
+	 :: echo mundo > /dev/fd/62 &
+	 :: diff /dev/fd/63 /dev/fd/62
+
+	
+
+	::: diff <(curl -s api1.com) <(curl -s api2.com)
+
+	*** Comparar configuraciones de servidores
+
+	::: diff <(ssh server1 "cat /etc/nginx/nginx.conf") \
+     <(ssh server2 "cat /etc/nginx/nginx.conf")
+
+
+ ##  >()	Convierte output en destino tipo archivo, pasa como un archivo el output del comando dentro del >()
+
+	::: echo "hello world" > >(wc -c)				===    echo "hello world" | wc -c
+
+
+	::: echo hola > >(wc -c)
+
+	 :: echo hola > /dev/fd/63
+	 :: wc -c < /dev/fd/63
+
+
+	***  Muestra todo el output - Filtra Errores - Filtra Warnings
+
+	::: python3 app.py  |  tee >(grep ERROR) >(grep WARNING)
+
+
+
