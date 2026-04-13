@@ -109,6 +109,8 @@ VENTANAS
                              echo  "bind-key C-i last-window " >> ~/.tmux.conf      funciona <3 <3 <3
    @ Ctrl - i  ===  @ Tab
 
+ ## ordenar ventanas pestanas mover 
+
   @ "numero_Ventana_Here"   saltar entre ventanas
   @ : swap-window -s 1 -t 3   pestana "1" a la posicion "3"  " -s currentNumber  -t targedNumber "
   @ : swap-window -t 0    pestana actual a la posicion "0"    -t targedNumber ...<3 <3 <3
