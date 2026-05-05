@@ -1,0 +1,16 @@
+	
+	::: ls -lah
+		reference.info
+		reference.install
+		reference.module
+
+
+
+*** Remplaza un sector del nombre del archivo por otro    ' reference -> test '
+
+	::: f=reference.info; mv "$f" "${f/reference/test}" 
+
+
+*** Reemplaza todas las coincidencias de la carpeta actual   reference.*   ' reference -> test '
+
+	::: for f in reference.*; do mv "$f" "${f/reference/test}"; done
