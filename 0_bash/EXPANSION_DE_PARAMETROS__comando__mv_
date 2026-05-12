@@ -10,6 +10,12 @@
 
 	::: f=reference.info; mv "$f" "${f/reference/test}" 
 
+				 mv					comando para renombrar/mover
+				 "$f"    		f como variable/contenedor
+				"${f/ / }"  Expansion de parametros de Bash, reemplaza texto dentro de la variable f ....<3 <3 <3 
+
+			"${variable/patron/reemplazo}"
+
 
 *** Reemplaza todas las coincidencias de la carpeta actual   reference.*   ' reference -> test '
 

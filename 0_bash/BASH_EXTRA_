@@ -19,6 +19,9 @@
 		::: find . -type f ! -name '*.mp4' -exec rm {} +					'ELIMINARA todos los archivos MENOS los .mp4 ...<3'
 
 
+
+		::: find . -type f -name 'test.*' -exec chmod +x {} +			 'find es recursivo, ojo con las subCarpetas... mejor  chmod +x test.*  para la carpeta actual'
+
 ### xargs XARGS
 
 	::: echo 'ifconfig.me' > test.txt
