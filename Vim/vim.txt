@@ -943,6 +943,9 @@ argument for the command, which has a different meaning.  For example:
 		i_Ctrl-r = expand('%:p:r') . ':' . line('.')
 		i_Ctrl-r = join(map(range(1,5), {_,i -> ' Mochimango:'.i}))
 
+		i_Ctrl-r = execute('version')      vim:: version
+		i_Ctrl-r = execute('Whereami')     vim:: Whereami
+
  ## Identacion el modo insertar.... <3 <3 <3
 	
 		i_Ctrl-i		agrega identacion desde el focus

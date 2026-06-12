@@ -7,6 +7,12 @@
       vim:: w ! sudo tee %        ##!! GUARDA COMO ROOT SI ESTAMOS COMO USUARIO SIN PRIVILEGIOS....!!!
       vim:: w ! sudo sponge %     ##!! GUARDA COMO ROOT SI ESTAMOS COMO USUARIO SIN PRIVILEGIOS....!!!
 
+		 nvim:: w ! pkexec tee %      " NeoVim guardar con privilegios de root"
+		 nvim:: w ! pkexec sponge %      " NeoVim guardar con privilegios de root"
+
+								::: sudo apt update
+								::: pkexec apt update
+
       f{v%d    selecciona todo entre los {} y dd   <3 <3
       va{d     selecciona todo entre los {} y dd
       vi{d     selecciona todo entre los {} y dd
