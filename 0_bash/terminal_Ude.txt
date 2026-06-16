@@ -33,6 +33,10 @@ sudo apt-get purge programHere
   ::: tree				'lista todo like a tree :v'
 		: tree -d			'solo directorios'
 
+### Buscar comandos con fullpath
+	::: which  whoami
+	::: command -v  whoami
+
 ### HISORIAL DE COMANDOS
 		::: Ctrl r    searchComandHistory
 		::: history 
