@@ -59,10 +59,15 @@ ln a arhivos y carpetasXigual
 ::: ln panda8hat.sh enlaceDuroDirecto     enlaceDuro/Directo 
 
 
-::: adduser nameHere
-  ROOT:: addgroup nameHere
-  ROOT:: usermod -g nameGroup nameUser
-  ROOT:: passwd userHere_x89p    <CR>
+### CREAR USUARIOS
+	::: adduser -m nameHere									'-m crea el directorio home para el usuario...<3'
+
+		ROOT:: addgroup name_NewGroup_Here			'Crear un nuevo Grupo'
+		ROOT:: usermod -aG name_Group name_User 'Agregar user a un Grupo'
+		ROOT:: passwd  name_User								'Agignar pasword a usuario'
+
+		ROOT:: usermod -s /bin/bash name_User		'Asignar bash a usuario'
+											/bin/zsh
 
 
 ::: find ruta  options
