@@ -1,3 +1,16 @@
+### HOSTNAME temporal
+	::: sudo hostname new_hostname_here
+	 :: hostname
+	 :: tmux
+
+				'New hostname en split y nuevas consolas READY...<3 <3 <3, solo se mantiene si sigues usando el mismo tipo de shell zsh/bash'
+
+	::: sudo hostnamectl set-hostname new_hostname_here  &&  reboot
+
+### 
+
+		::: command -v ls
+		::: which ls
 
 ### STDIN EN PANTALLA Y GUARDADO N PARALELO ********			no olvides usar :::sponge... <3 <3 <3
           tee   tee        tee      tee

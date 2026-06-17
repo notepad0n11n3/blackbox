@@ -60,7 +60,15 @@ ln a arhivos y carpetasXigual
 
 
 ### CREAR USUARIOS
-	::: adduser -m nameHere									'-m crea el directorio home para el usuario...<3'
+	::: adduser nameHere									'interactivo, auto{shell,home}'
+
+	::: useradd -m nameHere								'-m crea el directorio home para el usuario...<3'
+
+	::: useradd -m -s /bin/zsh -G sudo nombre_usuario
+	 :: passwd nombre_usuario
+															-s shell
+															-G agregarGrupo
+															-m crear su carpeta en home
 
 		ROOT:: addgroup name_NewGroup_Here			'Crear un nuevo Grupo'
 		ROOT:: usermod -aG name_Group name_User 'Agregar user a un Grupo'
@@ -68,6 +76,13 @@ ln a arhivos y carpetasXigual
 
 		ROOT:: usermod -s /bin/bash name_User		'Asignar bash a usuario'
 											/bin/zsh
+
+		::: sudo chown -R new_User:new_User /home/new_User			"asigna el propietario al path /home/new_User"
+
+		::: sudo chsh -s /bin/bash user_Here					'asignar shell a un usuario'
+		::: sudo usermod -s /bin/bash user_Here				'asignar shell a un usuario'
+
+		ROOT:: deluser --remove-home --remove-all-files nombre_usuario
 
 
 ::: find ruta  options
