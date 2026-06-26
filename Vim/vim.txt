@@ -98,6 +98,15 @@ v:: set tabstop=2    espacio de indentación  TAB
 					nnoremap <C-l> :bprevious<CR>
 				}
 
+			vim:: echo bufnr('%')
+
+			vim:: sbuffer 3									'abre el buffer 3 en un split horizontal, genial si solo es buffer y no es un archivo aun....<3 <3 <3'
+			vim:: new | b 3
+
+			vim:: vertical sbuffer 3				'abre el buffer 3 en un split vertical, genial si solo es buffer y no es un archivo aun....<3 <3 <3'
+		  vim::	vert		 sb      3
+			vim:: vnew | b 3
+
 ### PATH path
 
 	vim:: set path+=./path/here/				" vim:: find test1.txt "

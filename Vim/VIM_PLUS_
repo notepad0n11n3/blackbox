@@ -6,17 +6,26 @@
 						CERRAR	Term
 
 														'Ctrl d Ctrl w q'    ...ojo, puedes cerrarCUALQUIERtERMINAL con Ctrl-d... <3 <3 <3
-														'Ctrl \ n  Shift Z Q'  ...esto cierro todo el split, no solo el term... <3 <3 <3 <3
-
+														'Ctrl \ n  Shift Z Q'  ...cierra todo el split, no solo el term... <3 <3 <3 <3
 
 	vim::: term htop	(cuando son aplicaciones que se deben cerrar manualmente, aun mantiene el programaActivo <3)
 	vim::: term watch -n 1 ls -lah				"Ejecuta el comando  'watch -n 1 ls -lah'  en la terminal... <3 <3 <3 "
 
 	vim::: term whatweb https://0xword.com      =>   vim::: set modifiable			"te dejara editar el output en un nuevo buffer... <3 <3 <3"
 
-	vim::: term bash -c "echo Hello, World!"
+	vim::: term bash -c "ping -c 4 -4 google.com"
 	vim::: term bash -c "source $HOME/.zshrc_self && 0n11n3 -f"				("en esta es mejor .zshrc_self que .zshrc, .zshrc da errores :( ")
 	vim::: term bash -c "source $HOME/.zshrc_self && 0n11n3 -c"
+
+
+#Split de term en HORIZONTAL
+	vim:: term ++shell program_nameHere; exec $SHELL
+	vim:: exec("term ++shell program_nameHere; exec $SHELL") | wincmd w
+
+#Split de term en VERTICAL
+	vim:: vertical rightbelow term ++shell program_nameHere; exec $SHELL
+	vim:: vert     rightb     term ++shell program_nameHere; exec $SHELL
+	vim:: exec("vertical rightbelow term ++shell program_nameHere; exec $SHELL") | wincmd w
 
 
 ### Acceder a la ubicaci[on actual del archivo

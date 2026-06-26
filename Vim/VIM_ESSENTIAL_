@@ -20,6 +20,7 @@ vim:: imap ;l <Esc>
 	vim:: tabnew | Ex $burn | call Lterm() ... <3 <3 <3																					ejecuta todo en la nueva pestana... <3 <3 <3
 	vim:: vnew | Ex $burn | call Lterm() ... <3 <3 <3																						ejecuta todo en la nueva pestana... <3 <3 <3
 	vim:: tabnew | execute 'read! cat /etc/passwd' | execute ' %! grep sh$' | call Lterm()			ejecuta todo en la nueva pestana... <3 <3 <3
+	vim:: tabnew | exec("term ++shell opencode; exec $SHELL") | 1wincmd w
 	vim:: tabnew | call Mvnb('-ip')
 
 	vim:: execute 'call Mvnb()' | execute '%s/$/:80/g|noh' | execute '%normal gx'			"x89pMode scriptkittyTURUBO"
@@ -222,8 +223,18 @@ vim:: imap ;l <Esc>
 			CTRL-W g <Tab>     same as " g Tab  " go to last accessed tab
 
 					*** SALTO ENTRE PANELES/DIVISIONES LIKE TMUX  Alt-m-q ... ... ... <3 <3 <3{	 " CTRL-W w     go to N next window (wrap around) "
-						  Num Ctrl-w w    " Num => 1-2-3..8-9 "					"vim:: set statusline+=\ %{winnr()}"
+
+						  Num Ctrl-w w    " Num => 1-2-3..8-9 "					"vim:: set statusline+=\ %{winnr()}"								.........................<3 <3 <3 <3 <3
+							vim:: wincmd w				'like Ctrl-w w'
+							vim:: 1wincmd w				'salta al split 1'
+										N..ncmd w				'salta al split N'
+
+							vim:: wincmd t				'salta al split superior izquierdo'
+							vim:: wincmd b				'salta al split inferior derecho'
+
 							Ctrl-w p		"salta al panel anterior"							Ctrl-w o   "cierra todos los paneles(sin cambios) menos el actual"
+							vim:: wincmd p		'salta al split anterior (previous)'
+							vim:: winc   p
 
 					vim:: echo (winnr())			"print the number of the current panel/division... <3 <3 <3" " set statusline+=%F  'fullPath' "
 
