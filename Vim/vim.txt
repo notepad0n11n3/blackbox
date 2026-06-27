@@ -3,6 +3,9 @@
 		 ::: help :X							'encryption'
 
 
+		 ::: help usr_toc.txt				leetelo completo, aunque sea un capitulo por semana, Tu yo del futuro te lo va a agradecer <3 , puedes usar gf para ir a los archivos.
+
+
 				:%normal I//   :%normal I##
 
 				:messages					"Historial de outputs stdout y stderr ....<3 <3 <3"
@@ -49,9 +52,14 @@ v:: set tabstop=2    espacio de indentación  TAB
 
 
 ### VISUAL MODE   MODO VISUAL
+
         v + h/j/k/l         v + 8 + j seleccionarSaltoAbajo8_espacios valido para todos... v  V  Ctrl v
         V            // toda la linea
+
         Ctrl + v     // selección por BLOQUE :)
+							    con  o  puedes saltar entre el inicio y el final de la seleccion de Ctrl-v			<3 <3 <3
+							
+
 				gv        (RESELECCIONAR para volver a ejecutar comando sobre '<, >' nuevamente....<3 <3 <3 )
           
               seleccionar + u/U    convierte_a lowercase/UPERCASE... <3 <3 <3
@@ -105,7 +113,12 @@ v:: set tabstop=2    espacio de indentación  TAB
 
 			vim:: vertical sbuffer 3				'abre el buffer 3 en un split vertical, genial si solo es buffer y no es un archivo aun....<3 <3 <3'
 		  vim::	vert		 sb      3
+			vim:: sb 3
 			vim:: vnew | b 3
+
+
+			vim:: ball   :vert ball				'abre TODOS los BUFFERS en splits horizontal/vertical'
+			vim:: tab ball
 
 ### PATH path
 

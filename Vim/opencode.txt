@@ -1,0 +1,20 @@
+
+### Seleccion de texto y evaluacion con opencode.... <3 <3 <3 
+
+
+	vim:: '<,'>w !opencode run "explicame esto"						(el w es obligado para no meter la respuesta en el buffer y no creaSplit </3 .....)
+
+
+
+vim::: % !opencode run "agrega las web principales de youtube al final del archivo"
+
+
+
+### 100% OK OK OK OK 
+
+	vim::: '<,'>term opencode run "explica esto"      (like :term bash -c "ping -c 4 -4 google.com" , muestra el output en un split nuevo....<3 <3 <3 )...<3 <3 <3 
+
+	vim::: '<,'>term opencode run 'traduce al ingles esta linea'
+
+	vim::: % term opencode run "explicame este archivo"			( con term muestra el output en un split nuevo, no es necesario ! ...RO <3 <3 <3 )
+

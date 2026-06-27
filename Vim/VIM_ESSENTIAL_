@@ -249,6 +249,7 @@ vim:: imap ;l <Esc>
 
 	g;			(salta entre las modificaciones hasta la mas ANTIGUA)
 	g,			(salta entre las modificaciones hasta la mas NUEVA)
+	gi			(salta al ultimo lugar donde ESCRIBISTE (linea y columna OWO )....<3 <3 <3 <3 <3 <3 )
 
 	Ctrl 6   (Salta entre los 2 ultimos archivos abiertos)
 

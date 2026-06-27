@@ -28,6 +28,10 @@
 	vim:: exec("vertical rightbelow term ++shell program_nameHere; exec $SHELL") | wincmd w
 
 
+							:!comando			->  ejecuta externamente, muestra output, no deja buffer vivo
+							:term comando ->  abre un buffer en un split, usa el terminal emulador interno de vim...<3
+
+
 ### Acceder a la ubicaci[on actual del archivo
 	
 		 : let mango=expand('%:p') | execute 'cd ' . mango | term
