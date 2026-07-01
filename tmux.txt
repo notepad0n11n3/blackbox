@@ -135,6 +135,18 @@ VI MODE vi mode VI MODE vi mode
 								@ [  ?   'busca antes del focus'      /// q para salir
 								@ [  /   'busca despues del focus'    /// q para salir
 
+	DEFAULT MODE	default mode  like emacs y bash
+
+		Ctrl-b [		 "modo seleccion"
+		Ctrl-b ]		 "pegar"
+
+		Ctrl- f/b			"like bash, avanza 1 char Ctrl-f Ctrl-b"
+		Ctrl- n/p			"down/up"
+
+		Ctrl-Space				"inicia seleccion"
+		Ctrl-w						"copia la seleccion"
+
+
 *** EXTRA
   ::: tmux list-sessions   :: tmux ls
 
