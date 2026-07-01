@@ -139,9 +139,21 @@ VI MODE vi mode VI MODE vi mode
 
 		Ctrl-b [		 "modo seleccion"
 		Ctrl-b ]		 "pegar"
+		q						 "salir de modo seleccion"
 
 		Ctrl- f/b			"like bash, avanza 1 char Ctrl-f Ctrl-b"
+		Alt- f/b			"like bash, avanza like Alt-f  Alt-b "
+
+		Ctrl-a			"Inicio de linea"
+		Ctrl-e			"Final de linea"
+
 		Ctrl- n/p			"down/up"
+
+		Ctrl-v				"baja media ventana"
+		Alt-v					"sube media ventana"
+
+		Ctrl-s				"busca hacia adelante"
+		Ctrl-r				"busca hacia atras"
 
 		Ctrl-Space				"inicia seleccion"
 		Ctrl-w						"copia la seleccion"

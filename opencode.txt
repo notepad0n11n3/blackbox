@@ -1,0 +1,51 @@
+
+
+## en tmux, solo en tmux funciona el Ctrl-m ....ojo
+
+# navegacion en el output
+
+		Ctrl-j				"like Shift-Enter"
+		Ctrl-m				"Enter"
+
+
+		Ctrl-Alt-y		"subir linea"
+		Ctrl-Alt-e		"bajar linea"
+
+		Ctrl-Alt-u		"subir media pagina"
+		Ctrl-Alt-d		"bajar media pagina"
+
+# navegacion en el inputBox, like bash...<3 <3 <3
+
+	Ctrl-f/b		'avanza/retrocede un char'
+	Alt-f/b			'avanza/retrocede word'
+
+	Ctrl-u		'delete line'
+	Ctrl-w		'delete word'
+	Ctrl-h		'delete char'
+
+	Ctrl-a/e		'inicio/final de linea'
+
+## Ctrl-x seguido de.....
+
+	b			"Mostrar/Ocultar sidebar"
+	m			"Lista de modelos"
+	a			"Lista de agentes"
+
+	y			"Copia el output de opencode....<3 <3 <3"
+
+	u			"Undo"
+	r			"Redo"
+
+
+
+### no es necesario si estan en tmux...<3 <3 <3
+
+		# $HOME/.config/opencode/tui.json
+
+		{
+			"$schema": "https://opencode.ai/tui.json",
+			"keybinds": {
+				"input_newline": "ctrl+j,shift+return,ctrl+return,alt+return",
+				"input_submit": "ctrl-m,return"
+			}
+		}
