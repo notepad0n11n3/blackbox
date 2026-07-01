@@ -16,6 +16,14 @@ vim:: imap ;l <Esc>
 	vim:: w|!gcc % -o %< && clear && ./"%<"    (mas seguro que comillaSimples ... <3 <3 <3  ./%<  %<  )
 	vim:: term %<				(ejecuta el binario ...<3 <3 <3, aveces con  %<  o  ./%<   :/  )
 
+## :term  fullTop/fullBot/splitTop/splitBot
+
+	vim:: bo term						:botright term   "terminal abajo...<3 <3 en todo el ancho"
+	vim:: belowright term										 "terminal abajo... ancho del split"
+
+	vim:: to term						:topleft term		 "terminal arriba... en todo el ancho"
+	vim:: term															 "terminal arriba... ancho del split"
+
 ### MODO-COMANDOS ONELINER ... <3 <3 <3
 	vim:: tabnew | Ex $burn | call Lterm() ... <3 <3 <3																					ejecuta todo en la nueva pestana... <3 <3 <3
 	vim:: vnew | Ex $burn | call Lterm() ... <3 <3 <3																						ejecuta todo en la nueva pestana... <3 <3 <3

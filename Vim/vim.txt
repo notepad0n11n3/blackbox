@@ -2,6 +2,11 @@
      v:: help Ctrl -i     Ctrl i en normalMode
 		 ::: help :X							'encryption'
 
+																														vim:: bo term						:botright term   "terminal abajo...<3 <3 en todo el ancho"
+																														vim:: belowright term										 "terminal abajo... ancho del split"
+
+																														vim:: to term						:topleft term		 "terminal arriba... en todo el ancho"
+																														vim:: term															 "terminal arriba... ancho del split"
 
 		 ::: help usr_toc.txt				leetelo completo, aunque sea un capitulo por semana, Tu yo del futuro te lo va a agradecer <3 , puedes usar gf para ir a los archivos.
 

@@ -2,6 +2,13 @@
 
 						vim ::: tabs   (muestra el contenidoDetallado de todas las pestanas ... <3 <3 <3)
 
+
+vim:: bo term						:botright term   "terminal abajo...<3 <3 en todo el ancho"
+vim:: belowright term										 "terminal abajo... ancho del split"
+
+vim:: to term						:topleft term		 "terminal arriba... en todo el ancho"
+vim:: term															 "terminal arriba... ancho del split"
+
 ### :term				
 						CERRAR	Term
 
