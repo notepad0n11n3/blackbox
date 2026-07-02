@@ -25,6 +25,12 @@ alias vim='vim -i NONE -c "set number relativenumber numberwidth=1 sw=2 tabstop=
 
 						+sodium   --> ready xchacha20v2
 
+
+	### Cambiar de un metodo a otro,  al guardar vuelve a cifrar el archivo con el metodo seleccionado.....<3 <3 <3
+
+				 vim:: setlocal cryptmethod=blowfish2 | w					|||					 vim:: setlocal cryptmethod=xchacha20v2 | w
+
+
  vim:: help cryptmethod			||  :: help 'cm'
 
 
