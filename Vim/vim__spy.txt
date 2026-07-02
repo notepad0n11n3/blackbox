@@ -12,3 +12,18 @@
 alias vim='vim -i NONE -c "set number relativenumber numberwidth=1 sw=2 tabstop=2 softtabstop=2 wrap noswapfile | map <C-j> <CR> | nnoremap <C-s> :w<CR>"'
 
 															set laststatus=2		"optional"
+
+
+### Cifrado en vim  (9.x xchacha20v2) (8.x blowfish2)
+
+ vim:: set cryptmethod=xchacha20v2
+
+ ::: vim --version | grep +sodium
+
+						+sodium   --> ready xchacha20v2
+
+ vim:: help cryptmethod			||  :: help 'cm'
+
+
+
+
