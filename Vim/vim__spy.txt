@@ -1,4 +1,5 @@
 
+::: vim -x file
 
 ::: vim -i NONE -u NONE .
 													vim:: vim -i NONE ### No lee ni escribe .viminfo
@@ -15,6 +16,8 @@ alias vim='vim -i NONE -c "set number relativenumber numberwidth=1 sw=2 tabstop=
 
 
 ### Cifrado en vim  (9.x xchacha20v2) (8.x blowfish2)
+
+		::: vim -x secret.txt						"inicia con el password para el archivo...<3 <3 <3"
 
  vim:: set cryptmethod=xchacha20v2
 
