@@ -10,4 +10,4 @@
 
 		::: for i in *; do mv -- "$i" "${i%.gpg}"; done
 
-		 :: for i in *; do mv -- "$i" "${i%%.*}"; done
+		 :: for i in *.gpg ; do mv -- "$i" "${i%%.*}"; done
