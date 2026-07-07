@@ -206,6 +206,13 @@ VI MODE vi mode VI MODE vi mode
 						srwxrwx--- 1 aeo8 aeo8 0 Mar 25 17:58 /tmp/tmux-1000/default
 
 
+### TMUX DEFAULT, tmux default,  no .tmux.conf
+
+		Ctrl-b ;		 (like Alt-m ;  , salta al split anterior)
+		Ctrl-b l     (like Alt-m i  , salta a la ventana anterior)
+
+
+
 
 Sí, en Vim existen varios modos y contextos en los que diferentes combinaciones de teclas pueden tener comportamientos específicos. Aparte de `i_` (modo de inserción) y `c_` (modo de comandos), hay otros prefijos de ayuda que se refieren a distintos modos y tipos de operación en Vim. Aquí hay un resumen de algunos de ellos:
 
