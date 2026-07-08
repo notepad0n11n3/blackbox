@@ -72,7 +72,7 @@
 ]p        Ajusta la identaci[on al copiar
 
 
-### Mark JUMPT POINT  (Marks guardar posiciones) 
+#### MARK mark JUMPT POINT  (marks guardar posiciones) 
 							las marcas a-z  son marcas locales
 							las marcas A-Z  son marcas GLOBALES (saltoEntreArchivos 'Dentro dLaMisma Session de VIM' ) </3 <3 <3
 
@@ -87,13 +87,19 @@
 					ma
 					mA
 
-					'<caracterNumber>  ' salta al punto de salto(NORMAL_MODE) 
+					'<charNumber>			{ ' salta al punto de salto(NORMAL_MODE) } 
 					'a
 					'A
 					 
 					`a			(  `  salta exacatamente a la columna)
 					`A
 
+					''			salta entre las 2 ultimas posiciones, tambien funciona con `` ....<3 <3 <3
+					'.			salta al ultimo lugar donde editaste algo...<3 
+
+					'^			salta al ultimo lugar donde ENTRADTE EN MODO INSERT...<3 <3 
+
+					'"			Ultima posicion cuando cerraste el archivo
 
 
 					['  salta entre todos los marks generados (inicio/fin)
@@ -110,7 +116,7 @@
 						vim:: 'g,'k  s/mango/MANGO/g       tambi[en sirve para rangos <3 <3 <3
     
 
-### BUSQUEDA EN LINEA
+#### BUSQUEDA EN LINEA
 					fs        busca la proxima 's' del focus al final de la linea
 					Fs        busca la proxima 's' del focus al inicio de la linea
 
