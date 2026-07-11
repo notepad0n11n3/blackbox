@@ -483,6 +483,11 @@ CMD desde Vim
 
 		:'<, '>s/\%V\(.*\)\%V/"\1"/g			||||       :'<, '>s/ \%V \(.*\) \%V / test /g
 
+	### sustituciones con negaciones
+
+		: .s/[^|]/-/g         'sustituir todo lo que no sea | por -  ....<3 <3 <3'
+		: .s/[^| ]/-/g         'sustituir todo lo que no sea | y ' '  por -  ....<3 <3 <3'
+
 ### COMENTAR CODIGO Y BORRADO DEL MISMO
 
 					'<,'>  : s/^/#  ó   //   ó <!---   /gc ó g   
