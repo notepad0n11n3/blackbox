@@ -31,3 +31,33 @@
 
 
 				Ctrl-m  ==  Enter		...<3
+
+### BUFFERS buffers buffer
+
+	::: tmux set-buffer "$(pwd)"
+	::: pwd | tr -d '\n' | tmux load-buffer -
+
+	::: printf %s "$(pwd)" | tmux load-buffer -						"pwd sin salto de linea \n "
+	::: printf %s "$PWD" | tmux load-buffer -						"pwd sin salto de linea \n "
+
+									$PWD == pwd
+
+			@ ]					"tmux pega el ultimo elemento de la lista de buffers...<3 <3 <3"
+
+	 :: tmux paste-buffer
+
+
+	::: tmux list-buffers
+	::: tmux lsb
+
+						buffer4:...
+						buffer3:...
+						buffer2:...
+						buffer1:...
+						buffer0:...
+
+	::: tmux show-buffer		"el buffer primero en la pila  @ ]  "
+
+	 :: tmux paste-buffer -b buffer1
+
+
