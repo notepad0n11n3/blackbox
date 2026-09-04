@@ -35,7 +35,7 @@
 ### BUFFERS buffers buffer
 
 	::: tmux set-buffer "$(pwd)"
-	::: pwd | tr -d '\n' | tmux load-buffer -
+	::: pwd | tr -d '\n' | tmux load-buffer -									( ' tmux load-buffer - '	LIKE  ' vim - '  ....<3 <3 <3 <3 <3 )
 
 	::: printf %s "$(pwd)" | tmux load-buffer -						"pwd sin salto de linea \n "
 	::: printf %s "$PWD" | tmux load-buffer -						"pwd sin salto de linea \n "
@@ -44,11 +44,11 @@
 
 			@ ]					"tmux pega el ultimo elemento de la lista de buffers...<3 <3 <3"
 
-	 :: tmux paste-buffer
+	 :: tmux paste-buffer								"pega el buffer activo/ultimo buffer ingresado"
+	 :: tmux paste-buffer -b buffer5		"pega el contenido del buffer 5...<3 <3 <3"
 
 
-	::: tmux list-buffers
-	::: tmux lsb
+	::: tmux list-buffers				====				::: tmux lsb
 
 						buffer4:...
 						buffer3:...
@@ -56,8 +56,19 @@
 						buffer1:...
 						buffer0:...
 
-	::: tmux show-buffer		"el buffer primero en la pila  @ ]  "
+	::: tmux show-buffer										"muestra el buffer activo(ultimo) de la pila  '@-]'  "
+	::: tmux -L default show-buffer					"muestra el buffer activo(ultimo) de la pila  '@-]' del server socket 'socket-name' "
 
-	 :: tmux paste-buffer -b buffer1
+	::: tmux show-buffer -b buffer5								"muestra el contenido del buffer 5"
+	::: tmux -L default show-buffer -b buffer5		"muestra el contenido del buffer 5 del server socket 'socket-name' "
+
+	 :: tmux paste-buffer -b buffer5  "imprime el contenido del buffer 5"
+	 :: tmux -L default paste-buffer -b buffer5  
+
+		## Atajo de teclado para bufferX
+
+					::: tmux bind-key -n M-] paste-buffer -b buffer5				"atajo de teclado 'Alt-]' para ingresar el buffer5 por stdin....<3 <3 <3"
+
+					tmux::  bind-key -n M-] paste-buffer -b buffer5				"atajo de teclado 'Alt-]' para ingresar el buffer5 por stdin....<3 <3 <3"
 
 
